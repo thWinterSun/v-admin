@@ -1,4 +1,4 @@
-# iview-admin
+# my-admin
 
 > A Vue.js project
 
