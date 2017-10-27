@@ -50,24 +50,24 @@
             </div>
             <div class="layout-nav">
                 <MenuItem name="1">
-                    <Icon type="ios-navigate"></Icon>
+                    <Icon type="home"></Icon>
                     Home
                 </MenuItem>
                 <MenuItem name="2">
-                    <Icon type="ios-keypad"></Icon>
+                    <Icon type="stats-bars"></Icon>
                     Charts
                 </MenuItem>
                 <MenuItem name="3">
-                    <Icon type="ios-analytics"></Icon>
+                    <Icon type="gear-a"></Icon>
                     Forms
                 </MenuItem>
                 <MenuItem name="4">
-                    <Icon type="ios-paper"></Icon>
+                    <Icon type="clipboard"></Icon>
                     Tables
                 </MenuItem>
                 <Submenu name="4">
                   <template slot="title">
-                      <Icon type="stats-bars"></Icon>
+                      <Icon type="ios-book"></Icon>
                       Pages
                   </template>
                   <MenuItem name="3-1">login</MenuItem>
