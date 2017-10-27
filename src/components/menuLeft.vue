@@ -25,6 +25,7 @@
         color: #9ea7b4;
     }
     .layout-menu-left{
+        width:14%;
         background: #464c5b;
     }
     .layout-header{
