@@ -11,26 +11,40 @@
         float: left;
         position: relative;
         top: 15px;
-        left: 20px;
+        right: 20px;
+        
     }
-    
+    .layout-logo .logo-text{
+      height: 30px;
+      line-height: 30px;
+      padding: 0px 20px;
+      font-size: 20px;
+    }
     .layout-nav{
         width: 650px;
         margin: 0 auto;
     }
+    .ivu-menu-horizontal .ivu-menu-submenu .ivu-select-dropdown{
+        margin:0;
+        background-color:#495060;
+    }  
     .layout-assistant{
         width: 300px;
         margin: 0 auto;
         height: inherit;
     }
+  
     .layout-breadcrumb{
         padding: 10px 15px 0;
     }
     .layout-content{
-        min-height: 770px;
-        margin: 15px;
-        overflow: hidden;
-        background: #fff;
+        width: 100%;
+        max-width: 940px;
+        margin-left: auto;
+        margin-right: auto;
+        zoom: 1;
+        min-height: 830px;
+        background: #ddd;
         border-radius: 4px;
     }
     .layout-content-main{
@@ -45,14 +59,19 @@
 <template>
     <div class="layout">
         <Menu mode="horizontal" theme="dark" active-name="1">
-            <div class="layout-logo">
-              
-            </div>
             <div class="layout-nav">
-                <MenuItem name="1">
-                    <Icon type="home"></Icon>
-                    Home
-                </MenuItem>
+                <div class="layout-logo">
+                  <h3 class="logo-text">LOGO</h3>
+                </div>
+                <Submenu name="4">
+                  <template slot="title">
+                      <Icon type="home"></Icon>
+                      Home
+                  </template>
+                  <MenuItem name="1-1" to="/runstatus">运行状态</MenuItem>
+                  <MenuItem name="1-2" to="/realtime">实时信息</MenuItem>
+                  <MenuItem name="1-3" to="/overview">运行日志</MenuItem>
+                </Submenu>
                 <MenuItem name="2">
                     <Icon type="stats-bars"></Icon>
                     Charts
@@ -73,20 +92,20 @@
                   <MenuItem name="3-1">login</MenuItem>
                   <MenuItem name="3-2">404</MenuItem>
                   <MenuItem name="3-3">500</MenuItem>
-              </Submenu>
+                </Submenu>
               
             </div>
         </Menu>
         
-        <div class="layout-breadcrumb">
-            <Breadcrumb>
-                <BreadcrumbItem href="#">首页</BreadcrumbItem>
-                <BreadcrumbItem href="#">应用中心</BreadcrumbItem>
-                <BreadcrumbItem>某应用</BreadcrumbItem>
-            </Breadcrumb>
-        </div>
         <div class="layout-content">
-            内容区域
+          <div class="layout-breadcrumb">
+            <Breadcrumb>
+              <BreadcrumbItem href="/">Home</BreadcrumbItem>
+              <BreadcrumbItem href="/components/breadcrumb">Components</BreadcrumbItem>
+              <BreadcrumbItem>Breadcrumb</BreadcrumbItem>
+            </Breadcrumb>
+          </div>
+        
         </div>
         <div class="layout-copy">
             2017 &copy; philisense
