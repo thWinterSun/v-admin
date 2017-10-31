@@ -24,6 +24,9 @@
         width: 650px;
         margin: 0 auto;
     }
+    .ivu-menu a{
+      color:#fff;
+    }  
     .ivu-menu-horizontal .ivu-menu-submenu .ivu-select-dropdown{
         margin:0;
         background-color:#495060;
@@ -76,13 +79,14 @@
                     <Icon type="stats-bars"></Icon>
                     Charts
                 </MenuItem>
-                <MenuItem name="3">
+                <MenuItem name="3" >
                     <Icon type="gear-a"></Icon>
-                    Forms
+                    <router-link to="/form">Forms</router-link>
                 </MenuItem>
+                
                 <MenuItem name="4">
                     <Icon type="clipboard"></Icon>
-                    Tables
+                    <router-link to="/table">Tables</router-link>
                 </MenuItem>
                 <Submenu name="4">
                   <template slot="title">
@@ -105,7 +109,7 @@
               <BreadcrumbItem>Breadcrumb</BreadcrumbItem>
             </Breadcrumb>
           </div>
-        
+          <router-view></router-view>
         </div>
         <div class="layout-copy">
             2017 &copy; philisense
