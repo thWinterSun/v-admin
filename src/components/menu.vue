@@ -24,13 +24,19 @@
         width: 650px;
         margin: 0 auto;
     }
+    /*自定义修改部分*/
     .ivu-menu a{
       color:#fff;
     }  
     .ivu-menu-horizontal .ivu-menu-submenu .ivu-select-dropdown{
         margin:0;
         background-color:#495060;
-    }  
+    }
+    .ivu-menu-drop-list{
+      margin:0;
+      background-color:#495060;
+    }    
+    /**/
     .layout-assistant{
         width: 300px;
         margin: 0 auto;
@@ -66,28 +72,46 @@
                 <div class="layout-logo">
                   <h3 class="logo-text">LOGO</h3>
                 </div>
-                <Submenu name="4">
-                  <template slot="title">
+                <Submenu name="1">
+                    <template slot="title">
                       <Icon type="home"></Icon>
-                      Home
-                  </template>
-                  <MenuItem name="1-1" to="/runstatus">运行状态</MenuItem>
-                  <MenuItem name="1-2" to="/realtime">实时信息</MenuItem>
-                  <MenuItem name="1-3" to="/overview">运行日志</MenuItem>
+                      <router-link to="/home">
+                        Home
+                      </router-link>
+                    </template>
+                  <router-link to="/home/runstatus">
+                    <MenuItem name="1-1" >
+                      运行状态
+                    </MenuItem>
+                  </router-link>
+                  <router-link to="/home/realtime">
+                    <MenuItem name="1-2" >
+                      实时信息
+                    </MenuItem>
+                  </router-link>
+                  <router-link to="/home/overview">
+                    <MenuItem name="1-3" >
+                      运行日志
+                    </MenuItem>
+                  </router-link>
                 </Submenu>
                 <MenuItem name="2">
                     <Icon type="stats-bars"></Icon>
                     Charts
                 </MenuItem>
-                <MenuItem name="3" >
-                    <Icon type="gear-a"></Icon>
-                    <router-link to="/form">Forms</router-link>
-                </MenuItem>
                 
-                <MenuItem name="4">
-                    <Icon type="clipboard"></Icon>
-                    <router-link to="/table">Tables</router-link>
-                </MenuItem>
+                <router-link to="/form">
+                  <MenuItem name="3" >
+                      <Icon type="gear-a"></Icon>
+                        Forms
+                  </MenuItem>
+                </router-link>
+                <router-link to="/table">
+                  <MenuItem name="4">
+                      <Icon type="clipboard"></Icon>
+                        Tables
+                  </MenuItem>
+                </router-link>
                 <Submenu name="4">
                   <template slot="title">
                       <Icon type="ios-book"></Icon>
@@ -105,7 +129,7 @@
           <div class="layout-breadcrumb">
             <Breadcrumb>
               <BreadcrumbItem href="/">Home</BreadcrumbItem>
-              <BreadcrumbItem href="/components/breadcrumb">Components</BreadcrumbItem>
+              <BreadcrumbItem href="/home/runstatus">runstatus</BreadcrumbItem>
               <BreadcrumbItem>Breadcrumb</BreadcrumbItem>
             </Breadcrumb>
           </div>

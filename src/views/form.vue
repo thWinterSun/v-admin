@@ -13,6 +13,7 @@ export default {
   data () {
     return {
       value: '',
+      model1: '',
       cityList: [
         {
           value: 'beijing',
