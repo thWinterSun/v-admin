@@ -1,6 +1,8 @@
-# my-admin
+# v-admin
 
-> A Vue.js project
+>这是一个基于Vue + iview + v-router + webpack开发的后台管理系统，之前iview官方发布了自己的iview-admin,
+但是觉得官方提供的后台管理系统功能与其提供的组件相比实在是太少了，所以就想自己开发一套。由于大部分后台管理
+系统都是采用左侧导航，顶部横导航的很少，所以我们就开发了一个横向导航的后台管理系统。
 
 ## Build Setup
 
