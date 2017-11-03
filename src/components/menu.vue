@@ -72,56 +72,15 @@
                 <div class="layout-logo">
                   <h3 class="logo-text">LOGO</h3>
                 </div>
-                <Submenu name="1">
-                    <template slot="title">
-                      <Icon type="home"></Icon>
-                      <router-link to="/home">
-                        Home
-                      </router-link>
-                    </template>
-                  <router-link to="/home/runstatus">
-                    <MenuItem name="1-1" >
-                      运行状态
-                    </MenuItem>
-                  </router-link>
-                  <router-link to="/home/realtime">
-                    <MenuItem name="1-2" >
-                      实时信息
-                    </MenuItem>
-                  </router-link>
-                  <router-link to="/home/overview">
-                    <MenuItem name="1-3" >
-                      运行日志
-                    </MenuItem>
-                  </router-link>
-                </Submenu>
-                <MenuItem name="2">
-                    <Icon type="stats-bars"></Icon>
-                    Charts
-                </MenuItem>
-                
-                <router-link to="/form">
-                  <MenuItem name="3" >
-                      <Icon type="gear-a"></Icon>
-                        Forms
-                  </MenuItem>
-                </router-link>
-                <router-link to="/table">
-                  <MenuItem name="4">
-                      <Icon type="clipboard"></Icon>
-                        Tables
-                  </MenuItem>
-                </router-link>
-                <Submenu name="4">
+                <Submenu name="1" v-for="item in menuItem" :key="item">
                   <template slot="title">
-                      <Icon type="ios-book"></Icon>
-                      Pages
+                    <Icon :type="item.icon"></Icon>
+                    <router-link v-text="item.name" :to="item.router"></router-link>
                   </template>
-                  <MenuItem name="3-1">login</MenuItem>
-                  <MenuItem name="3-2">404</MenuItem>
-                  <MenuItem name="3-3">500</MenuItem>
+                  <router-link v-for="chil in item.children" :to="chil.route" :key="chil.mId">
+                    <MenuItem :name="chil.mId" v-text="chil.name"></MenuItem>
+                  </router-link>
                 </Submenu>
-              
             </div>
         </Menu>
         
@@ -142,6 +101,60 @@
 </template>
 <script>
     export default {
-
+      data () {
+        return {
+          menuItem: [
+            {
+              'children': [
+                {
+                  'name': '运行状态',
+                  'mId': '1-1',
+                  'route': '/home/runstatus'
+                },
+                {
+                  'name': '实时信息',
+                  'mId': '1-2',
+                  'route': '/home/realtime'
+                },
+                {
+                  'name': '运行日志',
+                  'mId': '1-3',
+                  'route': '/home/overview'
+                }
+              ],
+              'name': 'Home',
+              'icon': 'home',
+              'router': '/home'
+            },
+            {
+              'name': 'Table',
+              'icon': 'clipboard',
+              'router': '/table',
+              'children': [
+                {
+                  'name': 'aa',
+                  'mId': '2-1',
+                  'route': '/home/runstatus'
+                },
+                {
+                  'name': 'bb',
+                  'mId': '2-2',
+                  'route': '/home/realtime'
+                },
+                {
+                  'name': 'cc',
+                  'mId': '2-3',
+                  'route': '/home/overview'
+                }
+              ]
+            },
+            {
+              'name': 'Forms',
+              'icon': 'gear-a',
+              'router': '/form'
+            }
+          ]
+        }
+      }
     }
 </script>
