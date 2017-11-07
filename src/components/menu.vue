@@ -12,7 +12,7 @@
         position: relative;
         top: 15px;
         right: 20px;
-        
+
     }
     .layout-logo .logo-text{
       height: 30px;
@@ -27,7 +27,7 @@
     /*自定义修改部分*/
     .ivu-menu a{
       color:#fff;
-    }  
+    }
     .ivu-menu-horizontal .ivu-menu-submenu .ivu-select-dropdown{
         margin:0;
         background-color:#495060;
@@ -35,14 +35,14 @@
     .ivu-menu-drop-list{
       margin:0;
       background-color:#495060;
-    }    
+    }
     /**/
     .layout-assistant{
         width: 300px;
         margin: 0 auto;
         height: inherit;
     }
-  
+
     .layout-breadcrumb{
         padding: 10px 15px 0;
     }
@@ -83,7 +83,7 @@
                 </Submenu>
             </div>
         </Menu>
-        
+
         <div class="layout-content">
           <div class="layout-breadcrumb">
             <Breadcrumb>
