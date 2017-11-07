@@ -72,7 +72,7 @@
                 <div class="layout-logo">
                   <h3 class="logo-text">LOGO</h3>
                 </div>
-                <Submenu name="1" v-for="item in menuItem" :key="item">
+                <Submenu name="1" v-for="item in menuItem" :key="item.mId">
                   <template slot="title">
                     <Icon :type="item.icon"></Icon>
                     <router-link v-text="item.name" :to="item.router"></router-link>
@@ -124,11 +124,13 @@
               ],
               'name': 'Home',
               'icon': 'home',
+              'mId': '01',
               'router': '/home'
             },
             {
               'name': 'Table',
               'icon': 'clipboard',
+              'mId': '02',
               'router': '/table',
               'children': [
                 {
@@ -151,6 +153,7 @@
             {
               'name': 'Forms',
               'icon': 'gear-a',
+              'mId': '03',
               'router': '/form'
             }
           ]
