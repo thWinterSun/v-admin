@@ -1,6 +1,6 @@
 import Vue from 'vue'
-import me from './components/menu'
 import router from './router'
+import app from './App'
 import iview from 'iview'
 import 'iview/dist/styles/iview.css'
 
@@ -10,6 +10,6 @@ Vue.config.productionTip = false
 new Vue({
   el: '#app',
   router,
-  template: '<me/>',
-  components: { me }
+  template: '<app/>',
+  components: { app }
 })

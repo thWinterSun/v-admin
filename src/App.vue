@@ -1,44 +1,63 @@
 <template>
   <div id="app">
-    <template>
-      <RadioGroup v-model="phone">
-          <Radio label="apple">
-              <Icon type="social-apple"></Icon>
-              <span>Apple</span>
-          </Radio>
-          <Radio label="android">
-              <Icon type="social-android"></Icon>
-              <span>Android</span>
-          </Radio>
-          <Radio label="windows">
-              <Icon type="social-windows"></Icon>
-              <span>Windows</span>
-          </Radio>
-      </RadioGroup>
-
-      <Slider v-model="value1"></Slider>
-      <ButtonGroup>
-       <!-- <Button>取消</Button>
-       <Button type="primary">确定</Button> -->
-      </ButtonGroup>
-
-  </template>
-
+    <!--导航组件  -->
+    <top-menus></top-menus>
+    <!--主体内容  -->
+    <div class="layout-content">
+      <div class="layout-breadcrumb">
+        <Breadcrumb>
+          <BreadcrumbItem href="/">Home</BreadcrumbItem>
+          <BreadcrumbItem href="/home/runstatus">runstatus</BreadcrumbItem>
+          <BreadcrumbItem>Breadcrumb</BreadcrumbItem>
+        </Breadcrumb>
+      </div>
+      <router-view></router-view>
+    </div>
+    <!--页脚  -->
+    <div class="layout-copy">
+        2017 &copy; philisense
+    </div>
   </div>
 </template>
 
 <script>
+import topMenus from './components/menu.vue'
 export default {
+  name: 'top-menu',
   data () {
     return {
-      phone: 'apple',
-      animal: '印度黑羚',
-      value1: '25'
     }
-  }
+  },
+  components: { topMenus }
 }
 </script>
 
-<style>
-
+<style scoped>
+/**/
+.layout-assistant{
+    width: 300px;
+    margin: 0 auto;
+    height: inherit;
+}
+.layout-breadcrumb{
+    padding: 10px 15px 0;
+}
+.layout-content{
+    width: 100%;
+    max-width: 940px;
+    margin-left: auto;
+    margin-right: auto;
+    zoom: 1;
+    min-height: 830px;
+    background: #ddd;
+    border-radius: 4px;
+}
+.layout-content-main{
+    padding: 10px;
+}
+.layout-copy{
+    text-align: center;
+    padding: 10px 0 20px;
+    color: #9ea7b4;
+}
 </style>

@@ -36,34 +36,6 @@
       margin:0;
       background-color:#495060;
     }
-    /**/
-    .layout-assistant{
-        width: 300px;
-        margin: 0 auto;
-        height: inherit;
-    }
-
-    .layout-breadcrumb{
-        padding: 10px 15px 0;
-    }
-    .layout-content{
-        width: 100%;
-        max-width: 940px;
-        margin-left: auto;
-        margin-right: auto;
-        zoom: 1;
-        min-height: 830px;
-        background: #ddd;
-        border-radius: 4px;
-    }
-    .layout-content-main{
-        padding: 10px;
-    }
-    .layout-copy{
-        text-align: center;
-        padding: 10px 0 20px;
-        color: #9ea7b4;
-    }
 </style>
 <template>
     <div class="layout">
@@ -72,7 +44,7 @@
                 <div class="layout-logo">
                   <h3 class="logo-text">LOGO</h3>
                 </div>
-                <Submenu name="1" v-for="item in menuItem" :key="item">
+                <Submenu name="1" v-for="item in menuItem" :key="item.mId">
                   <template slot="title">
                     <Icon :type="item.icon"></Icon>
                     <router-link v-text="item.name" :to="item.router"></router-link>
@@ -83,20 +55,6 @@
                 </Submenu>
             </div>
         </Menu>
-
-        <div class="layout-content">
-          <div class="layout-breadcrumb">
-            <Breadcrumb>
-              <BreadcrumbItem href="/">Home</BreadcrumbItem>
-              <BreadcrumbItem href="/home/runstatus">runstatus</BreadcrumbItem>
-              <BreadcrumbItem>Breadcrumb</BreadcrumbItem>
-            </Breadcrumb>
-          </div>
-          <router-view></router-view>
-        </div>
-        <div class="layout-copy">
-            2017 &copy; philisense
-        </div>
     </div>
 </template>
 <script>
@@ -124,11 +82,13 @@
               ],
               'name': 'Home',
               'icon': 'home',
+              'mId': '01',
               'router': '/home'
             },
             {
               'name': 'Table',
               'icon': 'clipboard',
+              'mId': '02',
               'router': '/table',
               'children': [
                 {
@@ -151,6 +111,7 @@
             {
               'name': 'Forms',
               'icon': 'gear-a',
+              'mId': '03',
               'router': '/form'
             }
           ]
