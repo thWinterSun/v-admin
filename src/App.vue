@@ -18,10 +18,10 @@
 
       <Slider v-model="value1"></Slider>
       <ButtonGroup>
-       <Button>取消</Button>
-       <Button type="primary">确定</Button>
+       <!-- <Button>取消</Button>
+       <Button type="primary">确定</Button> -->
       </ButtonGroup>
-      
+
   </template>
 
   </div>
