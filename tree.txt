@@ -1,0 +1,54 @@
+
+│  .babelrc
+│  .editorconfig
+│  .eslintignore
+│  .eslintrc.js   --代码检查工具配置
+│  .gitignore     --git配置
+│  .postcssrc.js
+│  index.html     --项目入口html
+│  package.json
+│  README.md  	   --项目说明文件
+│  td_icon.ico
+│  tree.txt  
+│  
+├─build
+│      build.js
+│      check-versions.js
+│      dev-client.js
+│      dev-server.js
+│      utils.js
+│      vue-loader.conf.js    --vue-loader配置文件
+│      webpack.base.conf.js  --webpack配置文件
+│      webpack.dev.conf.js
+│      webpack.prod.conf.js
+│      
+├─config
+│      dev.env.js
+│      index.js
+│      prod.env.js
+│      
+├─src
+│  │  App.vue		--项目首页
+│  │  main.js		--项目入口js
+│  │  
+│  ├─assets
+│  │      iviewLogo.png
+│  │      logo.jpg
+│  │      
+│  ├─components	--项目组件存放位置
+│  │      menu.vue	--导航组件
+│  │      form.vue
+│  │      syslog.vue
+│  │      table.vue
+│  │      
+│  ├─router	
+│  │      index.js	--路由配置文件
+│  │      
+│  └─views		--成型页面存放位置
+│          homeCon.vue
+│          overview.vue
+│          runstatus.vue  
+│          login.vue
+└─static
+        .gitkeep
+        
