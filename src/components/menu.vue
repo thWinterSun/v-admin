@@ -11,8 +11,6 @@
         float: left;
         position: relative;
         top: 15px;
-        right: 20px;
-
     }
     .layout-logo .logo-text{
       height: 30px;
@@ -20,21 +18,28 @@
       padding: 0px 20px;
       font-size: 20px;
     }
-    .layout-nav{
-        width: 650px;
+    @media screen and (max-width: 1920px){
+      .layout-nav{
+        width: 1160px;
         margin: 0 auto;
-    }
+      }
+		}
+    @media screen and (max-width: 1366px){
+      .layout-nav{
+        width: 940px;
+        margin: 0 auto;
+      }
+		}
     /*自定义修改部分*/
     .ivu-menu a{
       color:#fff;
     }
-    .ivu-menu-horizontal .ivu-menu-submenu .ivu-select-dropdown{
+    .ivu-menu-submenu .ivu-select-dropdown{
         margin:0;
         background-color:#495060;
     }
-    .ivu-menu-drop-list{
-      margin:0;
-      background-color:#495060;
+    .userdown{
+      float:right;
     }
 </style>
 <template>
@@ -44,7 +49,7 @@
                 <div class="layout-logo">
                   <h3 class="logo-text">LOGO</h3>
                 </div>
-                <Submenu name="1" v-for="item in menuItem" :key="item.mId">
+                <Submenu :name="item.mId" v-for="item in menuItem" :key="item.mId">
                   <template slot="title">
                     <Icon :type="item.icon"></Icon>
                     <router-link v-text="item.name" :to="item.router"></router-link>
@@ -53,9 +58,17 @@
                     <MenuItem :name="chil.mId" v-text="chil.name"></MenuItem>
                   </router-link>
                 </Submenu>
-                <div class="layout-logo">
-                  <h3 class="logo-text">LOGO</h3>
-                </div>
+                <Dropdown class="userdown">
+                  <a href="javascript:void(0)">
+                    admin
+                    <Icon type="arrow-down-b"></Icon>
+                  </a>
+                  <DropdownMenu slot="list">
+                    <DropdownItem>退出登录</DropdownItem>
+                    <DropdownItem>修改密码</DropdownItem>
+                  </DropdownMenu>
+                </Dropdown>
+              
             </div>
         </Menu>
     </div>
