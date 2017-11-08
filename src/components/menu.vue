@@ -12,7 +12,7 @@
         position: relative;
         top: 15px;
         right: 20px;
-        
+
     }
     .layout-logo .logo-text{
       height: 30px;
@@ -36,9 +36,6 @@
       margin:0;
       background-color:#495060;
     }
-  
-  
-    
 </style>
 <template>
     <div class="layout">
@@ -61,8 +58,6 @@
                 </div>
             </div>
         </Menu>
-        
-        
     </div>
 </template>
 <script>
