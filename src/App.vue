@@ -28,7 +28,9 @@ export default {
     return {
     }
   },
-  components: { topMenus }
+  components: {
+    'top-menus': topMenus
+  }
 }
 </script>
 
@@ -41,6 +43,7 @@ export default {
 }
 .layout-breadcrumb{
     padding: 10px 15px 0;
+    
 }
 .layout-content{
     width: 100%;
@@ -49,7 +52,7 @@ export default {
     margin-right: auto;
     zoom: 1;
     min-height: 830px;
-    background: #ddd;
+    /*background: #ddd;*/
     border-radius: 4px;
 }
 .layout-content-main{

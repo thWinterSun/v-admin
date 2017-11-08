@@ -27,7 +27,7 @@
     /*自定义修改部分*/
     .ivu-menu a{
       color:#fff;
-    }  
+    }
     .ivu-menu-horizontal .ivu-menu-submenu .ivu-select-dropdown{
         margin:0;
         background-color:#495060;
@@ -35,7 +35,7 @@
     .ivu-menu-drop-list{
       margin:0;
       background-color:#495060;
-    }    
+    }
   
   
     
@@ -56,6 +56,9 @@
                     <MenuItem :name="chil.mId" v-text="chil.name"></MenuItem>
                   </router-link>
                 </Submenu>
+                <div class="layout-logo">
+                  <h3 class="logo-text">LOGO</h3>
+                </div>
             </div>
         </Menu>
         
