@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Form from '../views/form'
-import Table from '../views/table'
+import Form from '../components/form'
+import Table from '../components/table'
 import Cont from '../views/homeCon'
 Vue.use(Router)
 export default new Router({
