@@ -75,63 +75,63 @@
 </template>
 <script>
     export default {
-      data () {
-        return {
-          menuItem: [
-            {
-              'children': [
-                {
-                  'name': '运行状态',
-                  'mId': '1-1',
-                  'route': '/home/runstatus'
-                },
-                {
-                  'name': '实时信息',
-                  'mId': '1-2',
-                  'route': '/home/realtime'
-                },
-                {
-                  'name': '运行日志',
-                  'mId': '1-3',
-                  'route': '/home/overview'
-                }
-              ],
-              'name': 'Home',
-              'icon': 'home',
-              'mId': '01',
-              'router': '/home'
-            },
-            {
-              'name': 'Table',
-              'icon': 'clipboard',
-              'mId': '02',
-              'router': '/table',
-              'children': [
-                {
-                  'name': 'aa',
-                  'mId': '2-1',
-                  'route': '/home/runstatus'
-                },
-                {
-                  'name': 'bb',
-                  'mId': '2-2',
-                  'route': '/home/realtime'
-                },
-                {
-                  'name': 'cc',
-                  'mId': '2-3',
-                  'route': '/home/overview'
-                }
-              ]
-            },
-            {
-              'name': 'Forms',
-              'icon': 'gear-a',
-              'mId': '03',
-              'router': '/form'
+        data () {
+            return {
+                menuItem: [
+                    {
+                        'children': [
+                            {
+                                'name': '运行状态',
+                                'mId': '1-1',
+                                'route': '/home/runstatus'
+                            },
+                            {
+                                'name': '实时信息',
+                                'mId': '1-2',
+                                'route': '/home/realtime'
+                            },
+                            {
+                                'name': '运行日志',
+                                'mId': '1-3',
+                                'route': '/home/overview'
+                            }
+                        ],
+                        'name': 'Home',
+                        'icon': 'home',
+                        'mId': '01',
+                        'router': '/home'
+                    },
+                    {
+                        'name': 'Table',
+                        'icon': 'clipboard',
+                        'mId': '02',
+                        'router': '/table',
+                        'children': [
+                            {
+                                'name': 'aa',
+                                'mId': '2-1',
+                                'route': '/home/runstatus'
+                            },
+                            {
+                                'name': 'bb',
+                                'mId': '2-2',
+                                'route': '/home/realtime'
+                            },
+                            {
+                                'name': 'cc',
+                                'mId': '2-3',
+                                'route': '/home/overview'
+                            }
+                        ]
+                    },
+                    {
+                        'name': 'Forms',
+                        'icon': 'gear-a',
+                        'mId': '03',
+                        'router': '/form'
+                    }
+                ]
             }
-          ]
         }
-      }
     }
 </script>

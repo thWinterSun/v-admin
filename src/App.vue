@@ -23,14 +23,14 @@
 <script>
 import topMenus from './components/menu.vue'
 export default {
-  name: 'top-menu',
-  data () {
-    return {
+    name: 'top-menu',
+    data () {
+        return {
+        }
+    },
+    components: {
+        'top-menus': topMenus
     }
-  },
-  components: {
-    'top-menus': topMenus
-  }
 }
 </script>
 

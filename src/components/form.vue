@@ -10,26 +10,26 @@
 
 <script>
 export default {
-  data () {
-    return {
-      value: '',
-      model1: '',
-      cityList: [
-        {
-          value: 'beijing',
-          label: '北京市'
-        },
-        {
-          value: 'shanghai',
-          label: '上海市'
-        },
-        {
-          value: 'shenzhen',
-          label: '深圳市'
+    data () {
+        return {
+            value: '',
+            model1: '',
+            cityList: [
+                {
+                    value: 'beijing',
+                    label: '北京市'
+                },
+                {
+                    value: 'shanghai',
+                    label: '上海市'
+                },
+                {
+                    value: 'shenzhen',
+                    label: '深圳市'
+                }
+            ]
         }
-      ]
     }
-  }
 }
 </script>
 
