@@ -47,26 +47,26 @@
         <Menu mode="horizontal" theme="dark" active-name="1">
             <div class="layout-nav">
                 <div class="layout-logo">
-                  <h3 class="logo-text">LOGO</h3>
+                    <h3 class="logo-text">LOGO</h3>
                 </div>
                 <Submenu :name="item.mId" v-for="item in menuItem" :key="item.mId">
-                  <template slot="title">
-                    <Icon :type="item.icon"></Icon>
-                    <router-link v-text="item.name" :to="item.router"></router-link>
-                  </template>
-                  <router-link v-for="chil in item.children" :to="chil.route" :key="chil.mId">
-                    <MenuItem :name="chil.mId" v-text="chil.name"></MenuItem>
-                  </router-link>
+                    <template slot="title">
+                        <Icon :type="item.icon"></Icon>
+                        <router-link v-text="item.name" :to="item.router"></router-link>
+                    </template>
+                    <router-link v-for="chil in item.children" :to="chil.route" :key="chil.mId">
+                        <MenuItem :name="chil.mId" v-text="chil.name"></MenuItem>
+                    </router-link>
                 </Submenu>
                 <Dropdown class="userdown">
-                  <a href="javascript:void(0)">
-                    admin
-                    <Icon type="arrow-down-b"></Icon>
-                  </a>
-                  <DropdownMenu slot="list">
-                    <DropdownItem>退出登录</DropdownItem>
-                    <DropdownItem>修改密码</DropdownItem>
-                  </DropdownMenu>
+                    <a href="javascript:void(0)">
+                        admin
+                        <Icon type="arrow-down-b"></Icon>
+                    </a>
+                    <DropdownMenu slot="list">
+                        <DropdownItem>退出登录</DropdownItem>
+                        <DropdownItem>修改密码</DropdownItem>
+                    </DropdownMenu>
                 </Dropdown>
               
             </div>

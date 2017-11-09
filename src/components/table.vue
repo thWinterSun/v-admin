@@ -1,8 +1,8 @@
 <template>
-  <div class="">
-     <Button type="primary" @click="deleteSelect">删除选中</Button>
-    <TableComponent :columns-list="columns2" :table-data="data4" :function-type="functionType"></TableComponent>
-  </div>
+    <div class="">
+        <Button type="primary" @click="deleteSelect">删除选中</Button>
+        <TableComponent :columns-list="columns2" :table-data="data4" :function-type="functionType"></TableComponent>
+    </div>
 </template>
 <script>
     import TableComponent from './test.vue'

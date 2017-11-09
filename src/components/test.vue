@@ -1,16 +1,16 @@
 <template>
-  <div class="">
-    <Row>
-      <Table width="100%" border ref="selection" :columns="columnsList" :data="tableData"></Table>
-    </Row>
-    <Row>
-      <div style="margin: 10px;overflow: hidden">
-        <div style="float: right;">
-          <Page :total="100" :current="1" @on-change="changePage"></Page>
-        </div>
-      </div>
-    </Row>
-  </div>
+    <div>
+        <Row>
+            <Table width="100%" border ref="selection" :columns="columnsList" :data="tableData"></Table>
+        </Row>
+        <Row>
+            <div style="margin: 10px;overflow: hidden">
+                <div style="float: right;">
+                    <Page :total="100" :current="1" @on-change="changePage"></Page>
+                </div>
+            </div>
+        </Row>
+    </div>
 </template>
 <script>
     export default {

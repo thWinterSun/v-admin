@@ -1,7 +1,7 @@
 <template lang="html">
-  <div class="logCon">
-  	<h3>系统日志</h3>
-  </div>
+    <div class="logCon">
+  	    <h3>系统日志</h3>
+    </div>
 </template>
 
 <script>

@@ -1,7 +1,7 @@
 <template lang="html">
-  <div class="statCon">
-  	<h4>运行状态</h4>
-  </div>
+    <div class="statCon">
+  	     <h4>运行状态</h4>
+    </div>
 </template>
 
 <script>
