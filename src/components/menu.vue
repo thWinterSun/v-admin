@@ -44,7 +44,7 @@
 </style>
 <template>
     <div class="layout">
-        <Menu mode="horizontal" theme="dark" active-name="1">
+        <Menu mode="horizontal" theme="primary" active-name="1">
             <div class="layout-nav">
                 <div class="layout-logo">
                     <h3 class="logo-text">LOGO</h3>
@@ -108,27 +108,50 @@
                         'router': '/table',
                         'children': [
                             {
-                                'name': 'aa',
+                                'name': 'Basic Table',
                                 'mId': '2-1',
                                 'route': '/home/runstatus'
                             },
                             {
-                                'name': 'bb',
+                                'name': 'Advance Table',
                                 'mId': '2-2',
                                 'route': '/home/realtime'
                             },
                             {
-                                'name': 'cc',
+                                'name': 'Edit Table',
                                 'mId': '2-3',
                                 'route': '/home/overview'
                             }
                         ]
                     },
                     {
-                        'name': 'Forms',
-                        'icon': 'gear-a',
+                        'name': 'Form',
+                        'icon': 'ios-gear',
                         'mId': '03',
                         'router': '/form'
+                    },
+                    {
+                        'name': 'charts',
+                        'icon': 'connection-bars',
+                        'mId': '04',
+                        'router': '/charts',
+                        'children': [
+                            {
+                                'name': 'Echarts',
+                                'mId': '4-1',
+                                'route': '/charts/echarts'
+                            },
+                            {
+                                'name': 'highCharts',
+                                'mId': '4-2',
+                                'route': '/charts/highCharts'
+                            },
+                            {
+                                'name': 'D3 charts',
+                                'mId': '4-3',
+                                'route': '/charts/overview'
+                            }
+                        ]
                     }
                 ]
             }
