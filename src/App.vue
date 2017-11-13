@@ -4,13 +4,6 @@
     <top-menus></top-menus>
     <!--主体内容  -->
     <div class="layout-content">
-      <div class="layout-breadcrumb" style="display:none">
-        <Breadcrumb separator=">">
-          <BreadcrumbItem href="/">Home</BreadcrumbItem>
-          <BreadcrumbItem href="/home/runstatus">runstatus</BreadcrumbItem>
-          <BreadcrumbItem>Breadcrumb</BreadcrumbItem>
-        </Breadcrumb>
-      </div>
       <router-view></router-view>
     </div>
     <!--页脚  -->
@@ -35,6 +28,7 @@ export default {
 </script>
 
 <style scoped>
+
 /**/
 .layout-assistant{
     width: 300px;
@@ -52,7 +46,7 @@ export default {
     margin-right: auto;
     zoom: 1;
     min-height: 830px;
-    /*background: #ddd;*/
+    background-color: #fff;
     border-radius: 4px;
 }
 .layout-content-main{

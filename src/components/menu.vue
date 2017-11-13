@@ -41,6 +41,8 @@
     .userdown{
       float:right;
     }
+    
+    
 </style>
 <template>
     <div class="layout">
@@ -110,17 +112,17 @@
                             {
                                 'name': 'Basic Table',
                                 'mId': '2-1',
-                                'route': '/home/runstatus'
+                                'route': '/table/basictable'
                             },
                             {
-                                'name': 'Advance Table',
+                                'name': 'filter Table',
                                 'mId': '2-2',
-                                'route': '/home/realtime'
+                                'route': '/table/filtertable'
                             },
                             {
                                 'name': 'Edit Table',
                                 'mId': '2-3',
-                                'route': '/home/overview'
+                                'route': '/table/edittable'
                             }
                         ]
                     },
@@ -128,7 +130,24 @@
                         'name': 'Form',
                         'icon': 'ios-gear',
                         'mId': '03',
-                        'router': '/form'
+                        'router': '/form',
+                        'children': [
+                            {
+                                'name': 'Basic Form',
+                                'mId': '3-1',
+                                'route': '/form/basicform'
+                            },
+                            {
+                                'name': 'validate Form',
+                                'mId': '3-2',
+                                'route': '/form/validateform'
+                            },
+                            {
+                                'name': 'updata Form',
+                                'mId': '3-3',
+                                'route': '/form/updata'
+                            }
+                        ]
                     },
                     {
                         'name': 'charts',

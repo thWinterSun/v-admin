@@ -1,7 +1,8 @@
 <template>
     <div class="">
-        <Button type="primary" @click="deleteSelect">删除选中</Button>
-        <TableComponent :columns-list="columns2" :table-data="data4" :function-type="functionType"></TableComponent>
+        <!-- <Button type="primary" @click="deleteSelect">删除选中</Button>
+        <TableComponent :columns-list="columns2" :table-data="data4" :function-type="functionType"></TableComponent> -->
+        <router-view></router-view>
     </div>
 </template>
 <script>
