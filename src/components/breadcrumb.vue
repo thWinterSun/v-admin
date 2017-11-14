@@ -18,6 +18,12 @@ export default {
 
 <style lang="css">
     .layout-breadcrumb{
-        padding: 10px 15px;
+        height: 40px;
+        z-index: 5;
+        width: 100%;
+        line-height: 40px;
+        box-shadow: 0 1px 4px 0 #bbbec4;
+        padding: 0 2%;
+        margin-bottom: 5px;
     }    
 </style>
