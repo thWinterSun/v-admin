@@ -1,6 +1,8 @@
 <template lang="html">
     <Tabs value="name1">
-        <TabPane v-for="tab in tabs" :label="tab.label" :name="tab.name" :key="tab.name">标签的内容</TabPane>
+        <TabPane v-for="tab in tabs" :label="tab.label" :name="tab.name" :key="tab.name">
+
+        </TabPane>
     </Tabs>
 </template>
 
@@ -11,7 +13,7 @@ export default {
             tabs: [
                 {
                     'name': 'name1',
-                    'label': '标签1'
+                    'label': '444'
                 },
                 {
                     'name': 'name2',
