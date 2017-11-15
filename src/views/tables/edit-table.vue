@@ -3,10 +3,16 @@
         <!-- 基础的增删改查 -->
         <br>
         <Row>
-            <Col span="4" offset="1">
+            <Col span="2" offset="1">
                 <Button type="primary">
                   <Icon type="plus-round"></Icon>
                    添加
+               </Button>
+            </Col>
+            <Col span="2" >
+                <Button type="primary" @click="deleteSelect">
+                  <Icon type="trash-a"></Icon>
+                   删除
                </Button>
             </Col>
             <Col span="6" offset="13" >
@@ -24,6 +30,11 @@
                 </div>
             </div>
         </Row>
+        <Row>
+            <Modal :width="200" v-show="showMess">
+                {{mess}}
+            </Modal>
+        </Row>
     </div>
 </template>
 <script>
@@ -35,6 +46,8 @@
         },
         data () {
             return {
+                showMess: false,
+                mess: '',
                 columns2: [
                     {
                         type: 'selection',
@@ -74,32 +87,10 @@
                         fixed: 'right',
                         width: 150,
                         render: (h, params) => {
-                            return h('div', [
-                                h('Button', {
-                                    props: {
-                                        type: 'text',
-                                        size: 'small'
-                                    },
-                                    style: {
-                                        marginRight: '5px',
-                                        color: 'red',
-                                        fontSize: '22px'
-                                    },
-                                    on: {
-                                        click: function (ev) {
-                                            alert(params.row.name)
-                                        }
-                                    }
-                                }, [h('Icon',{
-                                    props: {
-                                        type: 'trash-a',
-                                        size: '30px'
-                                    },
-                                    attrs: {
-                                        size: '20px'
-                                    }
-                                })]),
-                                h('Button', {
+                            const row = params.row;
+                            let s = '';
+                            if (row.status / 2 === 1) {
+                                s = h('Button', {
                                     props: {
                                         type: 'text',
                                         size: 'small'
@@ -108,15 +99,79 @@
                                         color: '#3498db',
                                         fontSize: '20px'
                                     },
-                                    on: this.onMethon
+                                    on: {
+                                        click: function () {
+                                            alert(333)
+                                        }
+                                    }
                                 }, [h('Icon',{
                                     props: {
-                                        type: 'compose'
+                                        type: 'flash-off'
                                     },
                                     attrs: {
                                         size: '20px'
                                     }
                                 })])
+                            }
+                            return h('div', [
+                                h('Poptip', {
+                                    props: {
+                                        confirm: true,
+                                        title: `您确定要删除 ${params.row.name} 吗?`,
+                                        transfer: true
+                                    },
+                                    on: {
+                                        'on-ok': () => {
+                                            this.$Message.success('删除成功')
+                                        }
+                                    }
+                                }, [
+                                    h('Button', {
+                                        props: {
+                                            type: 'text',
+                                            size: 'small'
+                                        },
+                                        style: {
+                                            marginRight: '5px',
+                                            color: 'red',
+                                            fontSize: '22px'
+                                        }
+                                    }, [h('Icon',{
+                                        props: {
+                                            type: 'trash-a'
+                                        },
+                                        attrs: {
+                                            size: '20px',
+                                            title: '删除'
+                                        }
+                                    })])
+
+                                ]),
+                                h('Tooltip',{
+                                    props: {
+                                        placement: 'bottom',
+                                        content: '编辑'
+                                    }
+                                },[
+                                    h('Button', {
+                                        props: {
+                                            type: 'text',
+                                            size: 'small'
+                                        },
+                                        style: {
+                                            color: '#3498db',
+                                            fontSize: '20px'
+                                        },
+                                        on: this.onMethon
+                                    }, [h('Icon',{
+                                        props: {
+                                            type: 'compose'
+                                        },
+                                        attrs: {
+                                            size: '20px'
+                                        }
+                                    })])
+                                ]),s
                             ])
                         }
                     }
@@ -127,7 +182,20 @@
         },
         methods: {
             deleteSelect () {
-                console.dir(this.$refs.selection.getSelection())
+                let selectArr = this.$refs.selection.getSelection();
+                this.$Modal.confirm({
+                    title: '确认提示',
+                    content: selectArr.length === 0 ? '请选择删除项！' : '确认删除选中项？',
+                    loading: selectArr.length !== 0,
+                    onOk: () => {
+                        setTimeout(() => {
+                            this.$Modal.remove();
+                            selectArr.length !== 0 && this.$Message.success('删除成功');
+                        }, 2000);
+                    }
+                });
+                console.dir(this.$refs.selection.getSelection());
+                console.dir(this.$Message)
             },
             mockTableData1 () {
                 let data = []
@@ -142,6 +210,7 @@
                 return data
             },
             changePage (evt) {
+                console.dir(this)
                 this.tableData1 = this.mockTableData1()
                 alert(evt)
             },
