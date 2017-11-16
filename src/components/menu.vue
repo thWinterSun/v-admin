@@ -62,7 +62,7 @@
                 </Submenu>
                 <Dropdown class="userdown">
                     <a href="javascript:void(0)">
-                        admin
+                        <span v-text="userName" class="mr_10"></span>
                         <Icon type="arrow-down-b"></Icon>
                     </a>
                     <DropdownMenu slot="list">
@@ -81,6 +81,7 @@
     export default {
         data () {
             return {
+                userName: 'Jack',
                 menuItem: [
                     {
                         'children': [

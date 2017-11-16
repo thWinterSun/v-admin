@@ -1,54 +1,84 @@
-
-©¦  .babelrc
-©¦  .editorconfig
-©¦  .eslintignore
-©¦  .eslintrc.js   --´úÂë¼ì²é¹¤¾ßÅäÖÃ
-©¦  .gitignore     --gitÅäÖÃ
-©¦  .postcssrc.js
-©¦  index.html     --ÏîÄ¿Èë¿Úhtml
-©¦  package.json
-©¦  README.md  	   --ÏîÄ¿ËµÃ÷ÎÄ¼ş
-©¦  td_icon.ico
-©¦  tree.txt  
-©¦  
-©À©¤build
-©¦      build.js
-©¦      check-versions.js
-©¦      dev-client.js
-©¦      dev-server.js
-©¦      utils.js
-©¦      vue-loader.conf.js    --vue-loaderÅäÖÃÎÄ¼ş
-©¦      webpack.base.conf.js  --webpackÅäÖÃÎÄ¼ş
-©¦      webpack.dev.conf.js
-©¦      webpack.prod.conf.js
-©¦      
-©À©¤config
-©¦      dev.env.js
-©¦      index.js
-©¦      prod.env.js
-©¦      
-©À©¤src
-©¦  ©¦  App.vue		--ÏîÄ¿Ê×Ò³
-©¦  ©¦  main.js		--ÏîÄ¿Èë¿Újs
-©¦  ©¦  
-©¦  ©À©¤assets
-©¦  ©¦      iviewLogo.png
-©¦  ©¦      logo.jpg
-©¦  ©¦      
-©¦  ©À©¤components	--ÏîÄ¿×é¼ş´æ·ÅÎ»ÖÃ
-©¦  ©¦      menu.vue	--µ¼º½×é¼ş
-©¦  ©¦      form.vue
-©¦  ©¦      syslog.vue
-©¦  ©¦      table.vue
-©¦  ©¦      
-©¦  ©À©¤router	
-©¦  ©¦      index.js	--Â·ÓÉÅäÖÃÎÄ¼ş
-©¦  ©¦      
-©¦  ©¸©¤views		--³ÉĞÍÒ³Ãæ´æ·ÅÎ»ÖÃ
-©¦          homeCon.vue
-©¦          overview.vue
-©¦          runstatus.vue  
-©¦          login.vue
-©¸©¤static
+ï»¿
+â”‚  .babelrc
+â”‚  .editorconfig
+â”‚  .eslintignore
+â”‚  .eslintrc.js   --ä»£ç æ£€æŸ¥å·¥å…·é…ç½®
+â”‚  .gitignore     --gité…ç½®
+â”‚  .postcssrc.js
+â”‚  index.html     --é¡¹ç›®å…¥å£html
+â”‚  package.json
+â”‚  README.md  	   --é¡¹ç›®è¯´æ˜æ–‡ä»¶
+â”‚  td_icon.ico
+â”‚  tree.txt  
+â”‚  
+â”œâ”€build
+â”‚      build.js
+â”‚      check-versions.js
+â”‚      dev-client.js
+â”‚      dev-server.js
+â”‚      utils.js
+â”‚      vue-loader.conf.js    --vue-loaderé…ç½®æ–‡ä»¶
+â”‚      webpack.base.conf.js  --webpacké…ç½®æ–‡ä»¶
+â”‚      webpack.dev.conf.js
+â”‚      webpack.prod.conf.js
+â”‚      
+â”œâ”€config
+â”‚      dev.env.js
+â”‚      index.js
+â”‚      prod.env.js
+â”‚      
+â”œâ”€src
+â”‚  â”‚  App.vue
+â”‚  â”‚  main.js
+â”‚  â”‚  
+â”‚  â”œâ”€assets
+â”‚  â”‚      iviewLogo.png
+â”‚  â”‚      logo.jpg
+â”‚  â”‚      
+â”‚  â”œâ”€components
+â”‚  â”‚      breadcrumb.vue
+â”‚  â”‚      datePicker.vue
+â”‚  â”‚      form.vue
+â”‚  â”‚      menu.vue
+â”‚  â”‚      modal.vue
+â”‚  â”‚      progress.vue
+â”‚  â”‚      table.vue
+â”‚  â”‚      tabs.vue
+â”‚  â”‚      test.vue
+â”‚  â”‚      transfer.vue
+â”‚  â”‚      tree.vue
+â”‚  â”‚      upload.vue
+â”‚  â”‚      
+â”‚  â”œâ”€images
+â”‚  â”‚      login_bg.png
+â”‚  â”‚      
+â”‚  â”œâ”€router
+â”‚  â”‚      index.js
+â”‚  â”‚      
+â”‚  â””â”€views
+â”‚      â”‚  404.vue
+â”‚      â”‚  homeCon.vue
+â”‚      â”‚  login.vue
+â”‚      â”‚  overview.vue
+â”‚      â”‚  runstatus.vue
+â”‚      â”‚  syslog.vue
+â”‚      â”‚  
+â”‚      â”œâ”€charts
+â”‚      â”‚      chartsCont.vue
+â”‚      â”‚      d3.vue
+â”‚      â”‚      echarts.vue
+â”‚      â”‚      highCharts.vue
+â”‚      â”‚      
+â”‚      â”œâ”€forms
+â”‚      â”‚      basic-form.vue
+â”‚      â”‚      updata.vue
+â”‚      â”‚      validate-form.vue
+â”‚      â”‚      
+â”‚      â””â”€tables
+â”‚              basic-table.vue
+â”‚              edit-table.vue
+â”‚              filter-table.vue
+â”‚              
+â””â”€static
         .gitkeep
         

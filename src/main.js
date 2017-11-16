@@ -5,6 +5,12 @@ import iview from 'iview'
 import 'iview/dist/styles/iview.css'
 Vue.use(iview)
 Vue.config.productionTip = false
+/* Loadingbar */
+router.beforeEach((to, from, next) => {
+    iview.LoadingBar.start();
+    next();
+});
+
 /* eslint-disable no-new */
 new Vue({
     el: '#app',

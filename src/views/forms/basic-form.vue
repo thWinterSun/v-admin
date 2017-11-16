@@ -11,10 +11,13 @@
                     <p slot="title">基本表单</p>
                     <Form class="step-form" ref="step" :model="step" :rules="stepRules" :label-width="100">
                         <FormItem label="用户名：" prop="opinion">
-                            <Input :disabled="hasSubmit" v-model="step.opinion" type="text"  placeholder="请输入用户名" />
+                            <Input :disabled="hasSubmit" v-model="step.opinion" type="text"  placeholder="请输入用户名" class="with_200"/>
                         </FormItem>
                         <FormItem label="密码：">
-                            <Input :disabled="hasSubmit" v-model="step.remark" type="password"  placeholder="请输入密码" />
+                            <Input :disabled="hasSubmit" v-model="step.remark" type="password"  placeholder="请输入密码" class="with_200"/>
+                        </FormItem>
+                        <FormItem label="端口：">
+                            <InputNumber :max="65535" :min="1" v-model="prot"  class="with_200"></InputNumber>
                         </FormItem>
                         <FormItem label="是否通过：" required>
                             <RadioGroup v-model="step.pass">
@@ -30,34 +33,21 @@
                             </CheckboxGroup>
                         </FormItem>
                         <FormItem label="城市：" required>
-                            <Select v-model="model1" >
+                            <Select v-model="model1" class="with_200">
                                 <Option v-for="item in cityList" :value="item.value" :key="item.value">{{ item.label }}</Option>
                             </Select>
                         </FormItem>
                         <FormItem label="">
-                            <Button :disabled="hasSubmit"  style="width:100px;" type="primary">提交</Button>
+                            <Button :disabled="hasSubmit"  class="width_100" type="primary">提交</Button>
+                            <Button :disabled="hasSubmit"  class="width_100" type="default">关闭</Button>
                         </FormItem>
                     </Form>
                 </Card>
             </Col>
             <Col span="12">
                 <Card>
-                    <p slot="title"> network</p>
-                    <Form class="step-form" :label-width="100">
-                        <FormItem label="IP：" prop="opinion">
-                            <Input type="text"  placeholder="请输入IP" v-model="ip"/>
-                        </FormItem>
-                    </Form>
-                    <Form class="stp-form" :label-width="100">
-                        <FormItem label="子网掩码：">
-                            <Input type="text" placeholder="请输入" v-model="mask"/>
-                        </FormItem>
-                    </Form>
-                    <Form>
-                        <FormItem>
-                            <Input type="text" dir="rtl" lang=""/>
-                        </FormItem>
-                    </Form>
+                    <p slot="title"> 数据添加</p>
+                    <add-table></add-table>
                 </Card>
             </Col>
         </Row>
@@ -66,12 +56,11 @@
 
 <script>
 import bread from '../../components/breadcrumb'
+import addTable from '../../components/addTable.vue'
 export default {
     data () {
         return {
-            value: '',
-            ip: '',
-            mask: '',
+            prot: '',
             step: {
                 opinion: '',
                 remark: '',
@@ -114,10 +103,23 @@ export default {
         }
     },
     components: {
-        bread
+        bread,
+        addTable
     }
 }
 </script>
 
 <style lang="css">
+    .width_100{
+        width:100px;
+    }
+    .width_150{
+        width:150px;
+    }
+    .with_200{
+        width:200px;
+    }
+    .mr_10{
+        margin-right: 10px;
+    }
 </style>
