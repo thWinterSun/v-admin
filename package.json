@@ -50,6 +50,7 @@
     "iview": "^2.5.1",
     "iview-loader": "^1.0.0",
     "less": "^2.7.3",
+    "less-loader": "^4.0.5",
     "opn": "^5.1.0",
     "optimize-css-assets-webpack-plugin": "^3.2.0",
     "ora": "^1.2.0",

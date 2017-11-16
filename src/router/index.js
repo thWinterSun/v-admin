@@ -5,6 +5,14 @@ import Table from '../components/table'
 import Cont from '../views/homeCon'
 import ChartCont from '../views/charts/chartsCont'
 Vue.use(Router)
+export const loginRouter = {
+    path: '/login',
+    name: 'login',
+    meta: {
+        title: 'Login - 登录'
+    },
+    component: resolve => { require(['../views/login.vue'], resolve); }
+};
 export default new Router({
     routes: [
         {
@@ -44,6 +52,7 @@ export default new Router({
                 { path: 'echarts', title: 'echarts', name: 'echarts', component: resolve => { require(['../views/charts/echarts.vue'], resolve) } },
                 { path: 'highCharts', title: 'highCharts', name: 'highCharts', component: resolve => { require(['../views/charts/highCharts.vue'], resolve) } }
             ]
-        }
+        },
+        loginRouter
     ]
 })

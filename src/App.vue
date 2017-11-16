@@ -1,15 +1,15 @@
 <template>
   <div id="app">
-    <!--导航组件  -->
-    <top-menus></top-menus>
-    <!--主体内容  -->
-    <div class="layout-content">
-      <router-view></router-view>
-    </div>
-    <!--页脚  -->
-    <div class="layout-copy">
-        2017 &copy; philisense
-    </div>
+        <!--导航组件  -->
+        <top-menus></top-menus>
+        <!--主体内容  -->
+        <div class="layout-content">
+            <router-view></router-view>
+        </div>
+        <!--页脚  -->
+        <div class="layout-copy">
+            2017 &copy; philisense
+        </div>
   </div>
 </template>
 

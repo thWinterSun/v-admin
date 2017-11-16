@@ -30,7 +30,7 @@
                             </CheckboxGroup>
                         </FormItem>
                         <FormItem label="城市：" required>
-                            <Select v-model="model1" style="width:200px">
+                            <Select v-model="model1" >
                                 <Option v-for="item in cityList" :value="item.value" :key="item.value">{{ item.label }}</Option>
                             </Select>
                         </FormItem>
@@ -42,8 +42,22 @@
             </Col>
             <Col span="12">
                 <Card>
-                    <p slot="title"> title</p>
-                    <p>Content of no border type. Content of no border type. Content of no border type. Content of no border type. </p>
+                    <p slot="title"> network</p>
+                    <Form class="step-form" :label-width="100">
+                        <FormItem label="IP：" prop="opinion">
+                            <Input type="text"  placeholder="请输入IP" v-model="ip"/>
+                        </FormItem>
+                    </Form>
+                    <Form class="stp-form" :label-width="100">
+                        <FormItem label="子网掩码：">
+                            <Input type="text" placeholder="请输入" v-model="mask"/>
+                        </FormItem>
+                    </Form>
+                    <Form>
+                        <FormItem>
+                            <Input type="text" dir="rtl" lang=""/>
+                        </FormItem>
+                    </Form>
                 </Card>
             </Col>
         </Row>
@@ -56,6 +70,8 @@ export default {
     data () {
         return {
             value: '',
+            ip: '',
+            mask: '',
             step: {
                 opinion: '',
                 remark: '',

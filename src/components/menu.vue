@@ -66,7 +66,9 @@
                         <Icon type="arrow-down-b"></Icon>
                     </a>
                     <DropdownMenu slot="list">
-                        <DropdownItem>退出登录</DropdownItem>
+                        <router-link to="/login">
+                            <DropdownItem>退出登录</DropdownItem>
+                        </router-link>
                         <DropdownItem>修改密码</DropdownItem>
                     </DropdownMenu>
                 </Dropdown>

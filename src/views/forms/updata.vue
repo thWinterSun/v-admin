@@ -1,11 +1,22 @@
 <template lang="html">
     <div class="">
-        <h2>升级</h2>
+        <Card>
+            <Upload action="jsonplaceholder.typicode.com/posts">
+                <Button type="ghost" icon="ios-cloud-upload-outline">Upload files</Button>
+            </Upload>
+        </Card>
     </div>
 </template>
 
 <script>
 export default {
+    data () {
+        return {
+            url: './'
+        }
+    },
+    methods: {
+    }
 }
 </script>
 
