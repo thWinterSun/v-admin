@@ -1,12 +1,11 @@
 <template>
-    <tab-pane :tabs="tabs"></tab-pane>
+    <tab-pane></tab-pane>
 </template>
 <script>
 import search from './filter-table.vue';
 import edit from './edit-table.vue'
 export default {
     name: 'tab',
-    props: ['tabs'],
     components: {
         'search': search,
         'edit': edit,
