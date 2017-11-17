@@ -41,8 +41,8 @@
     .userdown{
       float:right;
     }
-    
-    
+
+
 </style>
 <template>
     <div class="layout">
@@ -72,7 +72,7 @@
                         <DropdownItem>修改密码</DropdownItem>
                     </DropdownMenu>
                 </Dropdown>
-              
+
             </div>
         </Menu>
     </div>
@@ -126,6 +126,11 @@
                                 'name': 'Edit Table',
                                 'mId': '2-3',
                                 'route': '/table/edittable'
+                            },
+                            {
+                                'name': 'test',
+                                'mId': '2-4',
+                                'route': '/table/test'
                             }
                         ]
                     },
