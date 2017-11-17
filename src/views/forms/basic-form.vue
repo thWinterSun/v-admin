@@ -60,7 +60,7 @@ import addTable from '../../components/addTable.vue'
 export default {
     data () {
         return {
-            prot: '',
+            prot: 80,
             step: {
                 opinion: '',
                 remark: '',
