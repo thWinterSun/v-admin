@@ -2,7 +2,7 @@
     <div class="">
         <Row>
             <Col span="24">
-                <Form >
+                <Form>
                     <FormItem>
                         <Input type="text"  placeholder="起始IP" class="width_150 mr_10" v-model="beginIp" />
                         <Input type="text"  placeholder="结束IP" class="width_150 mr_10" v-model="endIp" />
