@@ -4,7 +4,7 @@
             <Card >
                 <p slot="title">
                     <Icon type="log-in"></Icon>
-                    欢迎
+                    欢迎登录
                 </p>
                 <div class="form-con">
                     <Form ref="loginForm" :model="form" :rules="rules">
