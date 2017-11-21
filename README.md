@@ -2,7 +2,7 @@
 
 >一个基于Vue + iview + v-router + webpack开发的后台管理系统
 
-## 
+
 ##文件结构
 
 ``` bash

@@ -1,9 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Form from '../components/form'
-import Table from '../components/table'
 import Cont from '../views/homeCon'
-import ChartCont from '../views/charts/chartsCont'
 Vue.use(Router)
 export const loginRouter = {
     path: '/login',
@@ -29,7 +26,7 @@ export default new Router({
         },
         {
             path: '/table',
-            component: Table,
+            component: Cont,
             children: [
                 { path: 'basictable', title: '基本表格', name: 'basictable', component: resolve => { require(['../views/tables/basic-table.vue'], resolve) } },
                 { path: 'filtertable', title: '过滤表格', name: 'filtertable', component: resolve => { require(['../views/tables/filter-table.vue'], resolve) } },
@@ -39,7 +36,7 @@ export default new Router({
         },
         {
             path: '/form',
-            component: Form,
+            component: Cont,
             children: [
                 { path: 'basicform', title: '基本表单', name: 'basicform', component: resolve => { require(['../views/forms/basic-form.vue'], resolve) } },
                 { path: 'validateform', title: '验证表单', name: 'validateform', component: resolve => { require(['../views/forms/validate-form.vue'], resolve) } },
@@ -48,7 +45,7 @@ export default new Router({
         },
         {
             path: '/charts',
-            component: ChartCont,
+            component: Cont,
             children: [
                 { path: 'echarts', title: 'echarts', name: 'echarts', component: resolve => { require(['../views/charts/echarts.vue'], resolve) } },
                 { path: 'highCharts', title: 'highCharts', name: 'highCharts', component: resolve => { require(['../views/charts/highCharts.vue'], resolve) } }
