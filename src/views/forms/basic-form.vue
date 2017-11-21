@@ -51,12 +51,28 @@
                 </Card>
             </Col>
         </Row>
+        <Row>
+            <Col span="12">
+                <Card>
+                    <p slot="title"> 树形菜单</p>
+                    <tree></tree>
+                </Card>
+            </Col>
+            <Col span="12">
+                <Card>
+                    <p slot="title"> 穿梭框</p>
+                    <transfer></transfer>
+                </Card>
+            </Col>
+        </Row>
     </div>
 </template>
 
 <script>
 import bread from '../../components/breadcrumb'
 import addTable from '../../components/addTable.vue'
+import tree from '../../components/tree.vue'
+import transfer from '../../components/transfer.vue'
 export default {
     data () {
         return {
@@ -104,7 +120,9 @@ export default {
     },
     components: {
         bread,
-        addTable
+        addTable,
+        tree,
+        transfer
     }
 }
 </script>
@@ -121,5 +139,8 @@ export default {
     }
     .mr_10{
         margin-right: 10px;
+    }
+    .p_10{
+        padding:10px;
     }
 </style>

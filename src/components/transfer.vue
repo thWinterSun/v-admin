@@ -20,8 +20,7 @@
                     mockData.push({
                         key: i.toString(),
                         label: 'Content ' + i,
-                        description: 'The desc of content  ' + i,
-                        disabled: Math.random() * 3 < 1
+                        description: 'The desc of content  ' + i
                     });
                 }
                 return mockData;

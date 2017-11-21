@@ -25,7 +25,7 @@ export default {
                 ];
                 for (let i = 0; i < tabs.length; i++) {
                     childrenArr.push(h('TabPane',{
-                        props: {
+                        attrs: {
                             label: tabs[i].name,
                             icon: 'social-apple'
                         }
