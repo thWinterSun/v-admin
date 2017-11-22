@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Cont from '../views/homeCon'
+import Home from '../views/home.vue'
 Vue.use(Router)
 export const loginRouter = {
     path: '/login',
@@ -18,15 +18,15 @@ export default new Router({
         },
         {
             path: '/home',
-            component: Cont,
+            component: Home,
             children: [
                 { path: 'runstatus', title: '运行状态', name: 'runstatus', component: resolve => { require(['../views/runstatus.vue'], resolve) } },
                 { path: 'realtime', title: '实时信息', name: 'realtime', component: resolve => { require(['../views/syslog.vue'], resolve) } }
             ]
         },
         {
-            path: '/table',
-            component: Cont,
+            path: '/table/',
+            component: Home,
             children: [
                 { path: 'basictable', title: '基本表格', name: 'basictable', component: resolve => { require(['../views/tables/basic-table.vue'], resolve) } },
                 { path: 'filtertable', title: '过滤表格', name: 'filtertable', component: resolve => { require(['../views/tables/filter-table.vue'], resolve) } },
@@ -36,7 +36,7 @@ export default new Router({
         },
         {
             path: '/form',
-            component: Cont,
+            component: Home,
             children: [
                 { path: 'basicform', title: '基本表单', name: 'basicform', component: resolve => { require(['../views/forms/basic-form.vue'], resolve) } },
                 { path: 'validateform', title: '验证表单', name: 'validateform', component: resolve => { require(['../views/forms/validate-form.vue'], resolve) } },
@@ -45,7 +45,7 @@ export default new Router({
         },
         {
             path: '/charts',
-            component: Cont,
+            component: Home,
             children: [
                 { path: 'echarts', title: 'echarts', name: 'echarts', component: resolve => { require(['../views/charts/echarts.vue'], resolve) } },
                 { path: 'highCharts', title: 'highCharts', name: 'highCharts', component: resolve => { require(['../views/charts/highCharts.vue'], resolve) } }

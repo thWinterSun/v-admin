@@ -23,7 +23,9 @@
                             </Input>
                         </FormItem>
                         <FormItem>
-                            <Button type="primary" long>登录</Button>
+                            <router-link to="/home">
+                                <Button type="primary" long>登录</Button>
+                            </router-link>
                         </FormItem>
                     </Form>
                 </div>
@@ -34,6 +36,7 @@
 
 <script>
 export default {
+    name: 'login',
     data () {
         return {
             form: {
@@ -55,9 +58,18 @@ export default {
 
 <style lang="less">
     .login{
+        width:100%;  
+        height:960px; 
+        // background: #e7ebee;
+    	background-size:cover;
         .login-con{
             width:400px;
-            margin:0 auto;
+            height:400px;
+            position:relative;
+            left:50%;
+            top:50%;
+            margin-left: -200px;
+            margin-top: -200px;
         }
     }
 </style>
