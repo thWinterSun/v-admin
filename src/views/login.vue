@@ -69,7 +69,7 @@ export default {
         submit () {
             if (this.form.userName === 'admin') {
                 if (this.form.password === 'admin') {
-                    this.$router.push('home')
+                    this.$router.replace('home')
                 } else {
                     this.$Message.error('密码错误');
                 }

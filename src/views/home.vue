@@ -5,7 +5,6 @@
         <!--主体内容  -->
         <div class="layout-content">
             <router-view></router-view>
-            <h4>这里是主体内容</h4>
         </div>
         <!--页脚  -->
         <div class="layout-copy">

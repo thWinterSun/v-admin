@@ -84,6 +84,8 @@ export default {
                 for (let i = 0; i < this.tableData.length; i++) {
                     var bip = this.tableData[i].beginIp;
                     var eip = this.tableData[i].endIp;
+                    console.log(bip);
+                    console.log(this.beginIp);
                     if (this.beginIp === bip) {
                         this.error('输入起始IP不能重复');
                         return false;
