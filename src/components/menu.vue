@@ -23,7 +23,7 @@
         width: 1160px;
         margin: 0 auto;
       }
-		}
+	}
     @media screen and (max-width: 1366px){
       .layout-nav{
         width: 940px;

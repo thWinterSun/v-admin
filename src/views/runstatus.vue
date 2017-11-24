@@ -1,15 +1,12 @@
 <template lang="html">
     <div class="statCon">
-  	    <tabs></tabs>
+  	    <h3>运行状态</h3>
     </div>
 </template>
 
 <script>
-import tabs from '../components/tabs.vue'
+
 export default {
-    components: {
-        tabs
-    }
 }
 </script>
 

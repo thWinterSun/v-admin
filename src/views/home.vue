@@ -2,56 +2,102 @@
     <div class="">
         <!--导航组件  -->
         <top-menus></top-menus>
-        <!--主体内容  -->
-        <div class="layout-content">
+        <div class="home-body">
+            <Row class="cards" :gutter="10">
+                <Col :xs="12" :md="8" :lg="4">
+                    <Card :bordered="true">
+                       <p>Content of no border type. border type. Content of no border type. border type.</p>
+                   </Card>
+                </Col>
+                <Col :xs="12" :md="8" :lg="4">
+                    <Card :bordered="true">
+                       <p>Content of no border type. border type. Content of no border type. border type.</p>
+                   </Card>
+                </Col>
+                <Col :xs="12" :md="8" :lg="4">
+                    <Card :bordered="true">
+                       <p>Content of no border type. border type. Content of no border type. border type.</p>
+                   </Card>
+                </Col>
+                <Col :xs="12" :md="8" :lg="4">
+                    <Card :bordered="true">
+                       <p>Content of no border type. border type. Content of no border type. border type.</p>
+                   </Card>
+                </Col>
+                <Col :xs="12" :md="8" :lg="4">
+                    <Card :bordered="true">
+                       <p>Content of no border type. border type. Content of no border type. border type.</p>
+                   </Card>
+                </Col>
+                <Col :xs="12" :md="8" :lg="4">
+                    <Card :bordered="true">
+                       <p>Content of no border type. border type. Content of no border type. border type.</p>
+                   </Card>
+                </Col>
+                
+            </Row>
+            <Row :gutter="10">
+                <Col :md="24" :lg="16">
+                    <Card :bordered="true" style="height:400px">
+                        <charts></charts>
+                   </Card>
+                </Col>
+                <Col :md="24" :lg="8">
+                    <Card :bordered="true" style="height:400px">
+                       <p>Content of no border type. border type. Content of no border type. border type.</p>
+                   </Card>
+                </Col>
+            </Row>
+            <Row :gutter="10">
+                <Col :md="24" :lg="8">
+                    <Card :bordered="true" style="height:265px">
+                       <p>Content of no border type. border type. Content of no border type. border type.</p>
+                   </Card>
+                </Col>
+                <Col :md="24" :lg="8">
+                    <Card :bordered="true" style="height:265px">
+                       <p>Content of no border type. border type. Content of no border type. border type.</p>
+                   </Card>
+                </Col>
+                <Col :md="24" :lg="8">
+                    <Card :bordered="true" style="height:265px">
+                       <p>Content of no border type. border type. Content of no border type. border type.</p>
+                   </Card>
+                </Col>
+            </Row>
             <router-view></router-view>
         </div>
-        <!--页脚  -->
-        <div class="layout-copy">
-            2017 &copy; philisense
-        </div>
+        <foot></foot>
     </div>
 </template>
 
 <script>
-import topMenus from '../components/menu.vue'
+import topMenus from '../components/menu'
+import footer from '../components/footer'
+import charts from './charts/echarts'
 export default {
     name: 'home',
     components: {
-        'top-menus': topMenus
+        'top-menus': topMenus,
+        'foot': footer,
+        charts
     }
 }
 </script>
 
-<style scoped>
-    
-    /**/
-    .layout-assistant{
-        width: 300px;
-        margin: 0 auto;
-        height: inherit;
-    }
-    .layout-breadcrumb{
-        padding: 10px 15px 0;
+<style lang="less">
+    .home-body{
+        min-height: 800px;
+        padding:10px;
+        .ivu-row{
+            margin-bottom: 10px;
+            .ivu-card{
+                height:120px;
+                box-shadow: 0 1px 6px rgba(0,0,0,.2);
+            }
+        }
+        
         
     }
-    .layout-content{
-        width: 100%;
-        max-width: 940px;
-        min-height: 830px;
-        margin-left: auto;
-        margin-right: auto;
-        background-color: #fff;
-        box-shadow: 0 1px 6px rgba(0,0,0,.2);
-        border-radius: 5px;
-        zoom: 1;
-    }
-    .layout-content-main{
-        padding: 10px;
-    }
-    .layout-copy{
-        text-align: center;
-        padding: 10px 0 20px;
-        color: #9ea7b4;
-    }
 </style>
+

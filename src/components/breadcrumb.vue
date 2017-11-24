@@ -30,7 +30,6 @@ export default {
         z-index: 5;
         width: 100%;
         line-height: 40px;
-        background-color: #E7EBEE;
         padding: 0 2%;
     }
     .ivu-tabs-bar{

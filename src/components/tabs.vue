@@ -31,12 +31,8 @@ export default {
 
 <style lang="less">
     .ivu-tabs-nav-scroll{
-        background: #E7EBEE;
         .ivu-tabs-tab{
             border-radius: 5px;
-        }
-        .ivu-tabs-tab .ivu-tabs-tab-active{
-            background: #fff;
         }
     }
 </style>
