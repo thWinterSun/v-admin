@@ -34,7 +34,8 @@ export default new Router({
                 { path: 'basictable', title: '基本表格', name: 'basictable', component: resolve => { require(['../views/tables/basic-table.vue'], resolve) } },
                 { path: 'filtertable', title: '过滤表格', name: 'filtertable', component: resolve => { require(['../views/tables/filter-table.vue'], resolve) } },
                 { path: 'edittable', title: '编辑表格', name: 'edittable', component: resolve => { require(['../views/tables/edit-table.vue'], resolve) } },
-                { path: 'test', title: '标签测试', name: 'test', component: resolve => { require(['../views/tables/test.vue'], resolve) } }
+                { path: 'test', title: '标签测试', name: 'test', component: resolve => { require(['../views/tables/test.vue'], resolve) } },
+                { path: 'expandtable', title: '折叠表格', name: 'expandtable', component: resolve => { require(['../views/tables/expand-table.vue'], resolve) } }
             ]
         },
         {

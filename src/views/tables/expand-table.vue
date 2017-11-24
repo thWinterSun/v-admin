@@ -1,13 +1,6 @@
 <template>
     <div>
-        <!-- 筛选table -->
-        <br>
-        <Row>
-            <Col span="8" offset="16" >
-                <Input v-model="searchmess" icon="ios-search" placeholder="搜索." style="width: 200px" @on-click="searchMess()"></Input>
-            </Col>
-        </Row>
-        <br>
+        <!-- 折叠table -->
         <Row>
             <Table width="100%" ref="selection" :columns="columns2" :data="data4"></Table>
         </Row>
@@ -21,41 +14,24 @@
     </div>
 </template>
 <script>
+    import expandRow from './expand.vue'
     export default {
-        name: 'searchTable',
+        name: 'expandTable',
+        components: {
+            expandRow
+        },
         data () {
             return {
                 columns2: [
                     {
-                        type: 'selection',
-                        width: 60,
-                        align: 'center'
-                    },
-                    {
-                        title: '状态',
-                        key: 'status',
-                        render: (h) => {
-                            return h('i-switch',{
-                                attrs: {
-                                    size: 'large'
-                                },
-                                on: {
-                                    'on-change': function (evn) {
-                                        alert(evn)
-                                    }
+                        type: 'expand',
+                        width: 50,
+                        render: (h, params) => {
+                            return h(expandRow, {
+                                props: {
+                                    rows: params.row.children
                                 }
-                            },[
-                                h('span',{
-                                    attrs: {
-                                        slot: 'open'
-                                    }
-                                },'开启'),
-                                h('span',{
-                                    attrs: {
-                                        slot: 'close'
-                                    }
-                                },'关闭')
-                            ]);
+                            })
                         }
                     },
                     {
@@ -67,31 +43,8 @@
                         key: 'age'
                     },
                     {
-                        title: '消息',
-                        key: 'mess',
-                        render: (h, params) => {
-                            return ('div',{
-                                on: {
-                                    click: function () {
-                                        alert(22)
-                                    }
-                                }
-                            },[
-                                h('Badge',{
-                                    attrs: {
-                                        count: 127,
-                                        className: 'demo-badge'
-                                    }
-                                },[
-                                    h('Icon',{
-                                        attrs: {
-                                            type: 'ios-pricetags',
-                                            size: 24
-                                        }
-                                    })
-                                ])
-                            ])
-                        }
+                        title: '市区',
+                        key: 'address'
                     },
                     {
                         title: '操作',
@@ -108,7 +61,7 @@
                                     },
                                     on: {
                                         'on-ok': () => {
-                                            alert(33)
+                                            alert(33);
                                         }
                                     }
                                 }, [
@@ -149,7 +102,14 @@
                     data.push({
                         name: 'name' + Math.floor(Math.random() * 100 + 1),
                         age: Math.floor(Math.random() * 3 + 1),
-                        address: '火星'
+                        address: '火星',
+                        children: [
+                            {
+                                name: 'name1',
+                                age: 23,
+                                address: '拉马克'
+                            }
+                        ]
                     })
                 }
                 return data
@@ -166,9 +126,9 @@
     }
 </script>
 <style lang="less">
-    .demo-badge{
-        position: relative;
-        top: -8px;
-        left: -5px;
+    .ivu-table-tbody {
+        .ivu-table-expanded-cell{
+            padding: 0px 0px 0px 50px;
+        }
     }
 </style>
