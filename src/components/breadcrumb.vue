@@ -1,16 +1,24 @@
 <template lang="html">
     <div class="layout-breadcrumb">
-        <Breadcrumb separator=">">
-            <BreadcrumbItem href="/table">table</BreadcrumbItem>
-            <BreadcrumbItem href="/table/basictable">basic-table</BreadcrumbItem>
+        <Breadcrumb separator=">>" replace>
+            <BreadcrumbItem >{{path}}</BreadcrumbItem>
+            <BreadcrumbItem>{{$route.name}}</BreadcrumbItem>
         </Breadcrumb>
     </div>
 </template>
 
 <script>
 export default {
+    name: 'breadcrumb',
     data () {
         return {
+            parentPath: '',
+            childPath: ''
+        }
+    },
+    computed: {
+        path () {
+            return this.$route.path.split('/')[1]
         }
     }
 }
@@ -22,8 +30,10 @@ export default {
         z-index: 5;
         width: 100%;
         line-height: 40px;
-        box-shadow: 0 1px 4px 0 #bbbec4;
+        background-color: #E7EBEE;
         padding: 0 2%;
-        margin-bottom: 5px;
-    }    
+    }
+    .ivu-tabs-bar{
+        margin-bottom: 0
+    }
 </style>

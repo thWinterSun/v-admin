@@ -1,12 +1,17 @@
 <template>
-    <tab-pane></tab-pane>
+    <div class="">
+        <bread></bread>
+        <tab-pane></tab-pane>
+    </div>
 </template>
 <script>
 import search from './filter-table.vue';
 import edit from './edit-table.vue'
+import bread from '../../components/breadcrumb.vue'
 export default {
     name: 'tab',
     components: {
+        bread,
         'search': search,
         'edit': edit,
         'tabPane': {
@@ -25,7 +30,7 @@ export default {
                 ];
                 for (let i = 0; i < tabs.length; i++) {
                     childrenArr.push(h('TabPane',{
-                        props: {
+                        attrs: {
                             label: tabs[i].name,
                             icon: 'social-apple'
                         }

@@ -1,4 +1,4 @@
-<style scoped>
+<style scoped lang="less">
     .layout{
         border: 1px solid #d7dde4;
         background: #f5f7f9;
@@ -29,17 +29,25 @@
         width: 940px;
         margin: 0 auto;
       }
-		}
+	}
     /*自定义修改部分*/
     .ivu-menu a{
       color:#fff;
     }
-    .ivu-menu-submenu .ivu-select-dropdown{
-        margin:0;
-        background-color:#495060;
-    }
-    .userdown{
-      float:right;
+    .menu-right{
+        float:right;
+        color:#fff;
+        .ivu-dropdown{
+            min-width: 50px;
+            padding:0 10px;
+            .ivu-select-dropdown{
+                background-color: #ddd;
+                border:1px solid #a1a1a1;
+            }
+        }
+        .ive-dropdown:hover{
+            background: #2b85e4
+        }
     }
 
 
@@ -60,18 +68,31 @@
                         <MenuItem :name="chil.mId" v-text="chil.name"></MenuItem>
                     </router-link>
                 </Submenu>
-                <Dropdown class="userdown">
-                    <a href="javascript:void(0)">
-                        <span v-text="userName" class="mr_10"></span>
-                        <Icon type="arrow-down-b"></Icon>
-                    </a>
-                    <DropdownMenu slot="list">
-                        <router-link to="/login">
-                            <DropdownItem>退出登录</DropdownItem>
-                        </router-link>
-                        <DropdownItem>修改密码</DropdownItem>
-                    </DropdownMenu>
-                </Dropdown>
+                <div class="menu-right">
+                    <Dropdown>
+                        <Badge dot>
+                            <Icon type="ios-bell-outline" size="26"></Icon>
+                        </Badge>
+                        <DropdownMenu slot="list">
+                            <a href="#" >
+                                <DropdownItem >通知111</DropdownItem>
+                            </a>
+                            <DropdownItem>通知222</DropdownItem>
+                        </DropdownMenu>
+                    </Dropdown>
+                    <Dropdown class="userdown">
+                        <a href="javascript:void(0)">
+                            <span v-text="userName" class="mr_10"></span>
+                            <Icon type="arrow-down-b"></Icon>
+                        </a>
+                        <DropdownMenu slot="list">
+                            <a href="#" @click="logout">
+                                <DropdownItem >退出登录</DropdownItem>
+                            </a>
+                            <DropdownItem>修改密码</DropdownItem>
+                        </DropdownMenu>
+                    </Dropdown>
+                </div>
 
             </div>
         </Menu>
@@ -79,6 +100,11 @@
 </template>
 <script>
     export default {
+        methods: {
+            logout () {
+                this.$router.replace('login')
+            }
+        },
         data () {
             return {
                 userName: 'Jack',

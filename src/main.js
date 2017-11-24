@@ -11,6 +11,10 @@ router.beforeEach((to, from, next) => {
     next();
 });
 
+router.afterEach(route => {
+    iview.LoadingBar.finish();
+});
+
 /* eslint-disable no-new */
 new Vue({
     el: '#app',
