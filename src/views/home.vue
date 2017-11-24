@@ -38,12 +38,13 @@ export default {
     .layout-content{
         width: 100%;
         max-width: 940px;
+        min-height: 830px;
         margin-left: auto;
         margin-right: auto;
-        zoom: 1;
-        min-height: 830px;
         background-color: #fff;
-        border-radius: 4px;
+        box-shadow: 0 1px 6px rgba(0,0,0,.2);
+        border-radius: 5px;
+        zoom: 1;
     }
     .layout-content-main{
         padding: 10px;

@@ -34,22 +34,28 @@
     .ivu-menu a{
       color:#fff;
     }
+
+    .ivu-menu-horizontal .ivu-menu-submenu .ivu-select-dropdown .ivu-menu-item:hover{
+        background: rgba(45,140,240,.9);
+        color:#fff;
+    }
     .menu-right{
         float:right;
         color:#fff;
         .ivu-dropdown{
             min-width: 50px;
             padding:0 10px;
-            .ivu-select-dropdown{
-                background-color: #ddd;
-                border:1px solid #a1a1a1;
+            .ivu-dropdown-item:hover{
+                background: rgba(45,140,240,.9);
+                color:#fff;
             }
         }
-        .ive-dropdown:hover{
+        .ivu-dropdown:hover{
             background: #2b85e4
         }
     }
-
+    
+    
 
 </style>
 <template>

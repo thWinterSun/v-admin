@@ -44,4 +44,7 @@
 </script>
 
 <style lang="css">
+    .ivu-transfer{
+        padding:15px
+    }
 </style>

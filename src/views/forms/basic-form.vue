@@ -1,133 +1,68 @@
 <template lang="html">
-    <div class="">
+    <div >
         <Row>
             <Col span="24">
                 <bread></bread>
             </Col>
         </Row>
         <Row>
-            <Col span="12">
-                <Card>
-                    <p slot="title">基本表单</p>
-                    <Form class="step-form" ref="step" :model="step" :rules="stepRules" :label-width="100">
-                        <FormItem label="用户名：" prop="opinion">
-                            <Input :disabled="hasSubmit" v-model="step.opinion" type="text"  placeholder="请输入用户名" class="with_200"/>
-                        </FormItem>
-                        <FormItem label="密码：">
-                            <Input :disabled="hasSubmit" v-model="step.remark" type="password"  placeholder="请输入密码" class="with_200"/>
-                        </FormItem>
-                        <FormItem label="端口：">
-                            <InputNumber :max="65535" :min="1" v-model="prot"  class="with_200"></InputNumber>
-                        </FormItem>
-                        <FormItem label="是否通过：" required>
-                            <RadioGroup v-model="step.pass">
-                                <Radio :disabled="hasSubmit" label="通过"></Radio>
-                                <Radio :disabled="hasSubmit" label="不通过"></Radio>
-                            </RadioGroup>
-                        </FormItem>
-                        <FormItem label="登录类型：" required>
-                            <CheckboxGroup v-model="typeLogin">
-                                <Checkbox label="HTTP" ></Checkbox>
-                                <Checkbox label="HTTPS" ></Checkbox>
-                                <Checkbox label="TCP"></Checkbox>
-                            </CheckboxGroup>
-                        </FormItem>
-                        <FormItem label="城市：" required>
-                            <Select v-model="model1" class="with_200">
-                                <Option v-for="item in cityList" :value="item.value" :key="item.value">{{ item.label }}</Option>
-                            </Select>
-                        </FormItem>
-                        <FormItem label="">
-                            <Button :disabled="hasSubmit"  class="width_100" type="primary">提交</Button>
-                            <Button :disabled="hasSubmit"  class="width_100" type="default">关闭</Button>
-                        </FormItem>
-                    </Form>
-                </Card>
-            </Col>
-            <Col span="12">
-                <Card>
-                    <p slot="title"> 数据添加</p>
-                    <add-table></add-table>
-                </Card>
-            </Col>
-        </Row>
-        <Row>
-            <Col span="12">
-                <Card>
-                    <p slot="title"> 树形菜单</p>
-                    <tree></tree>
-                </Card>
-            </Col>
-            <Col span="12">
-                <Card>
-                    <p slot="title"> 穿梭框</p>
-                    <transfer></transfer>
-                </Card>
-            </Col>
+            <tab-pane></tab-pane>
         </Row>
     </div>
 </template>
 
 <script>
 import bread from '../../components/breadcrumb'
+import basicInput from '../../components/basic-input'
 import addTable from '../../components/addTable.vue'
 import tree from '../../components/tree.vue'
 import transfer from '../../components/transfer.vue'
 export default {
-    data () {
-        return {
-            prot: 80,
-            step: {
-                opinion: '',
-                remark: '',
-                pass: '通过'
-            },
-            stepRules: {
-                opinion: [
-                    { required: true, message: '请填写用户名', trigger: 'blur' }
-                ]
-            },
-            hasSubmit: false,
-            typeLogin: ['HTTP'],
-            cityList: [
-                {
-                    value: 'New York',
-                    label: 'New York'
-                },
-                {
-                    value: 'London',
-                    label: 'London'
-                },
-                {
-                    value: 'Sydney',
-                    label: 'Sydney'
-                },
-                {
-                    value: 'Ottawa',
-                    label: 'Ottawa'
-                },
-                {
-                    value: 'Paris',
-                    label: 'Paris'
-                },
-                {
-                    value: 'Canberra',
-                    label: 'Canberra'
-                }
-            ],
-            model1: ''
-        }
-    },
     components: {
         bread,
-        addTable,
-        tree,
-        transfer
+        'basicInput': basicInput,
+        'transfer': transfer,
+        'addTable': addTable,
+        'tree': tree,
+        'tabPane': {
+            functional: true,
+            render: function (h) {
+                let childrenArr = [];
+                let tabs = [
+                    {
+                        name: '基本表单',
+                        tp: 'basicInput'
+                    },
+                    {
+                        name: '穿梭框',
+                        tp: 'transfer'
+                    },
+                    {
+                        name: '数据添加',
+                        tp: 'addTable'
+                    },
+                    {
+                        name: '树形餐单',
+                        tp: 'tree'
+                    }
+                ];
+                for (let i = 0; i < tabs.length; i++) {
+                    childrenArr.push(h('TabPane',{
+                        attrs: {
+                            label: tabs[i].name
+                        }
+                    },[
+                        h(tabs[i].tp)
+                    ]))
+                }
+                return h('Tabs',[childrenArr])
+            }
+        }
     }
 }
 </script>
 
-<style lang="css">
+<style lang="less">
     .width_100{
         width:100px;
     }
@@ -137,10 +72,22 @@ export default {
     .with_200{
         width:200px;
     }
+    .ml_10{
+        margin-left: 10px;
+    }
     .mr_10{
         margin-right: 10px;
     }
     .p_10{
         padding:10px;
+    }
+    .ivu-tabs-nav-scroll{
+        background: #E7EBEE;
+        .ivu-tabs-tab{
+            border-radius: 5px;
+        }
+        .ivu-tabs-tab-active{
+            background: #fff;
+        }
     }
 </style>

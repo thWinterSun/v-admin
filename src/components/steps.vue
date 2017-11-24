@@ -10,7 +10,7 @@
         <div class="stepContent">
             <Card v-show="current==0">
                 <p slot="title"> 步骤一</p>
-                <login></login>
+                <basicInput></basicInput>
             </Card>
             <Card v-show="current==1">
                 <p slot="title"> 步骤二</p>
@@ -29,7 +29,7 @@
 </template>
 
 <script>
-import login from '../views/login.vue'
+import basicInput from './basic-input'
 import upload from './upload.vue'
 export default {
     name: 'steps',
@@ -55,7 +55,7 @@ export default {
         }
     },
     components: {
-        login,
+        basicInput,
         upload
     }
 }
