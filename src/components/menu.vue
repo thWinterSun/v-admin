@@ -163,6 +163,11 @@
                                 'name': 'test',
                                 'mId': '2-4',
                                 'route': '/table/test'
+                            },
+                            {
+                                'name': 'expand table',
+                                'mId': '2-5',
+                                'route': '/table/expandtable'
                             }
                         ]
                     },
