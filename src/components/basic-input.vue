@@ -1,6 +1,5 @@
 <template lang="html">
     <Card>
-        <p slot="title">基本表单</p>
         <Form class="step-form" ref="step" :model="step" :rules="stepRules" :label-width="100">
             <FormItem label="用户名：" prop="opinion">
                 <Input :disabled="hasSubmit" v-model="step.opinion" type="text"  placeholder="请输入用户名" class="with_200"/>

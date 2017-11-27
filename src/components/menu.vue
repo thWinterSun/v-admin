@@ -1,23 +1,4 @@
 <style scoped lang="less">
-    .layout{
-        border: 1px solid #d7dde4;
-        background: #f5f7f9;
-    }
-    .layout-logo{
-        width: 100px;
-        height: 30px;
-        background-color: #eee;
-        border-radius: 3px;
-        float: left;
-        position: relative;
-        top: 15px;
-    }
-    .layout-logo .logo-text{
-      height: 30px;
-      line-height: 30px;
-      padding: 0px 20px;
-      font-size: 20px;
-    }
     @media screen and (max-width: 1920px){
       .layout-nav{
         width: 1160px;
@@ -30,28 +11,28 @@
         margin: 0 auto;
       }
 	}
+    .layout-logo{
+        width: 100px;
+        height: 30px;
+        border-radius: 3px;
+        float: left;
+        position: relative;
+        top: 15px;
+    }
+    .layout-logo .logo-text{
+      height: 30px;
+      line-height: 30px;
+      padding: 0px 20px;
+      font-size: 20px;
+    }
+    
     /*自定义修改部分*/
-    .ivu-menu a{
-      color:#fff;
-    }
 
-    .ivu-menu-horizontal .ivu-menu-submenu .ivu-select-dropdown .ivu-menu-item:hover{
-        background: rgba(45,140,240,.9);
-        color:#fff;
-    }
     .menu-right{
         float:right;
-        color:#fff;
         .ivu-dropdown{
             min-width: 50px;
             padding:0 10px;
-            .ivu-dropdown-item:hover{
-                background: rgba(45,140,240,.9);
-                color:#fff;
-            }
-        }
-        .ivu-dropdown:hover{
-            background: #2b85e4
         }
     }
     
@@ -60,7 +41,7 @@
 </style>
 <template>
     <div class="layout">
-        <Menu mode="horizontal" theme="primary" active-name="1">
+        <Menu mode="horizontal" theme="dark" active-name="1">
             <div class="layout-nav">
                 <div class="layout-logo">
                     <h3 class="logo-text">LOGO</h3>

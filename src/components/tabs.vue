@@ -30,9 +30,5 @@ export default {
 </script>
 
 <style lang="less">
-    .ivu-tabs-nav-scroll{
-        .ivu-tabs-tab{
-            border-radius: 5px;
-        }
-    }
+    
 </style>

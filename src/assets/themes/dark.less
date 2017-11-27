@@ -1,0 +1,121 @@
+@dgray:#333849; // 表头及分页背景
+@lblue:#738BDD; //导航字体及下划线颜色
+body{
+    // body背景颜色和字体设置
+    background-color: #292C34 !important;
+    // 面包屑导航
+    .ivu-breadcrumb, .ivu-breadcrumb-item-separator {
+        color:#aaa
+    }
+    .ivu-breadcrumb-item-link{
+        color:#bbb;
+    }
+    // tabs
+    .ivu-tabs-bar{
+        border:none;
+    }
+    .ivu-tabs-nav .ivu-tabs-tab-active{
+        color:@lblue;
+    }
+    .ivu-tabs-nav .ivu-tabs-tab:hover{
+        color:@lblue;
+    }
+    .ivu-tabs-ink-bar{
+        background-color: @lblue;
+    }
+    
+    // menu背景颜色、字体、hover悬停颜色设置
+    .layout{
+        border: none;
+        .ivu-menu-dark {
+            background: #343842;
+            .ivu-menu-item, .ivu-menu-submenu, .ivu-dropdown{
+                color:#94A5E3;
+                a{
+                    color:#94A5E3;
+                }
+            }   
+            .ivu-menu-submenu:hover {
+                color: #57a3f3
+            }
+        }
+    }
+    
+    // table表头整体颜色及表头th、主体td背景及字体颜色设置
+    .ivu-table-wrapper{
+        border:none
+    }
+    .ivu-table:before, .ivu-table:after{
+        background-color:none;
+    }
+    .ivu-table th {
+        background-color: #333849;
+        color: #aaa;
+        border-bottom: 0;
+    }
+    .ivu-table td {
+        background-color: #292C34;
+        color: #9199ac;
+        border-bottom: 1px solid #343842;
+
+    }
+    tr.ivu-table-row-hover td {
+        background-color: #2C323C;
+    }
+    //分页
+    .ivu-page-next, .ivu-page-prev, .ivu-page-item-jump-next,.ivu-page-item{
+        background-color: @dgray;
+        border:1px solid @dgray;
+        a{
+            color: #566498;
+        }
+    }
+    //card
+    .ivu-card-head p, .ivu-card-head-inner{
+        color:#bbb;
+    }
+    .ivu-card-bordered{
+        background-color:#343842;
+        border:1px solid #343842;
+    }
+    .ivu-card-head{
+        border-bottom: 1px solid #292C34;
+    }
+    .ivu-card:hover{
+        -webkit-box-shadow: 0 1px 6px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 5px 23px rgba(0, 0, 0, 0.4);
+        border-color:#343842 ;
+    }
+    //form
+    .ivu-form .ivu-form-item-label,.ivu-form .ivu-radio-wrapper, .ivu-checkbox-group span{
+        color:#aaa;
+    }
+    //select 
+    .ivu-select-selection{
+        background-color:  @dgray;
+        border:1px solid  @dgray;
+    }
+    .ivu-select{
+        border:1px solid  #3E434E;
+        border-radius: 5px;
+    }
+    //input
+    .ivu-input-group .ivu-input-group-prepend, .ivu-radio-inner, .ivu-checkbox-inner{
+        background-color: #3E434E;
+    }
+    .ivu-input-group-append, .ivu-input-group-prepend{
+        border:1px solid #3E434E;
+        color:#bbb;
+    }
+    .ivu-input-group input,.ivu-form-item-content input,.ivu-input-number{
+        color: #ccc;
+        border:1px solid #3E434E;
+        background-color: #3E434E;
+    }
+    
+    //footer
+    .layout-copy{
+        background-color: #343842;
+        color: #9ea7b4;
+    }
+}

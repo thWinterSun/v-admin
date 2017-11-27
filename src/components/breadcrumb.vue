@@ -35,4 +35,7 @@ export default {
     .ivu-tabs-bar{
         margin-bottom: 0
     }
+    .ivu-breadcrumb,.ivu-breadcrumb-item-separator{
+        color:#1c2438;
+    }
 </style>

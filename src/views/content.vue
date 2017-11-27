@@ -37,10 +37,9 @@ export default {
     .layout-content{
         width: 100%;
         max-width: 940px;
-        min-height: 800px;
+        min-height: 840px;
         margin-left: auto;
         margin-right: auto;
-        background-color: #fff;
         box-shadow: 0 1px 6px rgba(0,0,0,.2);
         border-radius: 5px;
         zoom: 1;

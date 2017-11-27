@@ -75,6 +75,7 @@
 import topMenus from '../components/menu'
 import footer from '../components/footer'
 import charts from './charts/echarts'
+import '../assets/themes/dark.less'
 export default {
     name: 'home',
     components: {
@@ -87,13 +88,12 @@ export default {
 
 <style lang="less">
     .home-body{
-        min-height: 800px;
+        min-height: 820px;
         padding:10px;
         .ivu-row{
             margin-bottom: 10px;
             .ivu-card{
-                height:120px;
-                box-shadow: 0 1px 6px rgba(0,0,0,.2);
+                height:120px;   
             }
         }
         

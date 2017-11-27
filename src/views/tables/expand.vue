@@ -72,9 +72,5 @@
     }
 </script>
 <style lang="less">
-    .ivu-table-tbody {
-        .table-expanded-cell{
-            padding: 0 0 0 10px;
-        }
-    }
+    
 </style>
