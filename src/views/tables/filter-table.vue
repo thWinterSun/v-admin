@@ -37,11 +37,10 @@
                         render: (h) => {
                             return h('i-switch',{
                                 attrs: {
-                                    size: 'large'
                                 },
                                 on: {
                                     'on-change': function (evn) {
-                                        alert(evn)
+                                        // alert(evn)
                                     }
                                 }
                             },[
@@ -119,7 +118,7 @@
                                         },
                                         style: {
                                             marginRight: '5px',
-                                            color: 'red',
+                                            color: '#A03434',
                                             fontSize: '22px'
                                         }
                                     }, [h('Icon',{

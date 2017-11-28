@@ -41,7 +41,7 @@
 </style>
 <template>
     <div class="layout">
-        <Menu mode="horizontal" theme="dark" active-name="1">
+        <Menu mode="horizontal"  active-name="1">
             <div class="layout-nav">
                 <div class="layout-logo">
                     <h3 class="logo-text">LOGO</h3>

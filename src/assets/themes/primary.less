@@ -1,0 +1,48 @@
+@dblue:#0090FD; // 导航背景
+@bwhite:#C5EDFB; //导航字体
+@th:#4baff3;//th #49b1ff
+@lgray:#9C9C9C; //页面字体颜色
+@trhover: #a9ccf3; //#d7e6f7
+@e:#eee;
+body{
+    background-color: #EEE!important;
+    .ivu-menu{
+        background-color: @dblue;
+        color:@bwhite;
+        .ivu-menu-submenu-title{
+            color:@bwhite;
+            a{
+                color:@bwhite;
+            }
+        }
+        .ivu-menu-submenu .ivu-select-dropdown .ivu-menu-item:hover{
+            background-color: #4297F1;
+            color:@e;
+        }
+    }
+    .ivu-dropdown{
+        .ivu-dropdown-rel a{
+            color:@bwhite;
+        }
+    }
+    .layout-content{
+        background-color: #fff;
+        
+    }
+    .ivu-table-header th{
+        background-color: @th;
+        color:@e;
+    }
+    .ivu-table-tbody{
+        .ivu-table-row:hover{
+            background-color: @bwhite;
+            .ivu-table-cell span{
+                color:#333;
+            }
+        }
+        .ivu-table-cell span{
+            color:@lgray;
+        }
+    }
+    
+}

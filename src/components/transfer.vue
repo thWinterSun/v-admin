@@ -16,7 +16,7 @@
         methods: {
             getMockData () {
                 let mockData = [];
-                for (let i = 1; i <= 20; i++) {
+                for (let i = 1; i <= 15; i++) {
                     mockData.push({
                         key: i.toString(),
                         label: 'Content ' + i,
@@ -43,8 +43,11 @@
     }
 </script>
 
-<style lang="css">
+<style lang="less">
     .ivu-transfer{
         padding:15px
+    }
+    .ivu-transfer-list{
+        height:350px;
     }
 </style>

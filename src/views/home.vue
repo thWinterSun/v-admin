@@ -75,7 +75,7 @@
 import topMenus from '../components/menu'
 import footer from '../components/footer'
 import charts from './charts/echarts'
-import '../assets/themes/dark.less'
+import '../assets/themes/primary.less'
 export default {
     name: 'home',
     components: {

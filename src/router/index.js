@@ -12,6 +12,7 @@ export const loginRouter = {
     component: resolve => { require(['../views/login.vue'], resolve); }
 };
 export default new Router({
+    // mode: 'history',
     routes: [
         {
             path: '*',

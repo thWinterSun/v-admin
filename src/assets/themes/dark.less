@@ -1,21 +1,35 @@
-@dgray:#343842; // 表头及分页背景
+@dgray:#343842; // 表头及分页背景  3B4048
 @lblue:#738BDD; //导航字体及下划线颜色
+@bgray:#292C34; //body table td 背景
+@th:#333849; 
+@lgray:#3E434E; //浅灰色 select input 
+@b:#bbb; //input 输入框内容颜色
+@a:#aaa;
+@d:#ddd;
+@ca:#CACACA; //字体高亮
+@pagebg:#2C323C; //td hover 分页背景
+@lred:#E06C60;
+@dred:#A03434;
 body{
     // body背景颜色和字体设置
-    background-color: #292C34 !important;
+    background-color: @bgray !important;
     // 面包屑导航
     .ivu-breadcrumb, .ivu-breadcrumb-item-separator {
-        color:#aaa
+        color:@a
     }
     .ivu-breadcrumb-item-link{
-        color:#bbb;
+        color:@ca;
     }
     // tabs
     .ivu-tabs-bar{
         border:none;
     }
+    // .ivu-tabs-tabpane{
+    //     background-color: @dgray;
+    // }
     .ivu-tabs-nav .ivu-tabs-tab-active{
         color:@lblue;
+        background-color: @dgray;
     }
     .ivu-tabs-nav .ivu-tabs-tab:hover{
         color:@lblue;
@@ -27,17 +41,29 @@ body{
     // menu背景颜色、字体、hover悬停颜色设置
     .layout{
         border: none;
-        .ivu-menu-dark {
-            background: #343842;
+        .ivu-menu {    
+            background: @dgray;
+            
             .ivu-menu-item, .ivu-menu-submenu, .ivu-dropdown{
-                color:#94A5E3;
+                color:@lblue;
                 a{
-                    color:#94A5E3;
+                    color:@lblue;
+                    font-weight: 600;
                 }
-            }   
+            } 
+            
             .ivu-menu-submenu:hover {
                 color: #57a3f3
             }
+            // .ivu-dropdown .ivu-select-dropdown,.ivu-menu-submenu .ivu-select-dropdown {
+            //     background-color: @dgray;
+            //     color:#94A5E3;
+            //     margin:0;
+            //     border-radius: 0 0 4px 4px;
+            // }
+        }
+        .ivu-menu-horizontal.ivu-menu-light:after{
+            background-color: @dgray;
         }
     }
     // .layout-content{
@@ -45,55 +71,59 @@ body{
     // }
     // table表头整体颜色及表头th、主体td背景及字体颜色设置
     .ivu-table{
-        background-color: #292C34;
+        background-color: @bgray;
     }
     .ivu-table-wrapper{
         border:none
     }
     .ivu-table:before, .ivu-table:after{
-        background-color:#292C34;
+        background-color:@bgray;
     }
     .ivu-table th {
-        background-color: #2c2f38;
-        color: #aaa;
+        background-color: @th;
+        color: @a;
         border-bottom: 0;
     }
     .ivu-table td {
-        background-color:#292C34;
+        background-color:@bgray;
         color: #9199ac;
-        border-bottom: 1px solid #343842;
+        border-bottom: 1px solid @dgray;
 
     }
     tr.ivu-table-row-hover td {
-        background-color: #2C323C;
+        background-color: @pagebg;
+        color:@ca;
+    }
+    .ivu-table-fixed-right::before, .ivu-table-fixed::before{
+        background-color: @dgray;
     }
     //分页
     .ivu-page-next, .ivu-page-prev, .ivu-page-item-jump-next,.ivu-page-item{
-        background-color: @dgray;
+        background-color: @bgray;
         border:1px solid @dgray;
         a{
-            color: #566498;
+            color:@b;
         }
     }
     //card
     .ivu-card-head p, .ivu-card-head-inner{
-        color:#bbb;
+        color:@b;
     }
     .ivu-card-bordered{
-        background-color:#343842;
-        border:1px solid #343842;
+        background-color:@dgray;
+        border:1px solid @dgray;
     }
     .ivu-card-head{
-        border-bottom: 1px solid #292C34;
+        border-bottom: 1px solid @bgray;
     }
     .ivu-card:hover{
         -webkit-box-shadow: 0 1px 6px rgba(0, 0, 0, 0.2);
         box-shadow: 0 5px 23px rgba(0, 0, 0, 0.4);
-        border-color:#343842 ;
+        border-color:@dgray ;
     }
     //form
     .ivu-form .ivu-form-item-label,.ivu-form .ivu-radio-wrapper, .ivu-checkbox-group span{
-        color:#aaa;
+        color:@a;
     }
     //select 
     .ivu-select-selection{
@@ -101,26 +131,78 @@ body{
         border:1px solid  @dgray;
     }
     .ivu-select{
-        border:1px solid  #3E434E;
+        border:1px solid  @dgray;
         border-radius: 5px;
+    }
+    .ivu-select-selection .ivu-select-placeholder,.ivu-select-selected-value{
+        color: @b;
     }
     //input
     .ivu-input-group .ivu-input-group-prepend, .ivu-radio-inner, .ivu-checkbox-inner{
-        background-color: #3E434E;
+        background-color: @dgray;
     }
     .ivu-input-group-append, .ivu-input-group-prepend{
-        border:1px solid #3E434E;
-        color:#bbb;
+        border:1px solid @dgray;
+        color:@b;
     }
-    .ivu-input-group input,.ivu-form-item-content input,.ivu-input-number{
-        color: #ccc;
-        border:1px solid #3E434E;
-        background-color: #3E434E;
+    .ivu-input-group input,.ivu-form-item-content input,.ivu-input-number,.ivu-input{
+        color: @b;
+        border:1px solid @dgray;
+        background-color: @dgray;
+    }
+    //checkbox
+    .ivu-checkbox-inner{
+        border:1px solid @lgray;
     }
     
+    //cwitch
+    .ivu-switch{
+        background-color: @dgray;
+        border:1px solid @dgray;
+    }
+    .ivu-switch:after{
+    background-color: @ca;
+    }
+    
+    //Badge
+    .ivu-badge .ivu-badge-count{
+        background-color: @lred;
+    }
+    
+    //dot
+    .ivu-tag-dot{
+        color: @b!important;
+        border:1px solid @lgray!important;;
+        background-color: @dgray!important;
+    }
+    //steps
+    .ivu-steps {
+        .ivu-steps-head,.ivu-steps-title{
+            background-color: @bgray;
+        }
+    }
+    //transfer
+    .ivu-transfer{
+        .ivu-transfer-list-header{
+            background-color: @th;
+            border: 1px solid @bgray;
+            color:@ca;
+        }
+        .ivu-transfer-list-body{
+            background-color: @dgray;
+            border: 1px solid @bgray;
+            .ivu-transfer-list-content-item{
+                color: @b;
+            }
+            .ivu-transfer-list-content-item:hover{
+                background-color: @pagebg;
+                color: @ca;
+            }
+        }
+    }
     //footer
     .layout-copy{
-        background-color: #343842;
-        color: #9ea7b4;
+        background-color: @dgray;
+        color: @lblue;
     }
 }
