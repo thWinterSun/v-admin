@@ -1,19 +1,20 @@
 <template lang="html">
-    <div style="width:100%;height:360px;" id="data_source_con"></div>
+    <div class="">
+        <Row>
+            <Col :span="24">
+                <chart :options="option" class="echarts"></chart>
+            </Col>
+        </Row>
+        
+    </div>
 </template>
 
 <script>
-const echarts = require('echarts')
 export default {
     name: 'homeCon',
     data () {
         return {
-        }
-    },
-    mounted () {
-        this.$nextTick(() => {
-            var dataSourcePie = echarts.init(document.getElementById('data_source_con'));
-            const option = {
+            option: {
                 // title: {
                 //     text: '关系图',
                 //     left: '10%'
@@ -178,15 +179,16 @@ export default {
                         ]
                     }
                 ]
-            };
-            dataSourcePie.setOption(option);
-            window.addEventListener('resize', function () {
-                dataSourcePie.resize()
-            });
-        });
+            }
+        }
     }
-};
+}
 </script>
 
 <style lang="css">
+    .echarts {
+        height: 450px;
+        width: 100%;
+        border-radius: 25px;
+    }
 </style>

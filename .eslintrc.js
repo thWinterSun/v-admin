@@ -28,7 +28,7 @@ module.exports = {
     //keyword 前空格
     'keyword-spacing':1,
     //缩进为4个空格
-    "indent": ["error", 4],
+    "indent": [1, 4],
     //强制分号结尾
     "semi": 0,
     // allow debugger during development

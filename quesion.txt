@@ -7,6 +7,10 @@
 现阶段完成：
 1、基本显示table显示
 2、基本输入框和选择框
+//11.28 by dai
+1、增加2个风格，风别是深灰风格和蓝白风格，放在assets/themes中，暂时通过home中引入切换。
 
-整体色调提供可选功能
-导航支持横竖切换（选）
+//11.29 by dai
+1、增加vue-echarte 依赖，并在charts下面增加4个echarts图形文件。
+2、增加全局css样式表放在assets/css/style.less
+3、首页引入两个echarts图形

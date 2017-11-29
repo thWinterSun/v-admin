@@ -2,10 +2,10 @@
 @bwhite:#C5EDFB; //导航字体
 @th:#4baff3;//th #49b1ff
 @lgray:#9C9C9C; //页面字体颜色
-@trhover: #a9ccf3; //#d7e6f7
+@trhover: #E7EBEE; //#d7e6f7
 @e:#eee;
 body{
-    background-color: #EEE!important;
+    background-color: #E8EBF2!important;
     .ivu-menu{
         background-color: @dblue;
         color:@bwhite;
@@ -33,16 +33,24 @@ body{
         background-color: @th;
         color:@e;
     }
-    .ivu-table-tbody{
-        .ivu-table-row:hover{
-            background-color: @bwhite;
+    .ivu-table{
+        overflow: visible;
+        .ivu-table-tbody{
+            .ivu-table-row:hover{
+                background-color: @trhover;
+                .ivu-table-cell span{
+                    color:#333;
+                }
+            }
             .ivu-table-cell span{
-                color:#333;
+                color:@lgray;
             }
         }
-        .ivu-table-cell span{
-            color:@lgray;
-        }
+    }
+    
+    .ivu-row .ivu-card{
+        box-shadow: 0 1px 6px rgba(0,0,0,.2);
+        border-color: #eee;
     }
     
 }

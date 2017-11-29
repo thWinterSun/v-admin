@@ -6,7 +6,26 @@
             <Row class="cards" :gutter="10">
                 <Col :xs="12" :md="8" :lg="4">
                     <Card :bordered="true">
-                       <p>Content of no border type. border type. Content of no border type. border type.</p>
+                        <div class="front">
+							<div class="media">
+								<span class="pull-left">
+			                        <Icon type="ion-paper-airplane"></Icon>
+			                    </span>
+								<div class="media-body">
+									<small>硬盘利用</small>
+									<h2 id="hardDiskNumber" class="media-heading animate-number" >0%</h2>
+								</div>
+							</div>
+							<div class="progress-list">
+								<div class="details">
+									<div class="title">Percentage</div>
+								</div>
+								<div class="status pull-right bg-transparent-black-1">
+									<span id="hardDiskUtilization" class="animate-number">85</span>%
+								</div>
+								<Progress :percent="85" :stroke-width="8" status="active"></Progress>
+							</div>
+						</div>
                    </Card>
                 </Col>
                 <Col :xs="12" :md="8" :lg="4">
@@ -44,7 +63,7 @@
                 </Col>
                 <Col :md="24" :lg="8">
                     <Card :bordered="true" style="height:400px">
-                       <p>Content of no border type. border type. Content of no border type. border type.</p>
+                       <radar></radar>
                    </Card>
                 </Col>
             </Row>
@@ -74,30 +93,22 @@
 <script>
 import topMenus from '../components/menu'
 import footer from '../components/footer'
-import charts from './charts/echarts'
+import charts from './charts/Echarts/DashChartLarge'
+import radar from './charts/Echarts/RadarChart'
 import '../assets/themes/primary.less'
+import './home/home.less'
 export default {
-    name: 'home',
+    name: 'dashboard',
     components: {
         'top-menus': topMenus,
         'foot': footer,
-        charts
+        charts,
+        radar
     }
 }
 </script>
 
 <style lang="less">
-    .home-body{
-        min-height: 820px;
-        padding:10px;
-        .ivu-row{
-            margin-bottom: 10px;
-            .ivu-card{
-                height:120px;   
-            }
-        }
-        
-        
-    }
+    
 </style>
 
