@@ -114,7 +114,7 @@ export default {
 }
 </script>
 
-<style lang="css">
+<style lang="css" scoped>
     .addtable{
         padding:10px 0;
     }

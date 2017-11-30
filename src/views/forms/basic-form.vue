@@ -63,23 +63,6 @@ export default {
 </script>
 
 <style lang="less">
-    .width_100{
-        width:100px;
-    }
-    .width_150{
-        width:150px;
-    }
-    .with_200{
-        width:200px;
-    }
-    .ml_10{
-        margin-left: 10px;
-    }
-    .mr_10{
-        margin-right: 10px;
-    }
-    .p_10{
-        padding:10px;
-    }
+    
     
 </style>

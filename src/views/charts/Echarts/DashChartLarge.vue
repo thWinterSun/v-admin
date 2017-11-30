@@ -4,7 +4,7 @@
 
 <style scoped>
 .echarts {
-    height: 360px;
+    height: 330px;
     width: 100%;
 }
 
@@ -12,7 +12,6 @@
 </style>
 
 <script>
-
 export default {
     name: 'dashChartLarge',
     data () {
@@ -20,6 +19,12 @@ export default {
             option: {
                 tooltip: {
                     trigger: 'axis'
+                },
+                legend: {
+                    left: 'center',
+                    itemWidth: 12,
+                    itemHeight: 12,
+                    data: ['单价', '笔数']
                 },
                 xAxis: [
                     {
@@ -42,7 +47,7 @@ export default {
                 ],
                 series: [
                     {
-                        name: '客单价',
+                        name: '单价',
                         type: 'line',
                         tooltip: {
                             trigger: 'axis'
@@ -53,7 +58,7 @@ export default {
                             normal: {
                                 color: 'rgba(2, 197, 233, 0.2)',
                                 lineStyle: {
-                                    color: 'rgba(23, 107, 203, 0.2)'
+                                    color: 'rgba(223, 107, 13, 0.2)'
                                 },
                                 areaStyle: {
                                     color: 'rgba(223, 147, 233, 0.2)'
@@ -63,7 +68,7 @@ export default {
                         data: [10, 12, 21, 54, 60, 80, 71]
                     },
                     {
-                        name: '交易笔数',
+                        name: '笔数',
                         type: 'line',
                         tooltip: {
                             trigger: 'axis'

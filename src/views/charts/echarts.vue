@@ -1,12 +1,5 @@
 <template lang="html">
-    <div class="">
-        <Row>
-            <Col :span="24">
-                <chart :options="option" class="echarts"></chart>
-            </Col>
-        </Row>
-        
-    </div>
+    <chart :options="option" class="echarts"></chart>
 </template>
 
 <script>
@@ -15,13 +8,6 @@ export default {
     data () {
         return {
             option: {
-                // title: {
-                //     text: '关系图',
-                //     left: '10%'
-                // },
-                grid: {
-                    bottom: 80
-                },
                 tooltip: {
                     trigger: 'axis',
                     axisPointer: {
@@ -34,27 +20,22 @@ export default {
                 },
                 legend: {
                     data: ['流量', '降雨量'],
-                    x: 'center'
-                },
-                dataZoom: [
-                    {
-                        show: true,
-                        realtime: true,
-                        start: 65,
-                        end: 85
-                    },
-                    {
-                        type: 'inside',
-                        realtime: true,
-                        start: 65,
-                        end: 85
+                    x: 'center',
+                    textStyle: {
+                        color: '#9EB2BF'
                     }
-                ],
+                },
                 xAxis: [
                     {
                         type: 'category',
                         boundaryGap: false,
                         axisLine: {onZero: false},
+                        axisLabel: {
+                            show: true,
+                            textStyle: {
+                                color: '#9EB2BF'
+                            }
+                        },
                         data: [
                             '2009/6/12 2:00', '2009/6/12 3:00', '2009/6/12 4:00', '2009/6/12 5:00', '2009/6/12 6:00', '2009/6/12 7:00', '2009/6/12 8:00', '2009/6/12 9:00', '2009/6/12 10:00', '2009/6/12 11:00', '2009/6/12 12:00', '2009/6/12 13:00', '2009/6/12 14:00', '2009/6/12 15:00', '2009/6/12 16:00', '2009/6/12 17:00', '2009/6/12 18:00', '2009/6/12 19:00', '2009/6/12 20:00', '2009/6/12 21:00', '2009/6/12 22:00', '2009/6/12 23:00',
                             '2009/6/13 0:00', '2009/6/13 1:00', '2009/6/13 2:00', '2009/6/13 3:00', '2009/6/13 4:00', '2009/6/13 5:00', '2009/6/13 6:00', '2009/6/13 7:00', '2009/6/13 8:00', '2009/6/13 9:00', '2009/6/13 10:00', '2009/6/13 11:00', '2009/6/13 12:00', '2009/6/13 13:00', '2009/6/13 14:00', '2009/6/13 15:00', '2009/6/13 16:00', '2009/6/13 17:00', '2009/6/13 18:00', '2009/6/13 19:00', '2009/6/13 20:00', '2009/6/13 21:00', '2009/6/13 22:00', '2009/6/13 23:00',
@@ -118,6 +99,17 @@ export default {
                     {
                         name: '流量(m^3/s)',
                         type: 'value',
+                        axisLabel: {
+                            show: true,
+                            textStyle: {
+                                color: '#9EB2BF'
+                            }
+                        },
+                        axisLine: {
+                            lineStyle: {
+                                color: '#9EB2BF'
+                            }
+                        },
                         max: 500
                     },
                     {
@@ -125,6 +117,17 @@ export default {
                         nameLocation: 'start',
                         max: 5,
                         type: 'value',
+                        axisLabel: {
+                            show: true,
+                            textStyle: {
+                                color: '#9EB2BF'
+                            }
+                        },
+                        axisLine: {
+                            lineStyle: {
+                                color: '#9EB2BF'
+                            }
+                        },
                         inverse: true
                     }
                 ],
@@ -157,7 +160,7 @@ export default {
                         name: '降雨量',
                         type: 'line',
                         yAxisIndex: 1,
-                        animation: false,
+                        animation: true,
                         areaStyle: {
                             normal: {}
                         },
@@ -187,7 +190,7 @@ export default {
 
 <style lang="css">
     .echarts {
-        height: 450px;
+        height: 330px;
         width: 100%;
         border-radius: 25px;
     }

@@ -14,3 +14,8 @@
 1、增加vue-echarte 依赖，并在charts下面增加4个echarts图形文件。
 2、增加全局css样式表放在assets/css/style.less
 3、首页引入两个echarts图形
+
+//11.30 by dai
+1、首页编写硬盘、CUP等状态卡。
+2、首页增加用户信息表格。
+3、调整dark风格，table颜色等。

@@ -8,7 +8,7 @@
 
 <style scoped>
 .echarts {
-	height: 360px;
+	height: 330px;
 	width: 100%;
 	border-radius: 25px;
 }
@@ -27,7 +27,7 @@ export default {
                     top: 20,
                     itemWidth: 12,
                     itemHeight: 12,
-                    data: ['预算分配（Allocated Budget）', '实际开销（Actual Spending）'],
+                    data: ['预算', '开销'],
                     textStyle: {
                         color: '#9EB2BF'
                     }
@@ -92,10 +92,10 @@ export default {
                     },
                     data: [{
                         value: [5000, 7000, 12000, 11000, 15000, 14000],
-                        name: '预算分配（Allocated Budget）'
+                        name: '预算'
                     }, {
                         value: [2500, 12000, 8000, 8500, 12000, 12000],
-                        name: '实际开销（Actual Spending）'
+                        name: '开销'
                     }]
                 }],
                 color: ['#ef4b4c', '#b1eadb']

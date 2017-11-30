@@ -164,7 +164,7 @@
         }
     }
 </script>
-<style lang="less">
+<style lang="less" scoped>
     .demo-badge{
         position: relative;
         top: -8px;

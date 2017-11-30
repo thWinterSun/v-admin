@@ -1,7 +1,7 @@
-@dgray:#343842; // 表头及分页背景  3B4048
+@dgray:#495060; // 表头及分页背景  343842
 @lblue:#738BDD; //导航字体及下划线颜色
-@bgray:#292C34; //body table td 背景
-@th:#333849; 
+@bgray:#33363e; //body table td 背景
+@th:#535767; 
 @lgray:#3E434E; //浅灰色 select input 
 @b:#bbb; //input 输入框内容颜色
 @a:#aaa;
@@ -66,18 +66,18 @@ body{
             background-color: @dgray;
         }
     }
-    // .layout-content{
-    //     background-color: #343842
-    // }
+    .layout-content{
+        background-color: @dgray
+    }
     // table表头整体颜色及表头th、主体td背景及字体颜色设置
     .ivu-table{
-        background-color: @bgray;
+        background-color: @dgray;
     }
     .ivu-table-wrapper{
         border:none
     }
     .ivu-table:before, .ivu-table:after{
-        background-color:@bgray;
+        background-color:@dgray;
     }
     .ivu-table th {
         background-color: @th;
@@ -85,9 +85,9 @@ body{
         border-bottom: 0;
     }
     .ivu-table td {
-        background-color:@bgray;
+        background-color:@dgray;
         color: #9199ac;
-        border-bottom: 1px solid @dgray;
+        border-bottom: 1px solid @bgray;
 
     }
     tr.ivu-table-row-hover td {

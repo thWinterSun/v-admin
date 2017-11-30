@@ -24,7 +24,7 @@ export default {
 }
 </script>
 
-<style lang="css">
+<style lang="css" scoped>
     .layout-breadcrumb{
         height: 40px;
         z-index: 5;

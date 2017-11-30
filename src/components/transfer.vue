@@ -43,7 +43,7 @@
     }
 </script>
 
-<style lang="less">
+<style lang="less" scoped>
     .ivu-transfer{
         padding:15px
     }

@@ -11,9 +11,9 @@ export default {
 }
 </script>
 
-<style lang="css">
+<style lang="css" scoped>
     .layout-copy{
         text-align: center;
-        padding: 10px 0 20px;
+        padding: 10px 0;
     }
 </style>
