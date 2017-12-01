@@ -157,14 +157,15 @@
                 <Col :md="24" :lg="8">
                     <Card :bordered="true" style="height:285px" class="card-table">
                         <p slot="title" class="card-title">
-                            系统信息
+                            授权信息
                         </p>
+                        <syslog></syslog>
                    </Card>
                 </Col>
                 <Col :md="24" :lg="8">
                     <Card :bordered="true" style="height:285px" class="card-table">
                         <p slot="title" class="card-title">
-                            授权信息
+                            系统信息
                         </p>
                    </Card>
                 </Col>
@@ -181,6 +182,7 @@ import footer from '../components/footer'
 import charts from './charts/echarts.vue'
 import radar from './charts/Echarts/RadarChart'
 import user from './home/userTable'
+import syslog from './home/syslog'
 import '../assets/themes/dark.less'
 import '../assets/css/style.less'
 import './home/home.less'
@@ -191,7 +193,8 @@ export default {
         'foot': footer,
         charts,
         radar,
-        user
+        user,
+        syslog
     },
     data () {
         return {
