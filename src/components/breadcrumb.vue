@@ -1,6 +1,6 @@
 <template lang="html">
     <div class="layout-breadcrumb">
-        <Breadcrumb separator=">>" replace>
+        <Breadcrumb separator="/" replace>
             <BreadcrumbItem >{{path}}</BreadcrumbItem>
             <BreadcrumbItem>{{$route.name}}</BreadcrumbItem>
         </Breadcrumb>
@@ -31,11 +31,9 @@ export default {
         width: 100%;
         line-height: 40px;
         padding: 0 2%;
+        /*border-bottom: 1px solid #DDDEE1;*/
     }
     .ivu-tabs-bar{
         margin-bottom: 0
-    }
-    .ivu-breadcrumb,.ivu-breadcrumb-item-separator{
-        color:#1c2438;
     }
 </style>

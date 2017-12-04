@@ -1,11 +1,13 @@
 @dgray:#495060; // 表头及分页背景  343842
 @lblue:#738BDD; //导航字体及下划线颜色
 @bgray:#33363e; //body table td 背景
+@mhover:#3F434E; 
 @th:#535767; 
 @lgray:#3E434E; //浅灰色 select input  3E434E
 @b:#bbb; //input 输入框内容颜色
 @a:#aaa;
 @d:#ddd;
+@e:#eee;
 @ca:#CACACA; //字体高亮
 @pagebg:#2C323C; //td hover 分页背景
 @lred:#E06C60;
@@ -54,9 +56,15 @@ body{
                     color:@lblue;
                     font-weight: 600;
                 }
-            } 
+            }
+            .ivu-menu-item-active,.ivu-menu-submenu-active, .ivu-menu-submenu:hover{
+                border-bottom: 2px solid @lblue;
+                background-color: @mhover;
+            }
+            .ivu-select-dropdown .ivu-menu-item-selected, .ivu-select-dropdown .ivu-menu-item-selected:hover, 
             .ivu-select-dropdown .ivu-menu-item:hover,.ivu-select-dropdown .ivu-dropdown-item:hover{
-                background-color: @ca;
+                background-color: #8E95A9;
+                color: @ca;
             }
             .ivu-menu-submenu:hover,.ivu-dropdown:hover {
                 color: #57a3f3;
@@ -118,6 +126,10 @@ body{
             color:@b;
         }
     }
+    //breadcrumb
+    .layout-breadcrumb{
+        border-bottom: 1px solid @dgray;
+    }
     //card
     .ivu-card-head p, .ivu-card-head-inner{
         color:@b;
@@ -132,7 +144,7 @@ body{
     .ivu-card:hover{
         -webkit-box-shadow: 0 1px 6px rgba(0, 0, 0, 0.2);
         box-shadow: 0 5px 23px rgba(0, 0, 0, 0.4);
-        border-color:@dgray ;
+        border-color: @dgray;
     }
     //form
     .ivu-form .ivu-form-item-label,.ivu-form .ivu-radio-wrapper, .ivu-checkbox-group span{
@@ -164,7 +176,7 @@ body{
         background-color: @lgray;
     }
     //checkbox
-    .ivu-checkbox-inner{
+    .ivu-checkbox-inner, .ivu-radio-inner{
         border:1px solid @lgray;
     }
     
@@ -172,6 +184,10 @@ body{
     .ivu-switch{
         background-color: @lgray;
         border:1px solid @lgray;
+    }
+    .ivu-switch-checked{
+        background-color: @e;
+        border: 1px solid @dgray;
     }
     .ivu-switch:after{
     background-color: @ca;
@@ -212,6 +228,21 @@ body{
                 color: @ca;
             }
         }
+    }
+    //Tree
+    .ivu-tree-title{
+        color:@ca;
+    }
+    .ivu-tree-title:hover,.ivu-tree-title-selected:hover{
+        color: @b;
+        background-color: @lgray;
+    }
+    .ivu-tree-title-selected, .ivu-tree-title-selected:hover{
+        background-color: @lgray;
+        color: @b;
+    }
+    .ivu-tree-arrow{
+        color:#eee;
     }
     //footer
     .layout-copy{

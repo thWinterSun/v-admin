@@ -1,28 +1,31 @@
 <template>
     <div>
         <!-- 筛选table -->
-        <br>
         <Row>
-            <Col span="8" offset="16" >
-                <Input v-model="searchmess" icon="ios-search" placeholder="搜索." style="width: 200px" @on-click="searchMess()"></Input>
+            <Col span="24">
+                <bread></bread>
             </Col>
         </Row>
-        <br>
+        <Row>
+            <Col span="6" offset="18" >
+                <Input v-model="searchmess" icon="ios-search" placeholder="搜索." @on-click="searchMess()" class="with_200 mh_10"></Input>
+            </Col>
+        </Row>
         <Row>
             <Table width="100%" ref="selection" :columns="columns2" :data="data4"></Table>
         </Row>
-        <Row>
-            <div style="margin: 10px;overflow: hidden">
-                <div style="float: right;">
-                    <Page :total="100" :current="1" @on-change="changePage" show-sizer></Page>
-                </div>
-            </div>
+        <Row class="mh_10">
+            <Page :total="100" :current="1" @on-change="changePage" show-sizer class="fr"></Page>
         </Row>
     </div>
 </template>
 <script>
+    import bread from '../../components/breadcrumb'
     export default {
         name: 'searchTable',
+        components: {
+            bread
+        },
         data () {
             return {
                 columns2: [

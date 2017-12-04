@@ -42,7 +42,7 @@ export default {
                         tp: 'addTable'
                     },
                     {
-                        name: '树形餐单',
+                        name: '树形菜单',
                         tp: 'tree'
                     }
                 ];

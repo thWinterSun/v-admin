@@ -1,14 +1,31 @@
 <template>
-    <Transfer
-        :data="data1"
-        :target-keys="targetKeys1"
-        :render-format="render1"
-        @on-change="handleChange1"></Transfer>
+    <Card>
+        <Form class="step-form" ref="step" :label-width="100">
+            <FormItem label="名称：" prop="opinion">
+                <Input v-model="rouleName" type="text"  placeholder="请输入名称" class="with_200"/>
+            </FormItem>
+            <FormItem label="是否通过：">
+                <RadioGroup v-model="pass">
+                    <Radio label="通过"></Radio>
+                    <Radio label="不通过"></Radio>
+                </RadioGroup>
+            </FormItem>
+            <FormItem label="类型选择：">
+                <Transfer
+                :data="data1"
+                :target-keys="targetKeys1"
+                :render-format="render1"
+                @on-change="handleChange1"></Transfer>
+            </FormItem>
+        </Form> 
+    </Card>
 </template>
 <script>
     export default {
         data () {
             return {
+                rouleName: '',
+                pass: '通过',
                 data1: this.getMockData(),
                 targetKeys1: this.getTargetKeys()
             }

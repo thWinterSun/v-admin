@@ -1,8 +1,5 @@
 <template>
-    <div class="">
-        <bread></bread>
         <tab-pane></tab-pane>
-    </div>
 </template>
 <script>
 import search from './filter-table.vue';

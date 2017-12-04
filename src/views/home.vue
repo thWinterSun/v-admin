@@ -131,6 +131,7 @@
                                 <Option value="last week">最近一周</Option>
                                 <Option value="last mooth">最近一月</Option>
                             </Select>
+                            <div style="clear:both"></div>
                         </p>
                         <charts></charts>
                    </Card>

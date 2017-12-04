@@ -1,17 +1,15 @@
 <template lang="html">
-    <div class="addtable">
-        
-                <Form>
-                    <FormItem class="ml_10">
-                        <Input type="text"  placeholder="起始IP" class="width_150 mr_10" v-model="beginIp" />
-                        <Input type="text"  placeholder="结束IP" class="width_150 mr_10" v-model="endIp" />
-                        <Button type="primary" @click="addData">提交</Button>
-                    </FormItem>
-                </Form>
-            
-                <Table :columns="columns" :data="tableData" height="345"></Table>
-        
-    </div>
+    <Card>
+        <Form>
+            <FormItem class="ml_10">
+                <Input type="text"  placeholder="起始IP" class="width_150 mr_10" v-model="beginIp" />
+                <Input type="text"  placeholder="结束IP" class="width_150 mr_10" v-model="endIp" />
+                <Button type="primary" @click="addData">提交</Button>
+            </FormItem>
+        </Form>
+    
+        <Table :columns="columns" :data="tableData" height="345"></Table>
+    </Card>
 </template>
 
 <script>
