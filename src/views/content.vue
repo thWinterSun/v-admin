@@ -1,5 +1,6 @@
 <template lang="html">
-    <div class="">
+    <!-- 双飞翼布局 -->
+    <div>
         <!--导航组件  -->
         <top-menus></top-menus>
         <!--主体内容  -->

@@ -104,14 +104,9 @@
                                 'route': '/home/runstatus'
                             },
                             {
-                                'name': '实时信息',
-                                'mId': '1-2',
-                                'route': '/home/realtime'
-                            },
-                            {
                                 'name': '运行日志',
                                 'mId': '1-3',
-                                'route': '/home/overview'
+                                'route': '/home/syslog'
                             }
                         ],
                         'name': 'Home',

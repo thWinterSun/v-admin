@@ -28,7 +28,6 @@ export default {
                     children: [
                         {
                             title: 'basic-table',
-                            expand: true,
                             children: [
                                 {
                                     title: 'leaf 1-1-1'
@@ -85,7 +84,6 @@ export default {
                     children: [
                         {
                             title: 'Echarts',
-                            expand: true,
                             children: [
                                 {
                                     title: 'leaf 1-1-1',
@@ -98,7 +96,6 @@ export default {
                         },
                         {
                             title: 'highCharts',
-                            expand: true,
                             children: [
                                 {
                                     title: 'leaf 1-2-1',
