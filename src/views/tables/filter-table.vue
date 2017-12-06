@@ -2,11 +2,6 @@
     <div>
         <!-- 筛选table -->
         <Row>
-            <Col span="24">
-                <bread></bread>
-            </Col>
-        </Row>
-        <Row>
             <Col span="6" offset="18" >
                 <Input v-model="searchmess" icon="ios-search" placeholder="搜索." @on-click="searchMess()" class="with_200 mh_10"></Input>
             </Col>
@@ -172,5 +167,8 @@
         position: relative;
         top: -8px;
         left: -5px;
+    }
+    .ivu-table-cell{
+        overflow:initial;
     }
 </style>

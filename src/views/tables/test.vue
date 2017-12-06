@@ -1,16 +1,27 @@
 <template>
-        <tab-pane></tab-pane>
+    <div>
+        <Row>
+            <Col span="24">
+                <bread></bread>
+            </Col>
+        </Row>
+        <Row>
+            <Col span="24">
+                <tab-pane></tab-pane>
+            </Col>
+        </Row>
+    </div>
 </template>
 <script>
+import bread from '../../components/breadcrumb'
 import search from './filter-table.vue';
 import edit from './edit-table.vue'
-import bread from '../../components/breadcrumb.vue'
 export default {
     name: 'tab',
     components: {
-        bread,
         'search': search,
         'edit': edit,
+        bread,
         'tabPane': {
             functional: true,
             render: function (h) {

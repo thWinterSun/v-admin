@@ -172,7 +172,7 @@
 </template>
 
 <script>
-import charts from '../charts/echarts.vue'
+import charts from '../charts/Echarts/doubleLine'
 import radar from '../charts/Echarts/RadarChart'
 import user from './userTable'
 import syslog from './syslog'

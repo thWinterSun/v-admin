@@ -22,7 +22,7 @@ export default new Router({
             path: '/home',
             component: Home,
             children: [
-                { path: '', title: '运行状态', name: 'runstatus', component: resolve => { require(['../views/home/homeBody.vue'], resolve) } },
+                { path: '', component: resolve => { require(['../views/home/homeBody.vue'], resolve) } },
                 { path: 'runstatus', title: '运行状态', name: 'runstatus', component: resolve => { require(['../views/home/homeBody.vue'], resolve) } },
                 { path: 'syslog', title: '系统日志', name: 'syslog', component: resolve => { require(['../views/syslog.vue'], resolve) } }
             ]
@@ -31,7 +31,7 @@ export default new Router({
             path: '/table/',
             component: Content,
             children: [
-                { path: '', title: '基本表格', name: 'basictable', component: resolve => { require(['../views/tables/basic-table.vue'], resolve) } },
+                { path: '', component: resolve => { require(['../views/tables/basic-table.vue'], resolve) } },
                 { path: 'basictable', title: '基本表格', name: 'basictable', component: resolve => { require(['../views/tables/basic-table.vue'], resolve) } },
                 { path: 'filtertable', title: '过滤表格', name: 'filtertable', component: resolve => { require(['../views/tables/filter-table.vue'], resolve) } },
                 { path: 'edittable', title: '编辑表格', name: 'edittable', component: resolve => { require(['../views/tables/edit-table.vue'], resolve) } },
@@ -43,7 +43,7 @@ export default new Router({
             path: '/form',
             component: Content,
             children: [
-                { path: '', title: '基本表单', name: 'basicform', component: resolve => { require(['../views/forms/basic-form.vue'], resolve) } },
+                { path: '', component: resolve => { require(['../views/forms/basic-form.vue'], resolve) } },
                 { path: 'basicform', title: '基本表单', name: 'basicform', component: resolve => { require(['../views/forms/basic-form.vue'], resolve) } },
                 { path: 'validateform', title: '验证表单', name: 'validateform', component: resolve => { require(['../views/forms/validate-form.vue'], resolve) } },
                 { path: 'updata', title: '升级', name: 'updata', component: resolve => { require(['../views/forms/updata.vue'], resolve) } }
@@ -53,7 +53,7 @@ export default new Router({
             path: '/charts',
             component: Content,
             children: [
-                { path: '', title: 'echarts', name: 'echarts', component: resolve => { require(['../views/charts/echarts.vue'], resolve) } },
+                { path: '', component: resolve => { require(['../views/charts/echarts.vue'], resolve) } },
                 { path: 'echarts', title: 'echarts', name: 'echarts', component: resolve => { require(['../views/charts/echarts.vue'], resolve) } },
                 { path: 'highCharts', title: 'highCharts', name: 'highCharts', component: resolve => { require(['../views/charts/highCharts.vue'], resolve) } }
             ]

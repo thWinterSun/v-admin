@@ -1,10 +1,8 @@
 <template lang="html">
-    <div class="layout-breadcrumb">
-        <Breadcrumb separator="/" replace>
-            <BreadcrumbItem >{{path}}</BreadcrumbItem>
-            <BreadcrumbItem>{{$route.name}}</BreadcrumbItem>
-        </Breadcrumb>
-    </div>
+    <Breadcrumb separator="/" replace  class="layout-breadcrumb">
+        <BreadcrumbItem >{{path}}</BreadcrumbItem>
+        <BreadcrumbItem>{{$route.name}}</BreadcrumbItem>
+    </Breadcrumb>
 </template>
 
 <script>
