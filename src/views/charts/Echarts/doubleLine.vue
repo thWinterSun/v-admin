@@ -1,5 +1,5 @@
 <template lang="html">
-    <chart :options="option" class="echarts"></chart>
+    <chart :options="option" class="echarts chartsbg"></chart>
 </template>
 
 <script>
@@ -109,6 +109,11 @@ export default {
                                 color: '#9EB2BF'
                             }
                         },
+                        splitLine: {
+                            lineStyle: {
+                                color: ['#aaa']
+                            }
+                        },
                         max: 500
                     },
                     {
@@ -125,6 +130,11 @@ export default {
                         axisLine: {
                             lineStyle: {
                                 color: '#9EB2BF'
+                            }
+                        },
+                        splitLine: {
+                            lineStyle: {
+                                color: ['#aaa']
                             }
                         },
                         inverse: true

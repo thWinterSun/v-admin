@@ -1,5 +1,5 @@
 <template>
-    <Card>
+    <div class="p_15">
         <Form class="step-form" ref="step" :label-width="100">
             <FormItem label="名称：" prop="opinion">
                 <Input v-model="rouleName" type="text"  placeholder="请输入名称" class="with_200"/>
@@ -18,7 +18,7 @@
                 @on-change="handleChange1"></Transfer>
             </FormItem>
         </Form> 
-    </Card>
+    </div>
 </template>
 <script>
     export default {

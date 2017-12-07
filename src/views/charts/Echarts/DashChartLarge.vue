@@ -1,5 +1,5 @@
 <template>
-    <chart :options="option" class="echarts" id="chart" > </chart>
+    <chart :options="option" class="echarts chartsbg" id="chart" > </chart>
 </template>
 
 <style scoped>
@@ -24,12 +24,26 @@ export default {
                     left: 'center',
                     itemWidth: 12,
                     itemHeight: 12,
+                    textStyle: {
+                        color: '#9EB2BF'
+                    },
                     data: ['单价', '笔数']
                 },
                 xAxis: [
                     {
                         type: 'category',
                         boundaryGap: false,
+                        axisLabel: {
+                            show: true,
+                            textStyle: {
+                                color: '#9EB2BF'
+                            }
+                        },
+                        axisLine: {
+                            lineStyle: {
+                                color: '#9EB2BF'
+                            }
+                        },
                         data: ['1', '5', '10', '15', '20', '25', '31']
                     }
                 ],
@@ -37,11 +51,43 @@ export default {
                     {
                         name: '（单价）',
                         type: 'value',
+                        axisLabel: {
+                            show: true,
+                            textStyle: {
+                                color: '#9EB2BF'
+                            }
+                        },
+                        axisLine: {
+                            lineStyle: {
+                                color: '#9EB2BF'
+                            }
+                        },
+                        splitLine: {
+                            lineStyle: {
+                                color: ['#aaa']
+                            }
+                        },
                         max: 100
                     },
                     {
                         name: '（笔数）',
                         type: 'value',
+                        axisLabel: {
+                            show: true,
+                            textStyle: {
+                                color: '#9EB2BF'
+                            }
+                        },
+                        axisLine: {
+                            lineStyle: {
+                                color: '#9EB2BF'
+                            }
+                        },
+                        splitLine: {
+                            lineStyle: {
+                                color: ['#aaa']
+                            }
+                        },
                         max: 100
                     }
                 ],

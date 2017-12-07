@@ -1,5 +1,5 @@
 <template lang="html">
-    <Card>
+    <div class="p_15">
         <Form>
             <FormItem class="ml_10">
                 <Input type="text"  placeholder="起始IP" class="width_150 mr_10" v-model="beginIp" />
@@ -9,7 +9,7 @@
         </Form>
     
         <Table :columns="columns" :data="tableData" height="345"></Table>
-    </Card>
+    </div>
 </template>
 
 <script>
