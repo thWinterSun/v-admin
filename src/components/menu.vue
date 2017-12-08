@@ -182,14 +182,14 @@
                                 'route': '/charts/echarts'
                             },
                             {
-                                'name': 'highCharts',
+                                'name': 'frappe charts',
                                 'mId': '4-2',
-                                'route': '/charts/highCharts'
+                                'route': '/charts/frappe'
                             },
                             {
-                                'name': 'D3 charts',
+                                'name': 'highCharts',
                                 'mId': '4-3',
-                                'route': '/charts/overview'
+                                'route': '/charts/highCharts'
                             }
                         ]
                     }

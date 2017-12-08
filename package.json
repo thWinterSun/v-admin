@@ -11,6 +11,7 @@
     "lint": "eslint --ext .js,.vue src"
   },
   "dependencies": {
+    "frappe-charts": "^0.0.8",
     "iview": "^2.5.1",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1"

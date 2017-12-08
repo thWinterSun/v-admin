@@ -31,3 +31,7 @@
 //12.6 by dai
 1、修改test-table布局错乱问题
 2、修改expand-table布局错乱及子tr错乱问题。
+
+//12.7 by dai 
+1、研究frappe-charts，尝试将frappe图标放入项目，遇到问题未成功
+2、写文件上传的静态页

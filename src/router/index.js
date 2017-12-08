@@ -55,7 +55,8 @@ export default new Router({
             children: [
                 { path: '', component: resolve => { require(['../views/charts/echarts.vue'], resolve) } },
                 { path: 'echarts', title: 'echarts', name: 'echarts', component: resolve => { require(['../views/charts/echarts.vue'], resolve) } },
-                { path: 'highCharts', title: 'highCharts', name: 'highCharts', component: resolve => { require(['../views/charts/highCharts.vue'], resolve) } }
+                { path: 'highCharts', title: 'highCharts', name: 'highCharts', component: resolve => { require(['../views/charts/highCharts.vue'], resolve) } },
+                { path: 'frappe', title: 'frappe', name: 'frappe', component: resolve => { require(['../views/charts/echarts.vue'], resolve) } }
             ]
         },
         loginRouter
