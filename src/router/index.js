@@ -23,8 +23,9 @@ export default new Router({
             component: Home,
             children: [
                 { path: '', component: resolve => { require(['../views/home/homeBody.vue'], resolve) } },
-                { path: 'runstatus', title: '运行状态', name: 'runstatus', component: resolve => { require(['../views/home/homeBody.vue'], resolve) } },
-                { path: 'syslog', title: '系统日志', name: 'syslog', component: resolve => { require(['../views/syslog.vue'], resolve) } }
+                { path: 'runstatus', title: 'runstatus', name: 'runstatus', component: resolve => { require(['../views/home/homeBody.vue'], resolve) } },
+                { path: 'worldMap', title: 'worldMap', name: 'worldMap', component: resolve => { require(['../views/home/worldMap.vue'], resolve) } },
+                { path: 'globalMap', title: 'globalMap', name: 'globalMap', component: resolve => { require(['../views/home/worldMap.vue'], resolve) } }
             ]
         },
         {

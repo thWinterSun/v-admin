@@ -36,7 +36,9 @@
         }
     }
     
-    
+    .layout .ivu-menu{
+        margin-bottom:2px;
+    }
 
 </style>
 <template>
@@ -99,14 +101,19 @@
                     {
                         'children': [
                             {
-                                'name': '运行状态',
+                                'name': 'runstatus',
                                 'mId': '1-1',
                                 'route': '/home/runstatus'
                             },
                             {
-                                'name': '运行日志',
+                                'name': 'worldMap',
+                                'mId': '1-2',
+                                'route': '/home/worldMap'
+                            },
+                            {
+                                'name': 'globalMap',
                                 'mId': '1-3',
-                                'route': '/home/syslog'
+                                'route': '/home/globalMap'
                             }
                         ],
                         'name': 'Home',

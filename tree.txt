@@ -1,24 +1,22 @@
-﻿
-│  .babelrc
-│  .editorconfig
-│  .eslintignore
-│  .eslintrc.js   --代码检查工具配置
-│  .gitignore     --git配置
+﻿文件夹 PATH 列表
+卷序列号为 0D5A-1B5E
+E:.
+
+│  .eslintrc.js     //代码检查工具配置
 │  .postcssrc.js
-│  index.html     --项目入口html
-│  package.json
-│  README.md  	   --项目说明文件
+│  index.html
+│  package.json     //项目版本及依赖文件
+│  quesion.txt
 │  td_icon.ico
-│  tree.txt  
 │  
-├─build
+├─build             //webpack 配置文件
 │      build.js
 │      check-versions.js
 │      dev-client.js
 │      dev-server.js
 │      utils.js
-│      vue-loader.conf.js    --vue-loader配置文件
-│      webpack.base.conf.js  --webpack配置文件
+│      vue-loader.conf.js
+│      webpack.base.conf.js
 │      webpack.dev.conf.js
 │      webpack.prod.conf.js
 │      
@@ -27,21 +25,80 @@
 │      index.js
 │      prod.env.js
 │      
+├─dist              //编译后输出文件目录
+│  │  index.html
+│  │  
+│  └─static
+│      ├─css
+│      │      app.c2f68db20dd027ab9c1758ba569a640e.css
+│      │      
+│      ├─fonts
+│      │      ionicons.05acfdb.woff
+│      │      ionicons.24712f6.ttf
+│      │      ionicons.2c2ae06.eot
+│      │      
+│      ├─img
+│      │      ionicons.621bd38.svg
+│      │      
+│      └─js
+│              0.117919c9fc6d6b44da84.js
+│              0.117919c9fc6d6b44da84.js.map
+│              1.ac41db8e97c173dac5d9.js
+│              1.ac41db8e97c173dac5d9.js.map
+│              10.c8e96393254e9a71d994.js
+│              10.c8e96393254e9a71d994.js.map
+│              11.20ac99a9318618855ed8.js
+│              11.20ac99a9318618855ed8.js.map
+│              12.8846a5178d12531890d9.js
+│              12.8846a5178d12531890d9.js.map
+│              2.08faaece046ffb914a7b.js
+│              2.08faaece046ffb914a7b.js.map
+│              3.5b2c61646deca4a51ca4.js
+│              3.5b2c61646deca4a51ca4.js.map
+│              4.9b9019ec0131a0b88dc6.js
+│              4.9b9019ec0131a0b88dc6.js.map
+│              5.923cd8eea70fd4863ec8.js
+│              5.923cd8eea70fd4863ec8.js.map
+│              6.021a4d40c80b5112204d.js
+│              6.021a4d40c80b5112204d.js.map
+│              7.2a131c856442c8aff04b.js
+│              7.2a131c856442c8aff04b.js.map
+│              8.e645c42378dec85fa4f9.js
+│              8.e645c42378dec85fa4f9.js.map
+│              9.1cef68c6fe7faa94ff23.js
+│              9.1cef68c6fe7faa94ff23.js.map
+│              app.a4e031366eacc29337f4.js
+│              app.a4e031366eacc29337f4.js.map
+│              manifest.00009a211007ed8547cc.js
+│              manifest.00009a211007ed8547cc.js.map
+│              vendor.7dcb1275da5717c8c3d4.js
+│              vendor.7dcb1275da5717c8c3d4.js.map
+│              
 ├─src
 │  │  App.vue
-│  │  main.js
+│  │  main.js       //入口文件
 │  │  
 │  ├─assets
-│  │      iviewLogo.png
-│  │      logo.jpg
-│  │      
-│  ├─components
+│  │  │  iviewLogo.png
+│  │  │  logo.jpg
+│  │  │  
+│  │  ├─css
+│  │  │      style.less
+│  │  │      
+│  │  └─themes
+│  │          dark.less
+│  │          primary.less
+│  │          
+│  ├─components             //组件
+│  │      addTable.vue
+│  │      basic-input.vue
 │  │      breadcrumb.vue
 │  │      datePicker.vue
-│  │      form.vue
+│  │      footer.vue
 │  │      menu.vue
 │  │      modal.vue
 │  │      progress.vue
+│  │      steps.vue
 │  │      table.vue
 │  │      tabs.vue
 │  │      test.vue
@@ -50,35 +107,57 @@
 │  │      upload.vue
 │  │      
 │  ├─images
+│  │      code.png
 │  │      login_bg.png
 │  │      
 │  ├─router
 │  │      index.js
 │  │      
-│  └─views
+│  └─views              //视图
 │      │  404.vue
-│      │  homeCon.vue
+│      │  content.vue
+│      │  home.vue
 │      │  login.vue
 │      │  overview.vue
 │      │  runstatus.vue
 │      │  syslog.vue
 │      │  
 │      ├─charts
-│      │      chartsCont.vue
-│      │      d3.vue
-│      │      echarts.vue
-│      │      highCharts.vue
-│      │      
+│      │  │  d3.vue
+│      │  │  echarts.vue
+│      │  │  frappe.vue
+│      │  │  highCharts.vue
+│      │  │  
+│      │  └─Echarts
+│      │          CakeChart.vue
+│      │          DashChartLarge.vue
+│      │          doubleLine.vue
+│      │          RadarChart.vue
+│      │          ShopChart.vue
+│      │          
 │      ├─forms
-│      │      basic-form.vue
-│      │      updata.vue
-│      │      validate-form.vue
+│      │  │  basic-form.vue
+│      │  │  updata.vue
+│      │  │  validate-form.vue
+│      │  │  
+│      │  └─updatas
+│      │          dragUpdata.vue
+│      │          normalUpdata.vue
+│      │          
+│      ├─home
+│      │      home.less
+│      │      homeBody.vue
+│      │      syslog.vue
+│      │      userTable.vue
 │      │      
 │      └─tables
 │              basic-table.vue
 │              edit-table.vue
+│              expand-table.vue
+│              expand.vue
 │              filter-table.vue
+│              tab-pane.vue
+│              test.vue
 │              
 └─static
-        .gitkeep
         

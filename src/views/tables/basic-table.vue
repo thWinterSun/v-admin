@@ -15,7 +15,14 @@
                 </Row>    
                 <Row style="margin: 10px 0">
                     <Page :total="100" show-sizer style="float:right "></Page>
-                </Row>    
+                </Row>
+                <Row style="margin: 10px 0">
+                    <Col span="2" offset="1">
+                        <Button type="primary" @click="getdata">
+                           获取
+                       </Button>
+                    </Col>
+                </Row>  
             </TabPane>
             <TabPane label="标签二" name="name2">标签二的内容</TabPane>
             <TabPane label="标签三" name="name3">标签三的内容</TabPane>
@@ -25,6 +32,7 @@
 </template>
 
 <script>
+import jsonp from 'jsonp'
 import bread from '../../components/breadcrumb'
 export default {
     data () {
@@ -72,11 +80,57 @@ export default {
                     address: 'Ottawa No. 2 Lake Park',
                     date: '2016-10-04'
                 }
-            ]
+            ],
+            getJson: {
+                'head': {
+                    'module': 'object',
+                    'function': 'get_obj_service',
+                    'page_index': 1,
+                    'page_size': 20
+                },
+                'body': [{
+                    'name': '',
+                    'type': 0,
+                    'search': '',
+                    'is_detail': false
+                }]
+            }
         }
     },
     components: {
         bread
+    },
+    methods: {
+        getdata () {
+            this.getTableData(this.getJson);
+        },
+        getTableData (Strdata) {
+            // axios({
+            //     method: 'post',
+            //     url: 'https://192.168.13.186/data/',
+            // https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd=a&json=1
+            //     data: JSON.stringify(Strdata),
+            //     timeout: 50000,
+            //     headers: {
+            //         'X-CSRFToken': 'aEshU1tUVjnG4yRfObvP2h1CIE9Alg8K'
+            //     }
+            // }).then(function (res) {
+            //     console.log(res)
+            // }).catch(function (err) {
+            //     console.log(err);
+            // });
+            jsonp('https://192.168.13.186/data/', {
+                type: 'post',
+                param: JSON.stringify(Strdata),
+                timeout: 50000
+            }, function (err, data) {
+                if (err) {
+                    console.error(err.message);
+                } else {
+                    console.log(data);
+                }
+            });
+        }
     }
 }
 </script>

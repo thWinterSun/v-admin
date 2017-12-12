@@ -15,5 +15,6 @@ export default {
     .layout-copy{
         text-align: center;
         padding: 10px 0;
+        margin-top:5px;
     }
 </style>

@@ -1,11 +1,8 @@
 <template>
     <Row>
-
         <Col :span="24">
             <chart :options="option" class="echarts" id="cakechart"></chart>
-
         </Col>
-
     </Row>
 </template>
 
