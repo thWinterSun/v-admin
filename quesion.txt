@@ -6,9 +6,6 @@
 
 现阶段完成：
 1、基本显示table显示
-2、基本输入框和选择框
-
-
 
 
 依赖包
@@ -20,3 +17,33 @@
     babel-preset-env\
     --save-dev
     在.balbelrc 中的 "plugins"中添加 transform-vue-jsx,
+
+//11.28 by dai
+1、增加2个风格，风别是深灰风格和蓝白风格，放在assets/themes中，暂时通过home中引入切换。
+
+//11.29 by dai
+1、增加vue-echarte 依赖，并在charts下面增加4个echarts图形文件。
+2、增加全局css样式表放在assets/css/style.less
+3、首页引入两个echarts图形
+
+//11.30 by dai
+1、首页编写硬盘、CUP等状态卡。
+2、首页增加用户信息表格。
+3、调整dark风格，table颜色等。
+
+//12.1 by dai
+1、修改表单样式
+2、修改首页
+
+//12.4 by dai
+1、修改基本表单内树形菜单及穿梭框。
+2、修改面包屑导航及部分样式
+
+//12.6 by dai
+1、修改test-table布局错乱问题
+2、修改expand-table布局错乱及子tr错乱问题。
+
+//12.7 by dai
+1、研究frappe-charts，尝试将frappe图标放入项目，遇到问题未成功
+2、写文件上传的静态页
+3、修改ellint 使它不强制字符串使用单引号

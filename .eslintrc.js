@@ -28,9 +28,12 @@ module.exports = {
     //keyword 前空格
     'keyword-spacing':1,
     //缩进为4个空格
-    "indent": ["error", 4],
+    "indent": [1, 4],
     //强制分号结尾
     "semi": 0,
+    // 强制引号
+    //"quotes": [0,{"avoidEscape": true}],
+    "quotes": [0,"double"],
     // allow debugger during development
     'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0
   }

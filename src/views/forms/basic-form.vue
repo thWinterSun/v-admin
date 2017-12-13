@@ -42,7 +42,7 @@ export default {
                         tp: 'addTable'
                     },
                     {
-                        name: '树形餐单',
+                        name: '树形菜单',
                         tp: 'tree'
                     }
                 ];
@@ -63,31 +63,6 @@ export default {
 </script>
 
 <style lang="less">
-    .width_100{
-        width:100px;
-    }
-    .width_150{
-        width:150px;
-    }
-    .with_200{
-        width:200px;
-    }
-    .ml_10{
-        margin-left: 10px;
-    }
-    .mr_10{
-        margin-right: 10px;
-    }
-    .p_10{
-        padding:10px;
-    }
-    .ivu-tabs-nav-scroll{
-        background: #E7EBEE;
-        .ivu-tabs-tab{
-            border-radius: 5px;
-        }
-        .ivu-tabs-tab-active{
-            background: #fff;
-        }
-    }
+    
+    
 </style>

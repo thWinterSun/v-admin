@@ -15,7 +15,5 @@ export default {
 </script>
 
 <style lang="css">
-    .p_20{
-        padding:20px;
-    }
+    
 </style>

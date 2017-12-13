@@ -1,0 +1,143 @@
+<template>
+    <chart :options="option" class="echarts chartsbg" id="chart" > </chart>
+</template>
+
+<style scoped>
+.echarts {
+    height: 330px;
+    width: 100%;
+}
+
+
+</style>
+
+<script>
+export default {
+    name: 'dashChartLarge',
+    data () {
+        return {
+            option: {
+                tooltip: {
+                    trigger: 'axis'
+                },
+                legend: {
+                    left: 'center',
+                    itemWidth: 12,
+                    itemHeight: 12,
+                    textStyle: {
+                        color: '#9EB2BF'
+                    },
+                    data: ['单价', '笔数']
+                },
+                xAxis: [
+                    {
+                        type: 'category',
+                        boundaryGap: false,
+                        axisLabel: {
+                            show: true,
+                            textStyle: {
+                                color: '#9EB2BF'
+                            }
+                        },
+                        axisLine: {
+                            lineStyle: {
+                                color: '#9EB2BF'
+                            }
+                        },
+                        data: ['1', '5', '10', '15', '20', '25', '31']
+                    }
+                ],
+                yAxis: [
+                    {
+                        name: '（单价）',
+                        type: 'value',
+                        axisLabel: {
+                            show: true,
+                            textStyle: {
+                                color: '#9EB2BF'
+                            }
+                        },
+                        axisLine: {
+                            lineStyle: {
+                                color: '#9EB2BF'
+                            }
+                        },
+                        splitLine: {
+                            lineStyle: {
+                                color: ['#aaa']
+                            }
+                        },
+                        max: 100
+                    },
+                    {
+                        name: '（笔数）',
+                        type: 'value',
+                        axisLabel: {
+                            show: true,
+                            textStyle: {
+                                color: '#9EB2BF'
+                            }
+                        },
+                        axisLine: {
+                            lineStyle: {
+                                color: '#9EB2BF'
+                            }
+                        },
+                        splitLine: {
+                            lineStyle: {
+                                color: ['#aaa']
+                            }
+                        },
+                        max: 100
+                    }
+                ],
+                series: [
+                    {
+                        name: '单价',
+                        type: 'line',
+                        tooltip: {
+                            trigger: 'axis'
+                            // formatter: '{a} <br/>{b}日: {c}元'
+                        },
+                        smooth: true,
+                        itemStyle: {
+                            normal: {
+                                color: 'rgba(2, 197, 233, 0.2)',
+                                lineStyle: {
+                                    color: 'rgba(223, 107, 13, 0.2)'
+                                },
+                                areaStyle: {
+                                    color: 'rgba(223, 147, 233, 0.2)'
+                                }
+                            }
+                        },
+                        data: [10, 12, 21, 54, 60, 80, 71]
+                    },
+                    {
+                        name: '笔数',
+                        type: 'line',
+                        tooltip: {
+                            trigger: 'axis'
+                            // formatter: '{a} <br/>{b}日: {c}元'
+                        },
+                        yAxisIndex: 1,
+                        smooth: true,
+                        itemStyle: {
+                            normal: {
+                                color: 'rgba(2, 197, 233, 0.2)',
+                                lineStyle: {
+                                    color: 'rgba(2, 197, 233, 0.2)'
+                                },
+                                areaStyle: {
+                                    color: 'rgba(2, 197, 233, 0.2)'
+                                }
+                            }
+                        },
+                        data: [30, 32, 61, 24, 20, 90, 20]
+                    }
+                ]
+            }
+        }
+    }
+}
+</script>

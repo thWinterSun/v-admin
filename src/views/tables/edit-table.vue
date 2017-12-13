@@ -23,12 +23,8 @@
         <Row>
             <Table width="100%" ref="selection" :columns="columns2" :data="data4"></Table>
         </Row>
-        <Row>
-            <div style="margin: 10px;overflow: hidden">
-                <div style="float: right;">
-                    <Page :total="100" :current="1" @on-change="changePage" show-sizer></Page>
-                </div>
-            </div>
+        <Row class="mh_10">
+            <Page :total="100" :current="1" @on-change="changePage" show-sizer class="fr"></Page>
         </Row>
         <Row>
             <Modal :width="200" v-show="showMess">
@@ -133,7 +129,7 @@
                                         },
                                         style: {
                                             marginRight: '5px',
-                                            color: 'red',
+                                            color: '#A03434',
                                             fontSize: '22px'
                                         }
                                     }, [h('Icon',{

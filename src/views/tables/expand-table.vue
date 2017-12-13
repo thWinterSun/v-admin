@@ -2,14 +2,12 @@
     <div>
         <!-- 折叠table -->
         <Row>
-            <Table width="100%" ref="selection" :columns="columns2" :data="data4"></Table>
+            <Col span="24">
+                <Table width="100%" ref="selection" :columns="columns2" :data="data4"></Table>
+            </Col>
         </Row>
-        <Row>
-            <div style="margin: 10px;overflow: hidden">
-                <div style="float: right;">
-                    <Page :total="100" :current="1" @on-change="changePage" show-sizer></Page>
-                </div>
-            </div>
+        <Row class="mh_10">
+            <Page :total="100" :current="1" @on-change="changePage" show-sizer class="fr"></Page>
         </Row>
     </div>
 </template>
@@ -72,7 +70,7 @@
                                         },
                                         style: {
                                             marginRight: '5px',
-                                            color: 'red',
+                                            color: '#A03434',
                                             fontSize: '22px'
                                         }
                                     }, [h('Icon',{
@@ -107,7 +105,8 @@
                             {
                                 name: 'name1',
                                 age: 23,
-                                address: '拉马克'
+                                address: '拉马克',
+                                action: '删除'
                             }
                         ]
                     })
@@ -126,9 +125,7 @@
     }
 </script>
 <style lang="less">
-    .ivu-table-tbody {
-        .ivu-table-expanded-cell{
-            padding: 0px 0px 0px 50px;
-        }
+    td.ivu-table-expanded-cell{
+        padding:0
     }
 </style>

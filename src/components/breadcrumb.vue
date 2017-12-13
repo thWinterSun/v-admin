@@ -1,10 +1,8 @@
 <template lang="html">
-    <div class="layout-breadcrumb">
-        <Breadcrumb separator=">>" replace>
-            <BreadcrumbItem >{{path}}</BreadcrumbItem>
-            <BreadcrumbItem>{{$route.name}}</BreadcrumbItem>
-        </Breadcrumb>
-    </div>
+    <Breadcrumb separator="/" replace  class="layout-breadcrumb">
+        <BreadcrumbItem >{{path}}</BreadcrumbItem>
+        <BreadcrumbItem>{{$route.name}}</BreadcrumbItem>
+    </Breadcrumb>
 </template>
 
 <script>
@@ -24,14 +22,14 @@ export default {
 }
 </script>
 
-<style lang="css">
+<style lang="css" scoped>
     .layout-breadcrumb{
         height: 40px;
         z-index: 5;
         width: 100%;
         line-height: 40px;
-        background-color: #E7EBEE;
         padding: 0 2%;
+        /*border-bottom: 1px solid #DDDEE1;*/
     }
     .ivu-tabs-bar{
         margin-bottom: 0
