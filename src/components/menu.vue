@@ -1,12 +1,19 @@
 <style scoped lang="less">
-    .layout{
-        border: 1px solid #d7dde4;
-        background: #f5f7f9;
-    }
+    @media screen and (max-width: 1920px){
+      .layout-nav{
+        width: 1160px;
+        margin: 0 auto;
+      }
+	}
+    @media screen and (max-width: 1366px){
+      .layout-nav{
+        width: 940px;
+        margin: 0 auto;
+      }
+	}
     .layout-logo{
         width: 100px;
         height: 30px;
-        background-color: #eee;
         border-radius: 3px;
         float: left;
         position: relative;
@@ -18,49 +25,25 @@
       padding: 0px 20px;
       font-size: 20px;
     }
-    @media screen and (max-width: 1920px){
-      .layout-nav{
-        width: 1160px;
-        margin: 0 auto;
-      }
-		}
-    @media screen and (max-width: 1366px){
-      .layout-nav{
-        width: 940px;
-        margin: 0 auto;
-      }
-	}
-    /*自定义修改部分*/
-    .ivu-menu a{
-      color:#fff;
-    }
 
-    .ivu-menu-horizontal .ivu-menu-submenu .ivu-select-dropdown .ivu-menu-item:hover{
-        background: rgba(45,140,240,.9);
-        color:#fff;
-    }
+    /*自定义修改部分*/
+
     .menu-right{
         float:right;
-        color:#fff;
         .ivu-dropdown{
             min-width: 50px;
             padding:0 10px;
-            .ivu-dropdown-item:hover{
-                background: rgba(45,140,240,.9);
-                color:#fff;
-            }
-        }
-        .ivu-dropdown:hover{
-            background: #2b85e4
         }
     }
-    
-    
+
+    .layout .ivu-menu{
+        margin-bottom:2px;
+    }
 
 </style>
 <template>
     <div class="layout">
-        <Menu mode="horizontal" theme="primary" active-name="1">
+        <Menu mode="horizontal"  active-name="1">
             <div class="layout-nav">
                 <div class="layout-logo">
                     <h3 class="logo-text">LOGO</h3>
@@ -118,19 +101,19 @@
                     {
                         'children': [
                             {
-                                'name': '运行状态',
+                                'name': 'runstatus',
                                 'mId': '1-1',
                                 'route': '/home/runstatus'
                             },
                             {
-                                'name': '实时信息',
+                                'name': 'worldMap',
                                 'mId': '1-2',
-                                'route': '/home/realtime'
+                                'route': '/home/worldMap'
                             },
                             {
-                                'name': '运行日志',
+                                'name': 'globalMap',
                                 'mId': '1-3',
-                                'route': '/home/overview'
+                                'route': '/home/globalMap'
                             }
                         ],
                         'name': 'Home',
@@ -206,14 +189,14 @@
                                 'route': '/charts/echarts'
                             },
                             {
-                                'name': 'highCharts',
+                                'name': 'frappe charts',
                                 'mId': '4-2',
-                                'route': '/charts/highCharts'
+                                'route': '/charts/frappe'
                             },
                             {
-                                'name': 'D3 charts',
+                                'name': 'highCharts',
                                 'mId': '4-3',
-                                'route': '/charts/overview'
+                                'route': '/charts/highCharts'
                             }
                         ]
                     }

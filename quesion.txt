@@ -7,3 +7,16 @@
 现阶段完成：
 1、基本显示table显示
 2、基本输入框和选择框
+
+
+
+
+依赖包
+1、对jsx 语法的支持
+    npm install\
+    babel-plugin-syntax-jsx\
+    babel-plugin-transform-vue-jsx\
+    babel-helper-vue-jsx-merge-props\
+    babel-preset-env\
+    --save-dev
+    在.balbelrc 中的 "plugins"中添加 transform-vue-jsx,
