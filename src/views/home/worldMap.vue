@@ -1,50 +1,85 @@
 <style lang="css" scoped>
-    .ivu-col{
+    .chartBg{
         background-color: #495060;
         color: #a2a5a9;
     }
+    .ivu-table-cell{
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .cards{
+        height:200px;
+        background-color: #495060;
+        border-right: 2px solid #33363E;
+        border-bottom: 2px solid #33363E;
+        border-radius: 3px;
+        padding: 20px;
+    }
+    .midChart{
+        height:200px;
+        background-color: #232C35;
+        border-right: 1px solid  #495060;
+        padding: 20px;
+    }
     .tableBg{
         height:500px;
-        padding-top:30px;
+        padding-top:40px;
     }
     .mapChart{
         width:100%;
         height:500px;
     }
+    .pie{
+        width:50%;
+        height:160px;
+    }
 </style>
 <template lang="html">
     <div >
-        <!-- <Row>
-            <Col :lg="4">
+        <Row>
+            <Col :md="12" :lg="6">
+                <div class="cards">
+                    
+                </div>
             </Col>
-            <Col :lg="16">
+            <Col :md="12" :lg="6">
+                <div class="cards">
+                    
+                </div>
             </Col>
-            <Col :lg="4">
+            <Col :md="12" :lg="6">
+                <div class="cards">
+                    
+                </div>
+            </Col>
+            <Col :md="12" :lg="6">
+                <div class="cards">
+                    
+                </div>
             </Col>
         </Row>
         <Row>
-            <Col :lg="6">
-            </Col>
-            <Col :lg="6">
-            </Col>
-            <Col :lg="6">
-            </Col>
-            <Col :lg="6">
-            </Col>
-        </Row>
-        <Row>
-            <Col :lg="4">
-            </Col>
-            <Col :lg="16">
-            </Col>
-            <Col :lg="4">
-            </Col>
-        </Row> -->
-        <Row>
-            <Col :lg="16">
-                <chart :options="mapOptions" class="mapChart" id="cakechart"></chart>
+            <Col :lg="8">
+                <div class="midChart">
+                    <chart :options="pieOption1" class="pie" :theme="dark"></chart>
+                </div>
             </Col>
             <Col :lg="8">
+                <div class="midChart">
+                    
+                </div>
+            </Col>
+            <Col :lg="8">
+                <div class="midChart">
+                    
+                </div>
+            </Col>
+        </Row>
+        <Row class="chartBg">
+            <Col :md="24" :lg="16">
+                <chart :options="mapOptions" class="mapChart" id="cakechart"></chart>
+            </Col>
+            <Col :md="24" :lg="8">
                 <div class="tableBg">
                     <Table :columns="columns1" :data="data1" :show-header="false" :disabled-hover="true"></Table>
                 </div>
@@ -63,6 +98,42 @@ ECharts.registerMap('world', worldMap)
 export default {
     data () {
         return {
+            pieOption1: {
+                tooltip: {
+                    trigger: 'item',
+                    formatter: "{d}%"
+                },
+                series: [
+                    {
+                        name: '访问来源',
+                        type: 'pie',
+                        radius: ['50%', '70%'],
+                        avoidLabelOverlap: false,
+                        label: {
+                            normal: {
+                                show: false,
+                                position: 'center'
+                            },
+                            emphasis: {
+                                show: true,
+                                textStyle: {
+                                    fontSize: '30',
+                                    fontWeight: 'bold'
+                                }
+                            }
+                        },
+                        labelLine: {
+                            normal: {
+                                show: false
+                            }
+                        },
+                        data: [
+                            {value: 335, name: '直接访问'},
+                            {value: 310, name: '邮件营销'}
+                        ]
+                    }
+                ]
+            },
             columns1: [
                 {
                     title: 'Name',
@@ -85,9 +156,7 @@ export default {
                 },
                 {
                     title: 'Add',
-                    key: 'address',
-                    align: 'left',
-                    width: '100'
+                    key: 'address'
                 },
                 {
                     title: 'Sip',
@@ -101,8 +170,7 @@ export default {
                 },
                 {
                     title: 'Type',
-                    key: 'type',
-                    align: 'left'
+                    key: 'type'
                 }
             ],
             data1: [
@@ -131,13 +199,13 @@ export default {
                     name: 'Spain',
                     address: '1156',
                     sip: '66.48.10.212',
-                    dip: '101.234.117.108',
+                    dip: '101.34.117.108',
                     type: 'D.O.S'
                 },
                 {
                     name: 'New Caledonia',
                     address: '22',
-                    sip: '223.215.136.172',
+                    sip: '223.21.136.172',
                     dip: '118.72.210.99',
                     type: 'D.O.S'
                 },
@@ -159,7 +227,7 @@ export default {
                     name: 'Spain',
                     address: '1156',
                     sip: '66.48.10.212',
-                    dip: '101.234.117.108',
+                    dip: '101.234.17.108',
                     type: 'D.O.S'
                 }
             ],
