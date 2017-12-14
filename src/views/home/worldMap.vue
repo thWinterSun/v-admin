@@ -61,7 +61,7 @@
         <Row>
             <Col :lg="8">
                 <div class="midChart">
-                    <chart :options="pieOption1" class="pie" :theme="dark"></chart>
+                    <chart :options="pieOption1" class="pie" theme="dark"></chart>
                 </div>
             </Col>
             <Col :lg="8">
@@ -77,7 +77,7 @@
         </Row>
         <Row class="chartBg">
             <Col :md="24" :lg="16">
-                <chart :options="mapOptions" class="mapChart" id="cakechart"></chart>
+                <chart :options="mapOptions" class="mapChart" id="cakechart" theme="dark"></chart>
             </Col>
             <Col :md="24" :lg="8">
                 <div class="tableBg">
@@ -91,7 +91,7 @@
 <script>
 import ECharts from 'vue-echarts';
 // built-in theme
-import 'echarts/theme/dark'
+import 'echarts/theme/dark.js'
 // Map of China
 import worldMap from 'echarts/map/json/world.json'
 ECharts.registerMap('world', worldMap)

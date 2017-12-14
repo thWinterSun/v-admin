@@ -1,8 +1,9 @@
 <template lang="html">
-    <chart :options="option" class="echarts chartsbg"></chart>
+    <chart :options="option" class="echarts chartsbg" theme="dark"></chart>
 </template>
 
 <script>
+import 'echarts/theme/dark.js'
 export default {
     data () {
         return {

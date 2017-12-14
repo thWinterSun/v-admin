@@ -32,8 +32,46 @@
 </template>
 
 <script>
-import jsonp from 'jsonp'
+import axios from 'axios'
+import qs from 'qs'
 import bread from '../../components/breadcrumb'
+
+axios.interceptors.request.use((config) => {
+    if (config.method === 'post') {
+        config.data = qs.stringify(config.data);
+    }
+    return config;
+},(error) => {
+    // _.toast("错误的传参", 'fail');
+    return Promise.reject(error);
+});
+
+// 返回状态判断
+axios.interceptors.response.use((res) => {
+    if (res.data.success) {
+        // _.toast(res.data.msg);
+        return Promise.reject(res);
+    }
+    return res;
+});
+
+export function fetch (url, data) {
+    return new Promise((resolve, reject) => {
+        // let congit = {
+        //     headers: {'X-CSRFToken': 'BIXvXudH5PLLeXha2EGq5dxyAdG91x8i'}
+        // }
+        axios.post(url, data).then(res => {
+            if (res.data.code === 0) {
+                alert(res.data.content);
+            } else {
+                alert(res.data.content);
+            }
+        },res => {
+            alert(res.data.content);
+            console.log('调用失败');
+        })
+    })
+}
 export default {
     data () {
         return {
@@ -108,28 +146,15 @@ export default {
             // axios({
             //     method: 'post',
             //     url: 'https://192.168.13.186/data/',
-            // https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd=a&json=1
             //     data: JSON.stringify(Strdata),
-            //     timeout: 50000,
             //     headers: {
-            //         'X-CSRFToken': 'aEshU1tUVjnG4yRfObvP2h1CIE9Alg8K'
+            //         'Content-Type': 'application/x-www-form-urlencoded',
+            //         'X-CSRFToken': 'ZDILYouatYZRaHgSRKDcW4nimQSaexaF'
             //     }
             // }).then(function (res) {
-            //     console.log(res)
-            // }).catch(function (err) {
-            //     console.log(err);
+            //     return res.data;
             // });
-            jsonp('https://192.168.13.186/data/', {
-                type: 'post',
-                param: JSON.stringify(Strdata),
-                timeout: 50000
-            }, function (err, data) {
-                if (err) {
-                    console.error(err.message);
-                } else {
-                    console.log(data);
-                }
-            });
+            fetch('https://192.168.13.186/data/',Strdata);
         }
     }
 }

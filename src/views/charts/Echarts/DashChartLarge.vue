@@ -1,5 +1,5 @@
 <template>
-    <chart :options="option" class="echarts chartsbg" id="chart" > </chart>
+    <chart :options="option" class="echarts chartsbg" id="chart" theme="dark"> </chart>
 </template>
 
 <style scoped>
@@ -12,6 +12,7 @@
 </style>
 
 <script>
+import 'echarts/theme/dark.js'
 export default {
     name: 'dashChartLarge',
     data () {
