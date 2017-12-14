@@ -47,3 +47,11 @@
 1、研究frappe-charts，尝试将frappe图标放入项目，遇到问题未成功
 2、写文件上传的静态页
 3、修改ellint 使它不强制字符串使用单引号
+1、对jsx 语法的支持
+    npm install\
+    babel-plugin-syntax-jsx\
+    babel-plugin-transform-vue-jsx\
+    babel-helper-vue-jsx-merge-props\
+    babel-preset-env\
+    --save-dev
+    在.balbelrc 中的 "plugins"中添加 transform-vue-jsx,
