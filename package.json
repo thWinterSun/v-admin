@@ -11,9 +11,13 @@
     "lint": "eslint --ext .js,.vue src"
   },
   "dependencies": {
+    "axios": "^0.17.1",
     "frappe-charts": "^0.0.8",
     "iview": "^2.5.1",
     "jsonp": "^0.2.1",
+    "pako": "^1.0.6",
+    "promise": "^8.0.1",
+    "promise.prototype.finally": "^3.1.0",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1"
   },

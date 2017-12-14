@@ -12,7 +12,7 @@
                     <Col span="24">
                         <Table :columns="columns1" :data="data1"></Table>
                     </Col>
-                </Row>    
+                </Row>
                 <Row style="margin: 10px 0">
                     <Page :total="100" show-sizer style="float:right "></Page>
                 </Row>
@@ -22,12 +22,12 @@
                            获取
                        </Button>
                     </Col>
-                </Row>  
+                </Row>
             </TabPane>
             <TabPane label="标签二" name="name2">标签二的内容</TabPane>
             <TabPane label="标签三" name="name3">标签三的内容</TabPane>
         </Tabs>
-        
+
     </div>
 </template>
 
@@ -119,10 +119,10 @@ export default {
             // }).catch(function (err) {
             //     console.log(err);
             // });
-            jsonp('https://192.168.13.186/data/', {
-                type: 'post',
+            jsonp('https://192.168.152.128/data/', {
+                type: 'GET',
                 param: JSON.stringify(Strdata),
-                timeout: 50000
+                timeout: 0
             }, function (err, data) {
                 if (err) {
                     console.error(err.message);
