@@ -25,7 +25,7 @@
       padding: 0px 20px;
       font-size: 20px;
     }
-    
+
     /*自定义修改部分*/
 
     .menu-right{
@@ -35,7 +35,7 @@
             padding:0 10px;
         }
     }
-    
+
     .layout .ivu-menu{
         margin-bottom:2px;
     }

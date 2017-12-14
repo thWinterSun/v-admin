@@ -6,7 +6,18 @@
 
 现阶段完成：
 1、基本显示table显示
-2、基本输入框和选择框
+
+
+依赖包
+1、对jsx 语法的支持
+    npm install\
+    babel-plugin-syntax-jsx\
+    babel-plugin-transform-vue-jsx\
+    babel-helper-vue-jsx-merge-props\
+    babel-preset-env\
+    --save-dev
+    在.balbelrc 中的 "plugins"中添加 transform-vue-jsx,
+
 //11.28 by dai
 1、增加2个风格，风别是深灰风格和蓝白风格，放在assets/themes中，暂时通过home中引入切换。
 
@@ -32,11 +43,13 @@
 1、修改test-table布局错乱问题
 2、修改expand-table布局错乱及子tr错乱问题。
 
-//12.7 by dai 
+//12.7 by dai
 1、研究frappe-charts，尝试将frappe图标放入项目，遇到问题未成功
 2、写文件上传的静态页
 3、修改ellint 使它不强制字符串使用单引号
 
+
 //12.11-13 by dai 
 1、研究地图组件及webGl 引入
 2、研究跨域请求数据
+
