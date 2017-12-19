@@ -32,46 +32,7 @@
 </template>
 
 <script>
-import axios from 'axios'
-import qs from 'qs'
 import bread from '../../components/breadcrumb'
-
-axios.interceptors.request.use((config) => {
-    if (config.method === 'post') {
-        config.data = qs.stringify(config.data);
-    }
-    return config;
-},(error) => {
-    // _.toast("错误的传参", 'fail');
-    return Promise.reject(error);
-});
-
-// 返回状态判断
-axios.interceptors.response.use((res) => {
-    if (res.data.success) {
-        // _.toast(res.data.msg);
-        return Promise.reject(res);
-    }
-    return res;
-});
-
-export function fetch (url, data) {
-    return new Promise((resolve, reject) => {
-        // let congit = {
-        //     headers: {'X-CSRFToken': 'BIXvXudH5PLLeXha2EGq5dxyAdG91x8i'}
-        // }
-        axios.post(url, data).then(res => {
-            if (res.data.code === 0) {
-                alert(res.data.content);
-            } else {
-                alert(res.data.content);
-            }
-        },res => {
-            alert(res.data.content);
-            console.log('调用失败');
-        })
-    })
-}
 export default {
     data () {
         return {
@@ -143,17 +104,7 @@ export default {
             this.getTableData(this.getJson);
         },
         getTableData (Strdata) {
-            // axios({
-            //     method: 'post',
-            //     url: 'https://192.168.13.186/data/',
-            //     data: JSON.stringify(Strdata),
-            //     headers: {
-            //         'Content-Type': 'application/x-www-form-urlencoded',
-            //         'X-CSRFToken': 'ZDILYouatYZRaHgSRKDcW4nimQSaexaF'
-            //     }
-            // }).then(function (res) {
-            //     return res.data;
-            // });
+            // fetch('https://192.168.13.186/data/',Strdata);
             fetch('https://192.168.13.186/data/',Strdata);
         }
     }
