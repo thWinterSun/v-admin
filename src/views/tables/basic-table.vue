@@ -32,7 +32,8 @@
 </template>
 
 <script>
-import jsonp from 'jsonp'
+import axios from '../../http'
+// import pot from '../../http'
 import bread from '../../components/breadcrumb'
 export default {
     data () {
@@ -105,31 +106,14 @@ export default {
             this.getTableData(this.getJson);
         },
         getTableData (Strdata) {
-            // axios({
-            //     method: 'post',
-            //     url: 'https://192.168.13.186/data/',
-            // https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd=a&json=1
-            //     data: JSON.stringify(Strdata),
-            //     timeout: 50000,
-            //     headers: {
-            //         'X-CSRFToken': 'aEshU1tUVjnG4yRfObvP2h1CIE9Alg8K'
-            //     }
-            // }).then(function (res) {
-            //     console.log(res)
-            // }).catch(function (err) {
-            //     console.log(err);
-            // });
-            jsonp('https://192.168.152.128/data/', {
-                type: 'GET',
-                param: JSON.stringify(Strdata),
-                timeout: 0
-            }, function (err, data) {
-                if (err) {
-                    console.error(err.message);
-                } else {
-                    console.log(data);
-                }
-            });
+            return new Promise((resolve, reject) => {
+                axios.post('/data/',Strdata)
+                    .then(response => {
+                        resolve(response);
+                    }, err => {
+                        reject(err);
+                    })
+            })
         }
     }
 }
