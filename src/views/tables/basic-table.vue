@@ -32,8 +32,7 @@
 </template>
 
 <script>
-import axios from '../../http'
-// import pot from '../../http'
+import {post} from '../../http'
 import bread from '../../components/breadcrumb'
 export default {
     data () {
@@ -106,19 +105,14 @@ export default {
             this.getTableData(this.getJson);
         },
         getTableData (Strdata) {
-<<<<<<< HEAD
             return new Promise((resolve, reject) => {
-                axios.post('/data/',Strdata)
+                post('/data/',Strdata)
                     .then(response => {
                         resolve(response);
                     }, err => {
                         reject(err);
                     })
             })
-=======
-            // fetch('https://192.168.13.186/data/',Strdata);
-            fetch('https://192.168.13.186/data/',Strdata);
->>>>>>> 5d4a97df316f4d80b1c544974da3462d2895f307
         }
     }
 }
