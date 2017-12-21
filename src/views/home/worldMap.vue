@@ -39,22 +39,22 @@
         <Row>
             <Col :md="12" :lg="6">
                 <div class="cards">
-                    
+
                 </div>
             </Col>
             <Col :md="12" :lg="6">
                 <div class="cards">
-                    
+
                 </div>
             </Col>
             <Col :md="12" :lg="6">
                 <div class="cards">
-                    
+
                 </div>
             </Col>
             <Col :md="12" :lg="6">
                 <div class="cards">
-                    
+
                 </div>
             </Col>
         </Row>
@@ -66,12 +66,12 @@
             </Col>
             <Col :lg="8">
                 <div class="midChart">
-                    
+
                 </div>
             </Col>
             <Col :lg="8">
                 <div class="midChart">
-                    
+
                 </div>
             </Col>
         </Row>
@@ -249,7 +249,7 @@ export default {
                     {
                         name: 'World ',
                         type: 'map',
-                        mapType: 'world', 
+                        mapType: 'world',
                         // roam: true, 允许缩放
                         // zoom: 1.2,
                         label: {
@@ -460,4 +460,3 @@ export default {
     }
 }
 </script>
-
