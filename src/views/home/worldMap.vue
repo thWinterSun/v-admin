@@ -249,8 +249,8 @@ export default {
                     {
                         name: 'World ',
                         type: 'map',
-                        mapType: 'world',
-                        roam: true,
+                        mapType: 'world', 
+                        // roam: true, 允许缩放
                         // zoom: 1.2,
                         label: {
                             emphasis: {
