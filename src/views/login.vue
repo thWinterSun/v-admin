@@ -76,7 +76,6 @@ export default {
             } else {
                 this.$Message.error('用户名错误');
             }
-            // fetch('https://192.168.188.128/login/',this.loginData);
         }
     },
     computed: {

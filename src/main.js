@@ -2,8 +2,10 @@ import Vue from 'vue'
 import router from './router'
 import iview from 'iview'
 import 'iview/dist/styles/iview.css'
-import ECharts from 'vue-echarts';
 import app from './App'
+import ECharts from 'vue-echarts';
+import theme from './assets/themes/dark.json'
+ECharts.registerTheme('dark', theme)
 Vue.use(iview)
 /* echarts */
 Vue.component('chart', ECharts)
@@ -23,5 +25,7 @@ new Vue({
     el: '#app',
     router,
     template: '<app/>',
-    components: { app }
+    components: {
+        app
+    }
 })

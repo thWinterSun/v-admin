@@ -3,7 +3,6 @@
 </template>
 
 <script>
-import 'echarts/theme/dark.js'
 export default {
     data () {
         return {
@@ -12,18 +11,12 @@ export default {
                     trigger: 'axis',
                     axisPointer: {
                         type: 'cross',
-                        animation: false,
-                        label: {
-                            backgroundColor: '#505765'
-                        }
+                        animation: false
                     }
                 },
                 legend: {
                     data: ['流量', '降雨量'],
-                    x: 'center',
-                    textStyle: {
-                        color: '#9EB2BF'
-                    }
+                    x: 'center'
                 },
                 xAxis: [
                     {
@@ -31,10 +24,7 @@ export default {
                         boundaryGap: false,
                         axisLine: {onZero: false},
                         axisLabel: {
-                            show: true,
-                            textStyle: {
-                                color: '#9EB2BF'
-                            }
+                            show: true
                         },
                         data: [
                             '2009/6/12 2:00', '2009/6/12 3:00', '2009/6/12 4:00', '2009/6/12 5:00', '2009/6/12 6:00', '2009/6/12 7:00', '2009/6/12 8:00', '2009/6/12 9:00', '2009/6/12 10:00', '2009/6/12 11:00', '2009/6/12 12:00', '2009/6/12 13:00', '2009/6/12 14:00', '2009/6/12 15:00', '2009/6/12 16:00', '2009/6/12 17:00', '2009/6/12 18:00', '2009/6/12 19:00', '2009/6/12 20:00', '2009/6/12 21:00', '2009/6/12 22:00', '2009/6/12 23:00',
@@ -99,22 +89,6 @@ export default {
                     {
                         name: '流量(m^3/s)',
                         type: 'value',
-                        axisLabel: {
-                            show: true,
-                            textStyle: {
-                                color: '#9EB2BF'
-                            }
-                        },
-                        axisLine: {
-                            lineStyle: {
-                                color: '#9EB2BF'
-                            }
-                        },
-                        splitLine: {
-                            lineStyle: {
-                                color: ['#aaa']
-                            }
-                        },
                         max: 500
                     },
                     {
@@ -122,22 +96,6 @@ export default {
                         nameLocation: 'start',
                         max: 5,
                         type: 'value',
-                        axisLabel: {
-                            show: true,
-                            textStyle: {
-                                color: '#9EB2BF'
-                            }
-                        },
-                        axisLine: {
-                            lineStyle: {
-                                color: '#9EB2BF'
-                            }
-                        },
-                        splitLine: {
-                            lineStyle: {
-                                color: ['#aaa']
-                            }
-                        },
                         inverse: true
                     }
                 ],
