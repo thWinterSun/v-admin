@@ -22,7 +22,12 @@ export default {
                     {
                         type: 'category',
                         boundaryGap: false,
-                        axisLine: {onZero: false},
+                        axisLine: {
+                            onZero: false
+                        },
+                        splitLine: {
+                            show: false
+                        },
                         axisLabel: {
                             show: true
                         },

@@ -24,7 +24,7 @@ export default new Router({
             children: [
                 { path: '', component: resolve => { require(['../views/home/homeBody.vue'], resolve) } },
                 { path: 'runstatus', title: 'runstatus', name: 'runstatus', component: resolve => { require(['../views/home/homeBody.vue'], resolve) } },
-                { path: 'worldMap', title: 'worldMap', name: 'worldMap', component: resolve => { require(['../views/home/worldMap.vue'], resolve) } },
+                { path: 'worldMap', title: 'worldMap', name: 'worldMap', component: resolve => { require(['../views/home/intrusion.vue'], resolve) } },
                 { path: 'globalMap', title: 'globalMap', name: 'globalMap', component: resolve => { require(['../views/home/global.vue'], resolve) } }
             ]
         },

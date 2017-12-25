@@ -9,16 +9,15 @@
         padding: 20px;
     }
     .midChart{
-        height:340px;
+        height:330px;
         padding: 20px;
     }
     .tableBg{
-        height:500px;
-        padding-top:40px;
+        height:340px;
     }
     .mapChart{
         width:100%;
-        height:500px;
+        height:660px;
     }
     .pie{
         width:50%;
@@ -32,25 +31,25 @@
                 <chart :options="mapOptions" class="mapChart" id="cakechart" theme="dark"></chart>
             </Col>
             <Col :md="24" :lg="8">
-                <div class="tableBg">
-                    <Table :columns="columns1" :data="data1" :show-header="false" :disabled-hover="true"></Table>
+                <div class="midChart">
+                    <bar></bar>
+                </div>
+            </Col>
+            <Col :md="24" :lg="8">
+                <div class="midChart">
+                    <bar></bar>
                 </div>
             </Col>
         </Row>
         <Row>
-            <Col :lg="8">
-                <div class="midChart">
-                    <bar></bar>
+            <Col :md="24" :lg="16">
+                <div class="tableBg">
+                    <Table :columns="columns1" :data="data1" :show-header="false" :disabled-hover="true"></Table>
                 </div>
             </Col>
-            <Col :lg="8">
-                <div class="midChart">
+            <Col :md="24" :lg="8">
+                <div class="midChart" style="height:338px;">
                     <pie></pie>
-                </div>
-            </Col>
-            <Col :lg="8">
-                <div class="midChart">
-                    <bar></bar>
                 </div>
             </Col>
         </Row>
@@ -153,13 +152,6 @@ export default {
                     address: '53',
                     sip: '66.48.10.212',
                     dip: '39.0.6.158',
-                    type: 'D.O.S'
-                },
-                {
-                    name: 'Spain',
-                    address: '1156',
-                    sip: '66.48.10.212',
-                    dip: '101.234.17.108',
                     type: 'D.O.S'
                 }
             ],

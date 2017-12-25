@@ -18,7 +18,7 @@ export default {
                     trigger: 'axis'
                 },
                 legend: {
-                    left: 'center',
+                    bottom: '3%',
                     itemWidth: 12,
                     itemHeight: 12,
                     data: ['单价', '笔数']
@@ -27,6 +27,9 @@ export default {
                     {
                         type: 'category',
                         boundaryGap: false,
+                        splitLine: {
+                            show: false
+                        },
                         data: ['1', '5', '10', '15', '20', '25', '31']
                     }
                 ],

@@ -203,7 +203,8 @@ export default {
                         stack: 'IP',
                         label: {
                             normal: {
-                                show: true
+                                show: true,
+                                position: 'right'
                             }
                         },
                         barWidth: 15,
@@ -211,7 +212,16 @@ export default {
                         animationDelayUpdate: function (idx) {
                             return idx * 5;
                         },
-                        data: [2.6, 5.9, 9.0, 26.4, 28.7, 70.7, 175.6, 182.2, 48.7, 18.8, 6.0, 2.3]
+                        data: [2.6, 5.9, 9.0, 26.4, 28.7, 70.7, 175.6, 182.2, 48.7, 18.8, 6.0, 2.3],
+                        itemStyle: {
+                            normal: {
+                                color: function (params) {
+                                    // var colorList = ["#dd6b66","#759aa0","#e69d87","#8dc1a9","#ea7e53","#eedd78","#73a373","#73b9bc","#7289ab","#91ca8c","#f49f42"];
+                                    var colorList = ['#d87c7c','#919e8b', '#d7ab82', '#6e7074','#61a0a8','#efa18d', '#787464', '#cc7e63', '#724e58', '#4b565b','#d87c7c','#919e8b'];
+                                    return colorList[params.dataIndex];
+                                }
+                            }
+                        }
                     }
                 ]
             }
