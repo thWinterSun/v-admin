@@ -4,20 +4,18 @@
  */
 
 import axios from 'axios'
-import { getCookie } from './cookies'
 
 // axios 配置
 axios.defaults.timeout = 5000;
-axios.defaults.baseURL = 'https://192.168.152.128'
+axios.defaults.baseURL = 'https://192.168.13.114'
 axios.defaults.withCredentials = true;
+// axios.defaults.headers.common = {
+//     'X-CSRFToken': 'drNMVMQaf8CgE21TzTOW3XwVz1v55uvs',
+//     'X-Requested-With': 'XMLHttpRequest'
+// }
 // http request 拦截器
 axios.interceptors.request.use(
     config => {
-        if (getCookie('csrftoken')) {
-            config.headers = {
-                'X-CSRFToken': getCookie('csrftoken')
-            }
-        }
         return config;
     },
     err => {
@@ -27,7 +25,7 @@ axios.interceptors.request.use(
 // http response 拦截器
 axios.interceptors.response.use(
     response => {
-        console.dir(response);
+        // console.dir(response);
         return response;
     },
 
@@ -35,7 +33,6 @@ axios.interceptors.response.use(
         if (error.response) {
             console.log(error.response)
         }
-        // console.log(JSON.stringify(error));//console : Error: Request failed with status code 402
         return Promise.reject(error)
     });
 

@@ -86,7 +86,7 @@ export default {
                     'module': 'object',
                     'function': 'get_obj_service',
                     'page_index': 1,
-                    'page_size': 20
+                    'page_size': 100
                 },
                 'body': [{
                     'name': '',
@@ -109,6 +109,7 @@ export default {
                 post('/data/',Strdata)
                     .then(response => {
                         resolve(response);
+                        // console.log(response.data[0]);
                     }, err => {
                         reject(err);
                     })
