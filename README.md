@@ -1,22 +1,79 @@
-# v-admin
+### 项目技术架构
+***
+*  vue-cli
+*  vue
+*  axios
+*  vue-router
+*  vuex
+*  iview
+*  less
+*  webpack
+*  echarts
 
->一个基于Vue + iview + v-router + webpack开发的后台管理系统
+### 安装
+
+***
+项目地址: (`git clone`)
+```shell
+git clone https://github.com/thWinterSun/v-admin.git
+```
+通过`npm`安装本地服务第三方依赖模块(需要已安装[Node.js](https://nodejs.org/))
+
+```
+npm install
+```
+启动服务: (http://localhost:8888)
+
+```
+npm run dev
+```
+发布代码
+
+```
+npm run build
+```
+***
+
+## 功能
+
+- 登录/登出
+- 权限管理
+    - 列表过滤
+    - 权限切换
+- 多语言切换
+- 组件
+    - 可拖拽列表
+    - 文件上传
+    - 数字渐变
+- 表单编辑
+- 表格
+    - 可编辑表格
+        - 行内编辑
+        - 单元格编辑
+    - 可搜索表格
+- 错误页面
+    - 403页面
+    - 404页面
+- 换肤
+- 收缩侧边栏
+- tag标签导航
+- 面包屑导航
+- 消息中心
+- 个人中心
+
+### 目录结构
 
 
-##文件结构
-
-``` bash
-
-│  .babelrc
-│  .editorconfig
-│  .eslintignore
-│  .eslintrc.js   --代码检查工具配置
-│  .gitignore     --git配置
-│  .postcssrc.js
-│  index.html     --项目入口html
-│  package.json
-│  README.md  	   --项目说明文件
-│  td_icon.ico
+├──.babelrc
+├──.editorconfig
+├──.eslintignore
+├──.eslintrc.js   --代码检查工具配置
+├──.gitignore     --git配置
+├──.postcssrc.js
+├──index.html     --项目入口html
+├──package.json
+├──README.md  	   --项目说明文件
+├──td_icon.ico
 │  
 ├─build
 │      build.js
