@@ -62,7 +62,7 @@ npm run build
 - 个人中心
 
 ### 目录结构
-
+<pre>
 
 ├──.babelrc
 ├──.editorconfig
