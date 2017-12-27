@@ -148,6 +148,14 @@ npm run build
 </pre>
 
 ![image](https://github.com/thWinterSun/v-admin/blob/master/demo-img/2017-12-26_150412.jpg)
+
+![image](https://github.com/thWinterSun/v-admin/blob/master/demo-img/2017-12-26_150525.jpg)
+
+![image](https://github.com/thWinterSun/v-admin/blob/master/demo-img/2017-12-06_093758.jpg)
+
+![image](https://github.com/thWinterSun/v-admin/blob/master/demo-img/2017-12-06_093831.jpg)
+
+![image](https://github.com/thWinterSun/v-admin/blob/master/demo-img/2017-12-26_150602.jpg)
 ## License
 [MIT](http://opensource.org/licenses/MIT)
 
