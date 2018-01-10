@@ -1,11 +1,10 @@
 import Vue from 'vue'
 import router from './router'
+import store from './vuex/store'
 import iview from 'iview'
 import 'iview/dist/styles/iview.css'
-import app from './App'
 import ECharts from 'vue-echarts';
-import theme from './assets/themes/dark.json'
-ECharts.registerTheme('dark', theme)
+import app from './App'
 Vue.use(iview)
 /* echarts */
 Vue.component('chart', ECharts)
@@ -24,8 +23,7 @@ router.afterEach(route => {
 new Vue({
     el: '#app',
     router,
+    store,
     template: '<app/>',
-    components: {
-        app
-    }
+    components: { app }
 })
