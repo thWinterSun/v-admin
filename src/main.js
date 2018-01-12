@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import router from './router'
-import store from './vuex/store'
+// import store from './vuex/store'
 import iview from 'iview'
 import 'iview/dist/styles/iview.css'
 import ECharts from 'vue-echarts';
@@ -23,7 +23,7 @@ router.afterEach(route => {
 new Vue({
     el: '#app',
     router,
-    store,
+    // store,
     template: '<app/>',
     components: { app }
 })
