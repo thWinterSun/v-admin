@@ -30,6 +30,31 @@ const state = {
             "search": '',
             "is_detail": false
         }]
+    },
+    get_role_list: {
+        "head": {
+            "module": "admin",
+            "function": "get_authority",
+            "page_index": 1,
+            "page_size": 20
+        },
+        "body": [{
+            "action": 1,
+            "is_detail": false
+        }]
+    },
+    get_role: {
+        "head": {
+            "module": "admin",
+            "function": "get_authority",
+            "page_index": 1,
+            "page_size": 20
+        },
+        "body": [{
+            "name": "all",
+            "action": 1,
+            "is_detail": true
+        }]
     }
 }
 

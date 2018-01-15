@@ -128,8 +128,13 @@
                         'router': '/table',
                         'children': [
                             {
-                                'name': 'Basic Table',
+                                'name': 'role Set',
                                 'mId': '2-1',
+                                'route': '/table/role'
+                            },
+                            {
+                                'name': 'Basic Table',
+                                'mId': '2-2',
                                 'route': '/table/basictable'
                             },
                             {
