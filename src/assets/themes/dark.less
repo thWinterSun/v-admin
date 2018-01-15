@@ -90,6 +90,17 @@ body{
     //     background-color: @dgray;
     // 
     // }
+    // Button
+    .ivu-btn-cir {
+        color: #57a3f3;
+        background-color: @dgray;
+        border:1px solid #57a3f3;
+    }
+    .ivu-btn-cir:hover {
+        color: #eee;
+        background-color: #2d8cf0;
+        border:1px solid #2d8cf0;
+    }
     // table表头整体颜色及表头th、主体td背景及字体颜色设置
     .ivu-table{
         background-color: @dgray;
@@ -123,8 +134,12 @@ body{
         background-color: @bgray;
         border:1px solid @dgray;
         a{
-            color:@b;
+            color:@e;
         }
+    }
+    .ivu-page-item-active {
+        background-color: #2d8cf0;
+        border-color: #2d8cf0;
     }
     //breadcrumb
     .layout-breadcrumb{
@@ -186,8 +201,8 @@ body{
         border:1px solid @lgray;
     }
     .ivu-switch-checked{
-        background-color: @e;
-        border: 1px solid @dgray;
+        // border-color: #2d8cf0;
+        background-color: #57A3F3;
     }
     .ivu-switch:after{
     background-color: @ca;
@@ -244,6 +259,7 @@ body{
     .ivu-tree-arrow{
         color:#eee;
     }
+    
     //updata
     .ivu-btn.ivu-btn-ghost {
         color: #2b85e4;
@@ -251,6 +267,9 @@ body{
         border-color: #2b85e4;
     }
     //echarts background
+    .chartBg{
+        background-color: @dgray;
+    }
     .ivu-tabs-tabpane{
         background-color: @dgray;
     }
@@ -258,23 +277,5 @@ body{
     .layout-copy{
         background-color: @dgray;
         color: @lblue;
-    }
-    //charts 
-    .chartBg{
-        background-color: @dgray;
-        color: #a2a5a9;
-    }
-    .cards{
-        background-color: @dgray;
-        border-right: 2px solid #33363E;
-        border-bottom: 2px solid #33363E;
-    }
-    .midChart{
-        background-color: #232C35;
-        border-right: 1px solid  @dgray;
-        border-top: 1px solid  @dgray;
-    }
-    .tableBg{
-        border-top: 1px solid #33363E;
     }
 }

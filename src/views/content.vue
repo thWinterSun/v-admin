@@ -5,7 +5,16 @@
         <top-menus></top-menus>
         <!--主体内容  -->
         <div class="layout-content">
-            <router-view></router-view>
+            <Row>
+               <Col span="24">
+                   <bread></bread>
+               </Col>
+           </Row>
+           <Row>
+               <Col span="24">
+                   <router-view></router-view>
+               </Col>
+           </Row>
         </div>
         <foot></foot>
     </div>
@@ -13,12 +22,14 @@
 
 <script>
 import topMenus from '../components/menu.vue'
+import bread from '../components/breadcrumb'
 import footer from '../components/footer'
 export default {
     name: 'home',
     components: {
         'top-menus': topMenus,
-        'foot': footer
+        'foot': footer,
+        bread
     }
 }
 </script>

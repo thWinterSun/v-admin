@@ -1,11 +1,6 @@
 <template lang="html">
     <!--基本table以数据现在为主，包括table和分页  -->
     <div class="">
-        <Row>
-            <Col span="24">
-                <bread></bread>
-            </Col>
-        </Row>
         <Tabs>
             <TabPane label="标签一" name="name1">
                 <Row>

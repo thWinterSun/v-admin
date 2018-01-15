@@ -1,11 +1,6 @@
 <template lang="html">
     <div >
         <Row>
-            <Col span="24">
-                <bread></bread>
-            </Col>
-        </Row>
-        <Row>
             <tab-pane></tab-pane>
         </Row>
     </div>

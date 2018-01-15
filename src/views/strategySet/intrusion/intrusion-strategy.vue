@@ -1,47 +1,46 @@
 <template lang="html">
+    <!--基本table以数据现在为主，包括table和分页  -->
     <div>
+        
         <Row>
             <Col span="24">
-                <updata-tabs></updata-tabs>
+                <tab-pane></tab-pane>
             </Col>
         </Row>
     </div>
 </template>
 
 <script>
-import bread from '../../components/breadcrumb'
-import normal from './updatas/normalUpdata'
-import drag from './updatas/dragUpdata'
+import intruTable from './intruTable.vue'
+import intruFrom from './intruFrom.vue'
+import filt from '../../tables/filter-table'
 export default {
-    data () {
-        return {
-        }
-    },
+    name: 'intrusion-strategy',
     components: {
-        bread,
-        normal,
-        drag,
-        'updataTabs': {
+        'intrusion': intruTable,
+        'intruFrom': intruFrom,
+        'events': filt,
+        'tabPane': {
             functional: true,
             render: function (h) {
                 let tabsArr = [];
                 let tabs = [
                     {
-                        name: '普通上传',
-                        tab: 'normal'
+                        name: '入侵防护',
+                        tp: 'intrusion'
                     },
                     {
-                        name: '拖拽上传',
-                        tab: 'drag'
+                        name: '事件集',
+                        tp: 'events'
                     }
-                ]
-                for (let i = 0; i < tabs.length; i++) {
+                ];
+                for (let i in tabs) {
                     tabsArr.push(h('TabPane',{
                         attrs: {
                             label: tabs[i].name
                         }
                     },[
-                        h(tabs[i].tab)
+                        h(tabs[i].tp)
                     ]))
                 }
                 return h('Tabs',[tabsArr])

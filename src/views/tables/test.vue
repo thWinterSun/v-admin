@@ -2,11 +2,6 @@
     <div>
         <Row>
             <Col span="24">
-                <bread></bread>
-            </Col>
-        </Row>
-        <Row>
-            <Col span="24">
                 <tab-pane></tab-pane>
             </Col>
         </Row>

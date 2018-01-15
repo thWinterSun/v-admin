@@ -133,24 +133,9 @@
                                 'route': '/table/basictable'
                             },
                             {
-                                'name': 'filter Table',
-                                'mId': '2-2',
-                                'route': '/table/filtertable'
-                            },
-                            {
                                 'name': 'Edit Table',
                                 'mId': '2-3',
                                 'route': '/table/edittable'
-                            },
-                            {
-                                'name': 'test',
-                                'mId': '2-4',
-                                'route': '/table/test'
-                            },
-                            {
-                                'name': 'expand table',
-                                'mId': '2-5',
-                                'route': '/table/expandtable'
                             }
                         ]
                     },
@@ -164,11 +149,6 @@
                                 'name': 'Basic Form',
                                 'mId': '3-1',
                                 'route': '/form/basicform'
-                            },
-                            {
-                                'name': 'validate Form',
-                                'mId': '3-2',
-                                'route': '/form/validateform'
                             },
                             {
                                 'name': 'updata Form',
@@ -187,16 +167,6 @@
                                 'name': 'Echarts',
                                 'mId': '4-1',
                                 'route': '/charts/echarts'
-                            },
-                            {
-                                'name': 'frappe charts',
-                                'mId': '4-2',
-                                'route': '/charts/frappe'
-                            },
-                            {
-                                'name': 'highCharts',
-                                'mId': '4-3',
-                                'route': '/charts/highCharts'
                             }
                         ]
                     }
