@@ -12,13 +12,13 @@
 <script>
 import roleList from './roleTable.vue'
 import roleForm from './roleForm.vue'
-import filt from '../tables/filter-table'
+import user from './userTable'
 export default {
     name: 'rolePage',
     components: {
         'roleList': roleList,
         'roleForm': roleForm,
-        'events': filt,
+        'userList': user,
         'tabPane': {
             functional: true,
             render: function (h) {
@@ -29,8 +29,8 @@ export default {
                         tp: 'roleList'
                     },
                     {
-                        name: '事件集',
-                        tp: 'events'
+                        name: '用户设置',
+                        tp: 'userList'
                     }
                 ];
                 for (let i in tabs) {

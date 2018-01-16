@@ -14,10 +14,10 @@ export const loginRouter = {
 export default new Router({
     // mode: 'history',
     routes: [
-        // {
-        //     path: '*',
-        //     redirect: '/login'
-        // },
+        {
+            path: '*',
+            redirect: '/login'
+        },
         {
             path: '/home',
             component: Home,
@@ -37,7 +37,8 @@ export default new Router({
                 { path: 'edittable', title: '编辑表格', name: 'edittable', component: resolve => { require(['../views/strategySet/intrusion/intrusion-strategy.vue'], resolve) } },
                 { path: 'edittable/add', title: 'add', name: '编辑添加', component: resolve => { require(['../views/strategySet/intrusion/intruFrom.vue'], resolve) } },
                 { path: 'role', title: '角色', name: '角色管理', component: resolve => { require(['../views/systemSet/role.vue'], resolve) } },
-                { path: 'role/add', title: 'add', name: '角色添加', component: resolve => { require(['../views/systemSet/roleForm.vue'], resolve) } }
+                { path: 'role/add', title: 'add', name: '角色添加', component: resolve => { require(['../views/systemSet/roleForm.vue'], resolve) } },
+                { path: 'user/add', title: 'add', name: '用户添加', component: resolve => { require(['../views/systemSet/userAdd.vue'], resolve) } }
             ]
         },
         {

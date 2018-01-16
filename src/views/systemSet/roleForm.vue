@@ -9,7 +9,11 @@
                     <Input v-model="desc" type="text"  placeholder="请输入描述" class="with_200"/>
                 </FormItem>
                 <FormItem label="菜单：">
-                    <Tree :data="data4" show-checkbox multiple></Tree>
+                    <Tree :data="MenuTree" show-checkbox multiple></Tree>
+                </FormItem>
+                <FormItem label="">
+                    <Button type="primary" @click="submitRole">提交</Button>
+                    <Button type="default" @click="closeForm">关闭</Button>
                 </FormItem>
             </Form>
         </TabPane>
@@ -24,7 +28,7 @@ export default {
         return {
             rouleName: '',
             desc: '',
-            data4: [
+            MenuTree: [
                 {
                     title: 'table',
                     expand: true,
@@ -127,7 +131,7 @@ export default {
                 post('/data/',Strdata)
                     .then(response => {
                         resolve(response);
-                        console.dir(response.data[0].data[0]);
+                        console.log(response.data[0].data[0]);
                         var res = response.data[0].data[0];
                         this.rouleName = res.name;
                         this.desc = res.desc;
@@ -135,6 +139,12 @@ export default {
                         reject(err);
                     })
             })
+        },
+        submitRole () {
+            console.log(this.MenuTree)
+        },
+        closeForm () {
+            this.$router.replace({ path: '/table/role/' })
         }
     }
 }
