@@ -21,9 +21,10 @@
 </template>
 
 <script>
-import { post } from '../../http'
+import { post } from '@/http'
 import { mapState } from 'vuex'
 export default {
+    name: 'roleForm',
     data () {
         return {
             rouleName: '',

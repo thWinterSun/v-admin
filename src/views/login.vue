@@ -23,14 +23,13 @@
                             </Input>
                         </FormItem>
                         <FormItem prop="authCode">
-                            <Input v-model="form.authCode" placeholder="请输入验证码" style="width:50%">
+                            <Input v-model="form.authCode" placeholder="请输入验证码" style="width:50%;float:left">
                                 <span slot="prepend">
                                     <Icon :size="14" type="help-circled"></Icon>
                                 </span>
                             </Input>
-                            <!-- <span>
-                                <img src="../images/code.png" alt="验证码">
-                            </span> -->
+                            <img class="captchaImg" src="" alt="验证码">
+                            <input type="hidden" value="" v-model="form.hashkey">
                         </FormItem>
                         <FormItem>
                             <Button type="primary" long @click="submit">登录</Button>
@@ -43,6 +42,8 @@
 </template>
 
 <script>
+import { post } from '@/http'
+import qs from 'qs'
 export default {
     name: 'login',
     data () {
@@ -50,7 +51,8 @@ export default {
             form: {
                 userName: '',
                 password: '',
-                authCode: ''
+                authCode: '',
+                hashkey: ''
             },
             rules: {
                 userName: [
@@ -67,15 +69,32 @@ export default {
     },
     methods: {
         submit () {
-            if (this.form.userName === 'admin') {
-                if (this.form.password === 'admin') {
-                    this.$router.replace('home')
-                } else {
-                    this.$Message.error('密码错误');
+            this.$refs.loginForm.validate((valid) => {
+                if (valid) {
+                    this.handleSubmit(this.loginData);
                 }
-            } else {
-                this.$Message.error('用户名错误');
-            }
+            });
+        },
+        handleSubmit (Strdata) {
+            return new Promise((resolve, reject) => {
+                post('/login/',qs.stringify(Strdata))
+                    .then(response => {
+                        resolve(response);
+                        var res = response.data;
+                        this.form.userName = '';
+                        this.form.password = '';
+                        this.form.authCode = '';
+                        if (res['errCode'] === 1) {
+                            this.$Message.error('密码错误');
+                        } else if (res['errCode'] === 3) {
+                            this.$Message.error('验证码错误');
+                        } else if (res['errCode'] === 0) {
+                            this.$router.replace({ path: '/home' })
+                        }
+                    }, err => {
+                        reject(err);
+                    })
+            })
         }
     },
     computed: {
@@ -83,8 +102,9 @@ export default {
             return {
                 username: this.form.userName,
                 password: this.form.password,
-                captcha_0: 'bbb',
-                captcha_1: 'aa'
+                captcha_0: '32d5634269200b783c18e870bc2e3ffae4d1404e',
+                captcha_1: this.form.authCode,
+                from: "https" // location.protocol.split(":")[0]
             }
         }
     }
@@ -106,6 +126,18 @@ export default {
             margin-top: -200px;
             .ivu-card{
                 box-shadow: 0 1px 6px rgba(0,0,0,.2);
+            }
+            .ivu-input{
+                height:35px;
+            }
+            .ivu-btn{
+                height:35px;
+            }
+            .captchaImg{
+                height: 35px;
+                width:150px;
+                margin-left: 28px;
+                border-radius: 3px;
             }
         }
     }
