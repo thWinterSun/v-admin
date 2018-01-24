@@ -28,8 +28,8 @@
                                     <Icon :size="14" type="help-circled"></Icon>
                                 </span>
                             </Input>
-                            <img class="captchaImg" src="" alt="验证码">
-                            <input type="hidden" value="" v-model="form.hashkey">
+                            <img class="captchaImg" :src="form.authCodeUrl" alt="验证码" @click="getRefresh">
+                            <input type="hidden" v-model="form.hashkey">
                         </FormItem>
                         <FormItem>
                             <Button type="primary" long @click="submit">登录</Button>
@@ -42,8 +42,9 @@
 </template>
 
 <script>
-import { post } from '@/http'
+import { post,fetch } from '@/http'
 import qs from 'qs'
+// import CryptoJS from "crypto-js";
 export default {
     name: 'login',
     data () {
@@ -52,7 +53,8 @@ export default {
                 userName: '',
                 password: '',
                 authCode: '',
-                hashkey: ''
+                hashkey: '',
+                authCodeUrl: ''
             },
             rules: {
                 userName: [
@@ -67,6 +69,9 @@ export default {
             }
         };
     },
+    created () {
+        this.getRefresh();
+    },
     methods: {
         submit () {
             this.$refs.loginForm.validate((valid) => {
@@ -74,6 +79,14 @@ export default {
                     this.handleSubmit(this.loginData);
                 }
             });
+        },
+        getRefresh () {
+            fetch('/captcha/refresh')
+                .then(res => {
+                    console.log(res)
+                    this.form.authCodeUrl = res.image_url;
+                    this.form.hashkey = res.hashkey;
+                })
         },
         handleSubmit (Strdata) {
             return new Promise((resolve, reject) => {
@@ -102,9 +115,9 @@ export default {
             return {
                 username: this.form.userName,
                 password: this.form.password,
-                captcha_0: '32d5634269200b783c18e870bc2e3ffae4d1404e',
+                captcha_0: this.form.hashkey,
                 captcha_1: this.form.authCode,
-                from: "https" // location.protocol.split(":")[0]
+                from: location.protocol.split(":")[0]
             }
         }
     }
