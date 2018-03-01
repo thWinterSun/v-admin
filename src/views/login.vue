@@ -42,8 +42,6 @@
 </template>
 
 <script>
-import { post,fetch } from '@/http'
-import qs from 'qs'
 // import CryptoJS from "crypto-js";
 export default {
     name: 'login',
@@ -90,22 +88,7 @@ export default {
                 .catch((err) => console.log(err))
         },
         handleSubmit (Strdata) {
-            post('/login/',qs.stringify(Strdata))
-                .then(response => {
-                    var res = response.data;
-                    if (res['errCode'] === 1) {
-                        this.$Message.error('密码错误');
-                        this.form.userName = '';
-                        this.form.password = '';
-                        this.form.authCode = '';
-                    } else if (res['errCode'] === 3) {
-                        this.$Message.error('验证码错误');
-                        this.form.authCode = '';
-                    } else if (res['errCode'] === 0) {
-                        this.$router.replace({ path: '/home' })
-                    }
-                })
-                .catch((err) => console.log(err))
+            this.$router.replace({ path: '/home' })
         }
     },
     computed: {
