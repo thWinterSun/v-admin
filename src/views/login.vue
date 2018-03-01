@@ -92,6 +92,7 @@ export default {
         handleSubmit (Strdata) {
             post('/login/',qs.stringify(Strdata))
                 .then(response => {
+                    this.$router.replace({ path: '/home' })
                     var res = response.data;
                     if (res['errCode'] === 1) {
                         this.$Message.error('密码错误');
@@ -102,7 +103,7 @@ export default {
                         this.$Message.error('验证码错误');
                         this.form.authCode = '';
                     } else if (res['errCode'] === 0) {
-                        this.$router.replace({ path: '/home' })
+                        
                     }
                 })
                 .catch((err) => console.log(err))
