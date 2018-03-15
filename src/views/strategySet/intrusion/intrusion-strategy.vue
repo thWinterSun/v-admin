@@ -14,8 +14,20 @@
 import intruTable from './intruTable.vue'
 import intruFrom from './intruFrom.vue'
 import filt from '../../tables/filter-table'
+import { mapState } from 'vuex'
 export default {
     name: 'intrusion-strategy',
+    computed: mapState([
+        "userPermissions"
+    ]),
+    methods: {
+        getUserData () {
+            console.log(this.userPermissions)
+        }
+    },
+    created () {
+        console.log("加载页面")
+    },
     components: {
         'intrusion': intruTable,
         'intruFrom': intruFrom,

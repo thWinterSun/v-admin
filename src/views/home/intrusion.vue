@@ -11,13 +11,17 @@
     .midChart{
         height:330px;
         padding: 20px;
+        border-left: 2px solid  #495060;
+        border-bottom: 1px solid #495060;
+        background-color: #33363e;
     }
     .tableBg{
         height:340px;
     }
-    .mapChart{
+    .ivu-row .mapChart{
         width:100%;
         height:660px;
+        background-color: #495060;
     }
     .pie{
         width:50%;

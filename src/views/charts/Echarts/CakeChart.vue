@@ -10,7 +10,6 @@
 .echarts {
     height: 700px;
     width: 100%;
-    border-radius: 25px;
 }
 
 </style>

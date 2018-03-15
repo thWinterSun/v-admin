@@ -1,0 +1,8 @@
+{
+  "name": "vendor_library",
+  "content": {
+    "./node_modules/core-js/modules/_export.js": {
+      "id": 0,
+      "meta": {}
+    }
+}

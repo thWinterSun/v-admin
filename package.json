@@ -8,6 +8,7 @@
     "dev": "node build/dev-server.js",
     "start": "npm run dev",
     "build": "node build/build.js",
+    "build:dll": "webpack --config build/webpack.dll.config.js",
     "lint": "eslint --ext .js,.vue src"
   },
   "dependencies": {
@@ -38,6 +39,7 @@
     "chalk": "^2.0.1",
     "connect-history-api-fallback": "^1.3.0",
     "copy-webpack-plugin": "^4.0.1",
+    "cryptojs": "^2.5.3",
     "css-loader": "^0.28.0",
     "d3": "^4.11.0",
     "echarts": "^3.7.2",
@@ -82,6 +84,7 @@
     "vuex": "^3.0.1",
     "webpack": "^3.6.0",
     "webpack-bundle-analyzer": "^2.9.0",
+    "webpack-cli": "^2.0.9",
     "webpack-dev-middleware": "^1.12.0",
     "webpack-hot-middleware": "^2.18.2",
     "webpack-merge": "^4.1.0"

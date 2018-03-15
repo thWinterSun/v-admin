@@ -37,6 +37,7 @@
 
 <script>
 import { post } from '../../../http'
+import Cookies from 'js-cookie'
 import { mapState } from 'vuex'
 export default {
     data () {
@@ -181,21 +182,19 @@ export default {
     ]),
     methods: {
         fetchData () {
+            let token = Cookies.get('csrftoken');
+            console.log(token);
             this.error = null;
             this.loading = true;
             this.getTableData(this.get_ips_rule);
         },
         getTableData (Strdata) {
-            return new Promise((resolve, reject) => {
-                post('/data/',Strdata)
-                    .then(response => {
-                        resolve(response);
-                        this.tableBody = response.data[0].data;  // 数据
-                        this.page.total = response.data[0].head.total;  // 数据总条数
-                    }, err => {
-                        reject(err);
-                    })
-            })
+            post('/data/',Strdata)
+                .then(res => {
+                    this.tableBody = res.data[0].data;  // 数据
+                    this.page.total = res.data[0].head.total;  // 数据总条数
+                })
+                .catch((err) => console.log(err))
         },
         addForm () {
             this.$router.replace({ path: '/table/edittable/add' })

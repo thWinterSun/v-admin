@@ -13,8 +13,20 @@
 import roleList from './roleTable.vue'
 import roleForm from './roleForm.vue'
 import user from './userTable'
+import { mapState } from 'vuex'
 export default {
     name: 'rolePage',
+    computed: mapState([
+        "userPermissions"
+    ]),
+    methods: {
+        getUserData () {
+            console.log(this.userPermissions)
+        }
+    },
+    created () {
+        this.getUserData();
+    },
     components: {
         'roleList': roleList,
         'roleForm': roleForm,

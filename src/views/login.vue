@@ -42,9 +42,13 @@
 </template>
 
 <script>
+<<<<<<< HEAD
 import { post,fetch } from '@/http'
 import qs from 'qs'
 import Cookies from 'js-cookie'
+=======
+// import CryptoJS from "crypto-js";
+>>>>>>> 1a3daf59b025bc624587aae1f1a294c2cbca88ef
 export default {
     name: 'login',
     data () {
@@ -95,6 +99,7 @@ export default {
                 .catch((err) => console.log(err))
         },
         handleSubmit (Strdata) {
+<<<<<<< HEAD
             post('/login/',qs.stringify(Strdata))
                 .then(response => {
                     let res = response.data;
@@ -113,6 +118,9 @@ export default {
                     }
                 })
                 .catch((err) => console.log(err))
+=======
+            this.$router.replace({ path: '/home' })
+>>>>>>> 1a3daf59b025bc624587aae1f1a294c2cbca88ef
         }
     },
     computed: {
