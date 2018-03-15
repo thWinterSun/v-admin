@@ -114,6 +114,11 @@
                                 'name': 'globalMap',
                                 'mId': '1-3',
                                 'route': '/home/globalMap'
+                            },
+                            {
+                                'name': 'netdata',
+                                'mId': '1-4',
+                                'route': '/home/netdata'
                             }
                         ],
                         'name': 'Home',

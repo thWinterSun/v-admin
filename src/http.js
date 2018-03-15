@@ -1,21 +1,21 @@
-
 /*
  * http配置
  */
-
 import axios from 'axios'
-
+import Cookies from 'js-cookie'
 // axios 配置
 axios.defaults.timeout = 5000;
-axios.defaults.baseURL = 'https://192.168.13.114'
-axios.defaults.withCredentials = true;
-// axios.defaults.headers.common = {
-//     'X-CSRFToken': 'drNMVMQaf8CgE21TzTOW3XwVz1v55uvs',
-//     'X-Requested-With': 'XMLHttpRequest'
-// }
+axios.defaults.baseURL = 'https://' + window.location.host;
+// axios.defaults.withCredentials = true;
+axios.defaults.headers.common = {
+    'X-Requested-With': 'XMLHttpRequest'
+}
 // http request 拦截器
 axios.interceptors.request.use(
     config => {
+        if (Cookies.get('csrftoken')) {
+            config.headers['X-CSRFToken'] = Cookies.get('csrftoken');
+        }
         return config;
     },
     err => {

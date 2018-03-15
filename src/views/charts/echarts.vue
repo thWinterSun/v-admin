@@ -13,6 +13,7 @@ import bread from '../../components/breadcrumb'
 import double from './Echarts/doubleLine'
 import dash from './Echarts/DashChartLarge'
 import radar from './Echarts/RadarChart'
+import spider from './Echarts/spider'
 export default {
     name: 'homeCon',
     components: {
@@ -20,6 +21,7 @@ export default {
         double,
         dash,
         radar,
+        spider,
         'tabPane': {
             functional: true,
             render: function (h) {
@@ -36,6 +38,10 @@ export default {
                     {
                         name: '雷达图',
                         tab: 'radar'
+                    },
+                    {
+                        name: '关系图',
+                        tab: 'spider'
                     }
                 ];
                 for (let i = 0; i < tabs.length; i++) {

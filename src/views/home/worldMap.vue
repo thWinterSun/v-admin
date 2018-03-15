@@ -1,8 +1,5 @@
 <style lang="css" scoped>
-    .chartBg{
-        background-color: #495060;
-        color: #a2a5a9;
-    }
+
     .ivu-table-cell{
         padding-left: 10px;
         padding-right: 10px;
@@ -17,15 +14,15 @@
     }
     .midChart{
         height:200px;
-        background-color: #232C35;
-        border-right: 1px solid  #495060;
+        border-left: 1px solid  #495060;
+        border-bottom: 1px solid #495060;
         padding: 20px;
     }
     .tableBg{
         height:500px;
         padding-top:40px;
     }
-    .mapChart{
+    .chartBg .mapChart{
         width:100%;
         height:500px;
     }

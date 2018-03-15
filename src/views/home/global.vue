@@ -11,6 +11,8 @@
     .midChart{
         height:340px;
         padding: 20px;
+        border-left: 1px solid #495060;
+        border-right: 1px solid #495060;
     }
     .tableBg{
         height:500px;
@@ -19,6 +21,7 @@
     .mapChart{
         width:100%;
         height:500px;
+        border-right: 2px solid #33363E;
     }
     .pie{
         width:50%;

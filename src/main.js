@@ -4,7 +4,7 @@ import store from './store/store'
 import iview from 'iview'
 import 'iview/dist/styles/iview.css'
 import ECharts from 'vue-echarts';
-import theme from './assets/themes/vintage.json'
+import theme from './assets/themes/dark.json'
 import app from './App'
 import Cookies from 'js-cookie'
 ECharts.registerTheme('dark', theme)

@@ -44,7 +44,7 @@
 <script>
 import { post,fetch } from '@/http'
 import qs from 'qs'
-// import CryptoJS from "crypto-js";
+import Cookies from 'js-cookie'
 export default {
     name: 'login',
     data () {
@@ -76,7 +76,12 @@ export default {
         submit () {
             this.$refs.loginForm.validate((valid) => {
                 if (valid) {
-                    this.handleSubmit(this.loginData);
+                    // this.handleSubmit(this.loginData);
+                    // this.$store.dispatch('menus',this.loginData).then(res => {
+                    // });
+                    Cookies.set('csrftoken', 'admin');
+                    this.$router.replace({ path: '/home' });
+                    console.log("login success");
                 }
             });
         },
@@ -92,7 +97,7 @@ export default {
         handleSubmit (Strdata) {
             post('/login/',qs.stringify(Strdata))
                 .then(response => {
-                    var res = response.data;
+                    let res = response.data;
                     if (res['errCode'] === 1) {
                         this.$Message.error('密码错误');
                         this.form.userName = '';
@@ -102,6 +107,8 @@ export default {
                         this.$Message.error('验证码错误');
                         this.form.authCode = '';
                     } else if (res['errCode'] === 0) {
+                        const userData = res
+                        sessionStorage.setItem("useData",userData);
                         this.$router.replace({ path: '/home' })
                     }
                 })
