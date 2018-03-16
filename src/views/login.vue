@@ -42,13 +42,6 @@
 </template>
 
 <script>
-<<<<<<< HEAD
-import { post,fetch } from '@/http'
-import qs from 'qs'
-import Cookies from 'js-cookie'
-=======
-// import CryptoJS from "crypto-js";
->>>>>>> 1a3daf59b025bc624587aae1f1a294c2cbca88ef
 export default {
     name: 'login',
     data () {
@@ -83,8 +76,7 @@ export default {
                     // this.handleSubmit(this.loginData);
                     // this.$store.dispatch('menus',this.loginData).then(res => {
                     // });
-                    Cookies.set('csrftoken', 'admin');
-                    this.$router.replace({ path: '/home' });
+                        this.$router.replace({ path: '/home' });
                     console.log("login success");
                 }
             });
@@ -97,30 +89,6 @@ export default {
                     this.form.hashkey = res.hashkey;
                 })
                 .catch((err) => console.log(err))
-        },
-        handleSubmit (Strdata) {
-<<<<<<< HEAD
-            post('/login/',qs.stringify(Strdata))
-                .then(response => {
-                    let res = response.data;
-                    if (res['errCode'] === 1) {
-                        this.$Message.error('密码错误');
-                        this.form.userName = '';
-                        this.form.password = '';
-                        this.form.authCode = '';
-                    } else if (res['errCode'] === 3) {
-                        this.$Message.error('验证码错误');
-                        this.form.authCode = '';
-                    } else if (res['errCode'] === 0) {
-                        const userData = res
-                        sessionStorage.setItem("useData",userData);
-                        this.$router.replace({ path: '/home' })
-                    }
-                })
-                .catch((err) => console.log(err))
-=======
-            this.$router.replace({ path: '/home' })
->>>>>>> 1a3daf59b025bc624587aae1f1a294c2cbca88ef
         }
     },
     computed: {
