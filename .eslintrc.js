@@ -23,12 +23,15 @@ module.exports = {
     'generator-star-spacing': 0,
     //禁止tab和spaces混用
     'no-mixed-spaces-and-tabs':1,
+    // 'extends': 'smart-tabs',
     //逗号后强制空格
     'comma-spacing': 0,
     //keyword 前空格
-    'keyword-spacing':1,
+    'keyword-spacing': [0, {"before": false, "after": false, "overrides": null}],
+    'space-before-function-paren': 0,
     //缩进为4个空格
-    "indent": [1, 4],
+    "indent": [0, 4],
+    "no-tabs": 0,
     //强制分号结尾
     "semi": 0,
     // 强制引号

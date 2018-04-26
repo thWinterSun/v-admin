@@ -186,10 +186,11 @@ export default {
             console.log(token);
             this.error = null;
             this.loading = true;
+            console.log(this.get_ips_rule);
             this.getTableData(this.get_ips_rule);
         },
         getTableData (Strdata) {
-            post('/data/',Strdata)
+            post('data/',Strdata)
                 .then(res => {
                     this.tableBody = res.data[0].data;  // 数据
                     this.page.total = res.data[0].head.total;  // 数据总条数

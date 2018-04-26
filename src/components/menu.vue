@@ -177,6 +177,11 @@
                                 'name': 'Echarts',
                                 'mId': '4-1',
                                 'route': '/charts/echarts'
+                            },
+                            {
+                                'name': 'Peity',
+                                'mId': '4-2',
+                                'route': '/charts/peity'
                             }
                         ]
                     }

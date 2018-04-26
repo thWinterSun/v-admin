@@ -5,7 +5,8 @@ import axios from 'axios'
 import Cookies from 'js-cookie'
 // axios 配置
 axios.defaults.timeout = 5000;
-axios.defaults.baseURL = 'https://' + window.location.host;
+// axios.defaults.baseURL = 'https://' + window.location.host;
+axios.defaults.baseURL = '/api';
 // axios.defaults.withCredentials = true;
 axios.defaults.headers.common = {
     'X-Requested-With': 'XMLHttpRequest'

@@ -76,7 +76,7 @@ export default {
                     // this.handleSubmit(this.loginData);
                     // this.$store.dispatch('menus',this.loginData).then(res => {
                     // });
-                        this.$router.replace({ path: '/home' });
+                    this.$router.replace({ path: '/home' });
                     console.log("login success");
                 }
             });
