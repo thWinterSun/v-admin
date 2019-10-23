@@ -12,7 +12,7 @@
     "lint": "eslint --ext .js,.vue src"
   },
   "dependencies": {
-    "axios": "^0.17.1",
+    "axios": "^0.19.0",
     "frappe-charts": "^0.0.8",
     "iview": "^2.5.1",
     "js-cookie": "^2.2.0",
@@ -25,7 +25,7 @@
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",
-    "axios": "^0.17.1",
+    "axios": "^0.19.0",
     "babel-core": "^6.22.1",
     "babel-eslint": "^7.1.1",
     "babel-helper-vue-jsx-merge-props": "^2.0.2",
