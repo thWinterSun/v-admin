@@ -18,22 +18,17 @@ export default {
     },
     data () {
         return {
-            myData: ['大栅栏', '天安门', '故宫', '景山', '北海公园', '后海', '什刹海', '西单', '玉渊潭', '中央电视塔', '东单', '王府井', '南锣鼓巷', '工体', '潘家园', '琉璃厂'],
+            myData: ['航空摄影', '航空探矿', '空中巡查', '石油服务', '电力作业', '后海', '什刹海', '西单', '玉渊潭', '中央电视塔', '东单', '王府井', '南锣鼓巷', '工体', '潘家园', '琉璃厂'],
             option: {
                 title: {
-                    text: '',
-                    textStyle: {
-                        color: '#fff',
-                        fontSize: 16
-                    }
+                    text: '通航作业架次与小时分析',
+                    left: 5,
+                    top: 10
                 },
                 legend: {
-                    data: ['', ''],
-                    top: 4,
-                    right: '20%',
-                    textStyle: {
-                        color: '#fff'
-                    }
+                    data: ['小时', '架次'],
+                    bottom: 0,
+                    right: 'center'
                 },
                 tooltip: {
                     show: true,
@@ -46,36 +41,40 @@ export default {
                 toolbox: {
                     right: 20,
                     feature: {
-                        saveAsImage: {},
-                        restore: {},
-                        dataView: {},
+                        // saveAsImage: {},
+                        // restore: {},
+                        // dataView: {},
                         dataZoom: {},
                         magicType: {
                             type: ['line','bar']
                         }
                     }
                 },
-                grid: [{
-                    show: false,
-                    left: '4%',
-                    top: 60,
-                    bottom: 60,
-                    containLabel: true,
-                    width: '46%'
-                }, {
-                    show: false,
-                    left: '50.5%',
-                    top: 80,
-                    bottom: 60,
-                    width: '0%'
-                }, {
-                    show: false,
-                    right: '4%',
-                    top: 60,
-                    bottom: 60,
-                    containLabel: true,
-                    width: '46%'
-                }],
+                grid: [
+                    {
+                        show: false,
+                        left: '4%',
+                        top: 60,
+                        bottom: 60,
+                        containLabel: true,
+                        width: '46%'
+                    },
+                    {
+                        show: false,
+                        left: '54.5%',
+                        top: 80,
+                        bottom: 60,
+                        width: '0%'
+                    },
+                    {
+                        show: false,
+                        right: '4%',
+                        top: 60,
+                        bottom: 60,
+                        containLabel: true,
+                        width: '46%'
+                    }
+                ],
                 xAxis: [
                     {
                         type: 'value',
@@ -95,7 +94,7 @@ export default {
                             }
                         },
                         splitLine: {
-                            show: true,
+                            show: false,
                             lineStyle: {
                                 color: '#1F2022',
                                 width: 1,
@@ -125,7 +124,7 @@ export default {
                             }
                         },
                         splitLine: {
-                            show: true,
+                            show: false,
                             lineStyle: {
                                 color: '#1F2022',
                                 width: 1,
@@ -134,64 +133,74 @@ export default {
                         }
                     }
                 ],
-                yAxis: [{
-                    type: 'category',
-                    inverse: true,
-                    position: 'right',
-                    axisLine: {
-                        show: false
+                yAxis: [
+                    {
+                        type: 'category',
+                        inverse: true,
+                        position: 'right',
+                        splitLine: {
+                            show: false
+                        },
+                        axisLine: {
+                            show: false
+                        },
+                        axisTick: {
+                            show: false
+                        },
+                        axisLabel: {
+                            show: false,
+                            margin: 8,
+                            textStyle: {
+                                color: '#9D9EA0',
+                                fontSize: 12
+                            }
+                        },
+                        data: ['大栅栏', '天安门', '故宫', '景山', '北海公园', '后海', '什刹海', '西单', '玉渊潭', '中央电视塔', '东单', '王府井', '南锣鼓巷', '工体', '潘家园', '琉璃厂']
                     },
-                    axisTick: {
-                        show: false
+                    {
+                        gridIndex: 1,
+                        type: 'category',
+                        inverse: true,
+                        position: 'left',
+                        axisLine: {
+                            show: false
+                        },
+                        axisTick: {
+                            show: false
+                        },
+                        axisLabel: {
+                            show: true,
+                            textStyle: {
+                                color: '#9D9EA0',
+                                fontSize: 12
+                            }
+                        },
+                        data: ['大栅栏', '天安门', '故宫', '景山', '北海公园', '后海', '什刹海', '西单', '玉渊潭', '中央电视塔', '东单', '王府井', '南锣鼓巷', '工体', '潘家园', '琉璃厂']
                     },
-                    axisLabel: {
-                        show: false,
-                        margin: 8,
-                        textStyle: {
-                            color: '#9D9EA0',
-                            fontSize: 12
-                        }
-                    },
-                    data: this.myData
-                }, {
-                    gridIndex: 1,
-                    type: 'category',
-                    inverse: true,
-                    position: 'left',
-                    axisLine: {
-                        show: false
-                    },
-                    axisTick: {
-                        show: false
-                    },
-                    axisLabel: {
-                        show: true,
-                        textStyle: {
-                            color: '#9D9EA0',
-                            fontSize: 12
-                        }
-                    },
-                    data: this.myData
-                }, {
-                    gridIndex: 2,
-                    type: 'category',
-                    inverse: true,
-                    position: 'left',
-                    axisLine: {
-                        show: false
-                    },
-                    axisTick: {
-                        show: false
-                    },
-                    axisLabel: {
-                        show: false,
-                        textStyle: {
-                            color: '#9D9EA0',
-                            fontSize: 12
-                        }
-                    },
-                    data: this.myData
-                }],
+                    {
+                        gridIndex: 2,
+                        type: 'category',
+                        inverse: true,
+                        position: 'left',
+                        splitLine: {
+                            show: false
+                        },
+                        axisLine: {
+                            show: false
+                        },
+                        axisTick: {
+                            show: false
+                        },
+                        axisLabel: {
+                            show: false,
+                            textStyle: {
+                                color: '#9D9EA0',
+                                fontSize: 12
+                            }
+                        },
+                        data: ['大栅栏', '天安门', '故宫', '景山', '北海公园', '后海', '什刹海', '西单', '玉渊潭', '中央电视塔', '东单', '王府井', '南锣鼓巷', '工体', '潘家园', '琉璃厂']
+                    }
+                ],
                 series: [
                     {
                     name: '小时',
