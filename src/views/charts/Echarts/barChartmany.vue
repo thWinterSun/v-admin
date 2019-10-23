@@ -15,41 +15,42 @@ export default {
         return {
             option: {
                 title: {
-                    text: '作业企业数',
+                    text: '通用航空器保有量',
+                    top: 10,
+                    left: 5,
                     x: 'left'
                 },
                 tooltip: {
                     trigger: 'axis'
                 },
                 legend: {
-                    show: false,
+                    show: true,
                     bottom: '3%',
                     itemWidth: 12,
                     itemHeight: 12,
-                    data: ['单价', '笔数']
+                    data: ['总数','固定翼','旋翼类','其它']
+                },
+                grid: {
+                    left: '15%'
                 },
                 xAxis: [
                     {
                         type: 'category',
                         boundaryGap: false,
                         axisTick: {show: false},
+                        axisLine: {show: false},
                         splitLine: {
                             show: false
                         },
-                        data: ['1', '5', '10', '15', '20', '25', '31']
+                        data: ['2007','2008','2009','2010','2011','2012','2013','2014','2015','2016','2017']
                     }
                 ],
                 yAxis: [
                     {
                         name: '',
                         type: 'value',
-                        splitLine: {
-                            show: false
-                        }
-                    },
-                    {
-                        name: '',
-                        type: 'value',
+                        axisLine: {show: false},
+                        axisTick: {show: false},
                         splitLine: {
                             show: false
                         }
@@ -57,29 +58,44 @@ export default {
                 ],
                 series: [
                     {
-                        name: '',
-                        type: 'line',
+                        name: '总数',
+                        type: 'bar',
+                        // stack: '总量',
                         tooltip: {
                             trigger: 'axis'
                         },
-                        areaStyle: {
-                            normal: {}
-                        },
                         smooth: true,
-                        data: [10, 12, 21, 54, 60, 80, 71]
+                        data: [807,900,907,1010,1154,1320,1654,1975,2235,2595,2776]
                     },
                     {
-                        name: '',
-                        type: 'line',
+                        name: '固定翼',
+                        type: 'bar',
+                        // stack: '总量',
                         tooltip: {
                             trigger: 'axis'
                         },
-                        areaStyle: {
-                            normal: {}
-                        },
-                        yAxisIndex: 1,
                         smooth: true,
-                        data: [30, 32, 61, 24, 20, 90, 20]
+                        data: [677,743,736,812,893,995,1239,1403,1530,1692,1808]
+                    },
+                    {
+                        name: '旋翼类',
+                        type: 'bar',
+                        // stack: '总量',
+                        tooltip: {
+                            trigger: 'axis'
+                        },
+                        smooth: true,
+                        data: [124,141,154,178,238,298,385,538,658,838,903]
+                    },
+                    {
+                        name: '其它',
+                        type: 'bar',
+                        // stack: '总量',
+                        tooltip: {
+                            trigger: 'axis'
+                        },
+                        smooth: true,
+                        data: [6,16,17,20,23,27,30,34,47,65,65]
                     }
                 ]
             }

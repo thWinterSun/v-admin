@@ -15,7 +15,9 @@ export default {
         return {
             option: {
                 title: {
-                    text: '作业企业数',
+                    text: '通航历年飞行小时',
+                    top: 10,
+                    left: 5,
                     x: 'left'
                 },
                 tooltip: {
@@ -26,30 +28,29 @@ export default {
                     bottom: '3%',
                     itemWidth: 12,
                     itemHeight: 12,
-                    data: ['单价', '笔数']
+                    data: []
+                },
+                grid: {
+                    left: '15%'
                 },
                 xAxis: [
                     {
                         type: 'category',
                         boundaryGap: false,
                         axisTick: {show: false},
+                        axisLine: {show: false},
                         splitLine: {
                             show: false
                         },
-                        data: ['1', '5', '10', '15', '20', '25', '31']
+                        data: ['2007','2008','2009','2010','2011','2012','2013','2014','2015','2016','2017']
                     }
                 ],
                 yAxis: [
                     {
                         name: '',
                         type: 'value',
-                        splitLine: {
-                            show: false
-                        }
-                    },
-                    {
-                        name: '',
-                        type: 'value',
+                        axisLine: {show: false},
+                        axisTick: {show: false},
                         splitLine: {
                             show: false
                         }
@@ -62,24 +63,11 @@ export default {
                         tooltip: {
                             trigger: 'axis'
                         },
-                        areaStyle: {
-                            normal: {}
-                        },
+                        // areaStyle: {
+                        //     normal: {}
+                        // },
                         smooth: true,
-                        data: [10, 12, 21, 54, 60, 80, 71]
-                    },
-                    {
-                        name: '',
-                        type: 'line',
-                        tooltip: {
-                            trigger: 'axis'
-                        },
-                        areaStyle: {
-                            normal: {}
-                        },
-                        yAxisIndex: 1,
-                        smooth: true,
-                        data: [30, 32, 61, 24, 20, 90, 20]
+                        data: [260716,272843,329873,367600,502749,517037,529800,675000,735000,764700,808000]
                     }
                 ]
             }

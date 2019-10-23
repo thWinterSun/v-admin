@@ -1,7 +1,7 @@
 <template>
 <Row>
 	<Col :span="24">
-	<chart :options="option" class="echarts"></chart>
+	    <chart :options="option" class="echarts"></chart>
 	</Col>
 </Row>
 </template>
@@ -24,7 +24,8 @@ export default {
                 },
                 tooltip: {},
                 legend: {
-                    top: 20,
+                    show: false,
+                    top: 0,
                     itemWidth: 12,
                     itemHeight: 12,
                     data: ['预算', '开销'],

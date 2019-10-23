@@ -16,31 +16,47 @@ export default {
         return {
             option: {
                 title: {
-                    text: '用户访问来源',
-                    x: 'center'
+                    text: '通航作业企业数分析',
+                    x: 'center',
+                    left: 5,
+                    top: 10
                 },
                 tooltip: {
                     trigger: 'item',
-                    formatter: "{a} <br/>{b} : {c} ({d}%)"
+                    formatter: "{b} : {c} ({d}%)"
                 },
                 legend: {
+                    show: false,
                     orient: 'vertical',
-                    top: 'bottom',
+                    top: 'middle',
                     left: 'left',
-                    data: ['直接访问','邮件营销','联盟广告','视频广告','搜索引擎']
+                    data: ['','','','','']
                 },
                 series: [
                     {
-                        name: '访问来源',
+                        name: '',
                         type: 'pie',
-                        radius: '55%',
-                        center: ['50%', '60%'],
+                        radius: ['30%','50%'],
+                        center: ['50%', '50%'],
+                        label: {
+                            normal: {
+                                formatter: '{b}：{c}'
+                            }
+                        },
                         data: [
-                            {value: 335, name: '直接访问', selected: true},
-                            {value: 310, name: '邮件营销'},
-                            {value: 234, name: '联盟广告'},
-                            {value: 135, name: '视频广告'},
-                            {value: 1548, name: '搜索引擎'}
+                            {value: 111, name: '空中游览', selected: true},
+                            {value: 97, name: '执照培训'},
+                            {value: 88, name: '航空拍摄'},
+                            {value: 72, name: '空中巡查'},
+                            {value: 74, name: '空中喷洒'},
+                            {value: 70, name: '空中广告'},
+                            {value: 61, name: '包机飞行'},
+                            {value: 42, name: '航空护林'},
+                            // {value: 35, name: '空中拍照'},
+                            // {value: 34, name: '科学实验'},
+                            // {value: 19, name: '医疗救援'},
+                            {value: 11, name: '跳伞飞行'},
+                            {value: 6, name: '航空表演'}
                         ]
                     }
                 ]
