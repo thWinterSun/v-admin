@@ -44,7 +44,7 @@
     "d3": "^4.11.0",
     "echarts": "^3.7.2",
     "echarts-gl": "^1.0.0-beta.6",
-    "eslint": "^3.19.0",
+    "eslint": "^4.19.1",
     "eslint-config-standard": "^10.2.1",
     "eslint-friendly-formatter": "^3.0.0",
     "eslint-loader": "^1.7.1",
