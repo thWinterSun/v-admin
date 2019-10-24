@@ -18,12 +18,17 @@ export default {
     },
     data () {
         return {
-            myData: ['航空摄影', '航空探矿', '空中巡查', '石油服务', '电力作业', '后海', '什刹海', '西单', '玉渊潭', '中央电视塔', '东单', '王府井', '南锣鼓巷', '工体', '潘家园', '琉璃厂'],
+            flightType: ['航空摄影', '航空探矿', '空中巡查', '石油服务', '人工降水', '航空护林', '航空喷洒', '气象探测', '直升机引航', '科学实验', '空中广告', '航空器代管', '空中游览', '包机飞行', '医疗救援','跳伞飞行','个人娱乐','执照培训'],
+            flights: [6352,1458,19661,46217,6319,15835,107444,1842,5365,1083,9543,8658,74352,14987,3537,5085,16622,908035],
+            flightHours: [17350,4648,28429,37926,9732,17923,41570,1921,2984,2307,2634,21688,16434,22053,2156,3316,2709,295476],
             option: {
                 title: {
-                    text: '通航作业架次与小时分析',
+                    text: '通航作业架次与小时',
                     left: 5,
-                    top: 10
+                    top: 10,
+                    textStyle: {
+                        color: '#fff'
+                    }
                 },
                 legend: {
                     data: ['小时', '架次'],
@@ -33,7 +38,7 @@ export default {
                 tooltip: {
                     show: true,
                     trigger: 'axis',
-                    formatter: '{b}<br/>{a}: {c}人',
+                    formatter: '{b}<br/>{a}: {c}',
                     axisPointer: {
                         type: 'shadow'
                     }
@@ -44,7 +49,7 @@ export default {
                         // saveAsImage: {},
                         // restore: {},
                         // dataView: {},
-                        dataZoom: {},
+                        // dataZoom: {},
                         magicType: {
                             type: ['line','bar']
                         }
@@ -54,23 +59,23 @@ export default {
                     {
                         show: false,
                         left: '4%',
-                        top: 60,
-                        bottom: 60,
+                        top: 40,
+                        bottom: 40,
                         containLabel: true,
                         width: '46%'
                     },
                     {
                         show: false,
                         left: '54.5%',
-                        top: 80,
-                        bottom: 60,
+                        top: 60,
+                        bottom: 40,
                         width: '0%'
                     },
                     {
                         show: false,
                         right: '4%',
-                        top: 60,
-                        bottom: 60,
+                        top: 40,
+                        bottom: 40,
                         containLabel: true,
                         width: '46%'
                     }
@@ -87,7 +92,7 @@ export default {
                         },
                         position: 'top',
                         axisLabel: {
-                            show: true,
+                            show: false,
                             textStyle: {
                                 color: '#B2B2B2',
                                 fontSize: 12
@@ -117,7 +122,7 @@ export default {
                         },
                         position: 'top',
                         axisLabel: {
-                            show: true,
+                            show: false,
                             textStyle: {
                                 color: '#B2B2B2',
                                 fontSize: 12
@@ -151,11 +156,11 @@ export default {
                             show: false,
                             margin: 8,
                             textStyle: {
-                                color: '#9D9EA0',
-                                fontSize: 12
+                                // color: '#9D9EA0',
+                                // fontSize: 12
                             }
                         },
-                        data: ['大栅栏', '天安门', '故宫', '景山', '北海公园', '后海', '什刹海', '西单', '玉渊潭', '中央电视塔', '东单', '王府井', '南锣鼓巷', '工体', '潘家园', '琉璃厂']
+                        data: ['航空摄影', '航空探矿', '空中巡查', '石油服务', '人工降水', '航空护林', '航空喷洒', '气象探测', '直升机引航', '科学实验', '空中广告', '航空器代管', '空中游览', '包机飞行', '医疗救援','跳伞飞行','个人娱乐']
                     },
                     {
                         gridIndex: 1,
@@ -171,11 +176,11 @@ export default {
                         axisLabel: {
                             show: true,
                             textStyle: {
-                                color: '#9D9EA0',
-                                fontSize: 12
+                                // color: '#fff',
+                                fontSize: 13
                             }
                         },
-                        data: ['大栅栏', '天安门', '故宫', '景山', '北海公园', '后海', '什刹海', '西单', '玉渊潭', '中央电视塔', '东单', '王府井', '南锣鼓巷', '工体', '潘家园', '琉璃厂']
+                        data: ['航空摄影', '航空探矿', '空中巡查', '石油服务', '人工降水', '航空护林', '航空喷洒', '气象探测', '直升机引航', '科学实验', '空中广告', '航空器代管', '空中游览', '包机飞行', '医疗救援','跳伞飞行','个人娱乐']
                     },
                     {
                         gridIndex: 2,
@@ -194,11 +199,11 @@ export default {
                         axisLabel: {
                             show: false,
                             textStyle: {
-                                color: '#9D9EA0',
-                                fontSize: 12
+                                // color: '#9D9EA0',
+                                // fontSize: 14
                             }
                         },
-                        data: ['大栅栏', '天安门', '故宫', '景山', '北海公园', '后海', '什刹海', '西单', '玉渊潭', '中央电视塔', '东单', '王府井', '南锣鼓巷', '工体', '潘家园', '琉璃厂']
+                        data: ['航空摄影', '航空探矿', '空中巡查', '石油服务', '人工降水', '航空护林', '航空喷洒', '气象探测', '直升机引航', '科学实验', '空中广告', '航空器代管', '空中游览', '包机飞行', '医疗救援','跳伞飞行','个人娱乐']
                     }
                 ],
                 series: [
@@ -209,16 +214,17 @@ export default {
                     barWidth: 20,
                     label: {
                         normal: {
-                            show: false
+                            show: true,
+                            position: 'left',
+                            textStyle: {
+                                color: '#eee',
+                                fontSize: 11
+                            }
                         },
                         emphasis: {
                             show: true,
                             position: 'left',
-                            offset: [0, 0],
-                            textStyle: {
-                                color: '#fff',
-                                fontSize: 14
-                            }
+                            offset: [0, 0]
                         }
                     },
                     itemStyle: {
@@ -229,7 +235,7 @@ export default {
                             color: '#08C7AE'
                         }
                     },
-                    data: [389, 259, 262, 324, 232, 176, 196, 214, 133, 370, 268, 360, 185, 392, 392, 153]
+                    data: [17350,4648,28429,37926,9732,17923,41570,1921,2984,2307,2634,21688,16434,22053,2156,3316,2709]
                 },
                 {
                     name: '架次',
@@ -240,16 +246,17 @@ export default {
                     yAxisIndex: 2,
                     label: {
                         normal: {
-                            show: false
+                            show: true,
+                            position: 'right',
+                            textStyle: {
+                                color: '#eee',
+                                fontSize: 11
+                            }
                         },
                         emphasis: {
                             show: true,
                             position: 'right',
-                            offset: [0, 0],
-                            textStyle: {
-                                color: '#fff',
-                                fontSize: 14
-                            }
+                            offset: [0, 0]
                         }
                     },
                     itemStyle: {
@@ -260,7 +267,7 @@ export default {
                             color: '#F94646'
                         }
                     },
-                    data: [300, 350, 300, 250, 200, 150, 100, 150, 200, 250, 300, 350, 400, 350, 300, 250]
+                    data: [6352,1458,19661,46217,6319,15835,107444,1842,5365,1083,9543,8658,74352,14987,3537,5085,16622]
                 }]
             }
         }

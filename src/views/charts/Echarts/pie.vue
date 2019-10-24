@@ -16,10 +16,13 @@ export default {
         return {
             option: {
                 title: {
-                    text: '通航作业企业数分析',
+                    text: '通航作业企业数',
                     x: 'center',
                     left: 5,
-                    top: 10
+                    top: 10,
+                    textStyle: {
+                        color: '#fff'
+                    }
                 },
                 tooltip: {
                     trigger: 'item',
@@ -36,11 +39,15 @@ export default {
                     {
                         name: '',
                         type: 'pie',
-                        radius: ['30%','50%'],
+                        radius: ['40%','50%'],
                         center: ['50%', '50%'],
                         label: {
                             normal: {
-                                formatter: '{b}：{c}'
+                                formatter: '{b}：{c}',
+                                textStyle: {
+                                    color: '#9EB2BF',
+                                    fontSize: 11
+                                }
                             }
                         },
                         data: [

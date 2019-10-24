@@ -18,7 +18,10 @@ export default {
                     text: '通用航空器保有量',
                     top: 10,
                     left: 5,
-                    x: 'left'
+                    x: 'left',
+                    textStyle: {
+                        color: '#fff'
+                    }
                 },
                 tooltip: {
                     trigger: 'axis'

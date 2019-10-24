@@ -93,6 +93,8 @@ export default {
         doublebar,
         manybar
     },
+    methods: {
+    },
     data () {
         return {
             pieOption1: {
@@ -229,49 +231,43 @@ export default {
                 }
             ],
             mapOptions: {
-                title: {
-                    text: '',
-                    left: 20,
-                    top: 10,
-                    textStyle: {
-                        fontWeight: "300",
-                        fontSize: 20,
-                        color: '#707982'
-                    }
+                geo: {
+                    map: 'world',
+                    itemStyle: {
+                        emphasis: {
+                            areaColor: '#d1d1d1'
+                        }
+                    },
+                    // roam: 'scale',
+                    roam: false
                 },
-                tooltip: {
-                    trigger: 'item'
-                },
-                series: [
-                    {
-                        name: 'World ',
-                        type: 'map',
-                        mapType: 'world',
-                        // roam: true, 允许缩放
-                        // zoom: 1.2,
-                        label: {
-                            emphasis: {
-                                show: true,
-                                textStyle: {
-                                    color: '#BCBCBC',
-                                    fontWeight: 'bold'
-                                }
-                            },
-                            normal: {
-                                show: false
-                            }
-                        },
-                        itemStyle: {
-                            normal: {
-                                areaColor: '#a2a5a9',
-                                borderColor: '#404a59',
-                                opacity: 0.7
-                            },
-                            emphasis: {
-                                areaColor: '#2a333d'
-                            }
-                        },
-                        data: [
+                // visualMap: {
+                //     min: 10,
+                //     max: 1000,
+                //     left: 0,
+                //     calculable: true,
+                //     color: ['#d94e5d','#eac736']
+                // },
+                series: [{
+                    name: '',
+                    type: 'scatter',
+                    coordinateSystem: 'geo',
+                    symbol: 'circle',
+                    symbolSize: function (val) {
+                        let size = 0
+                        if (val[2] < 2000) {
+                            size = val[2] / 100
+                        } else {
+                            size = 25
+                        }
+                        return size
+                    },
+                    showEffectOn: 'render',
+                    rippleEffect: {
+                        brushType: 'stroke'
+                    },
+                    hoverAnimation: true,
+                    data: [
                             {name: 'Afghanistan', value: 28397.812},
                             {name: 'Angola', value: 19549.124},
                             {name: 'Albania', value: 3150.143},
@@ -449,9 +445,8 @@ export default {
                             {name: 'South Africa', value: 51452.352},
                             {name: 'Zambia', value: 13216.985},
                             {name: 'Zimbabwe', value: 13076.978}
-                        ]
-                    }
-                ]
+                    ]
+                }]
             },
             barOptions: {
                 title: '中国通航历年飞行小时',

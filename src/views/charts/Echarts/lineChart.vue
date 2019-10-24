@@ -18,7 +18,10 @@ export default {
                     text: '通航历年飞行小时',
                     top: 10,
                     left: 5,
-                    x: 'left'
+                    x: 'left',
+                    textStyle: {
+                        color: '#fff'
+                    }
                 },
                 tooltip: {
                     trigger: 'axis'
