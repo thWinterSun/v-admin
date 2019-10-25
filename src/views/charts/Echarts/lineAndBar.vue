@@ -15,7 +15,7 @@ export default {
         return {
             option: {
                 title: {
-                    text: '通用航空器保有量',
+                    text: '运营企业数量',
                     top: 10,
                     left: 5,
                     x: 'left',
@@ -27,14 +27,16 @@ export default {
                     trigger: 'axis'
                 },
                 legend: {
-                    show: true,
+                    show: false,
                     bottom: '3%',
                     itemWidth: 12,
                     itemHeight: 12,
-                    data: ['总数','固定翼','旋翼类','其它']
+                    data: ['增长率','运营企业总数']
                 },
                 grid: {
-                    left: '15%'
+                    left: '15%',
+                    top: '25%',
+                    bottom: '15%'
                 },
                 xAxis: [
                     {
@@ -55,7 +57,16 @@ export default {
                 ],
                 yAxis: [
                     {
-                        name: '',
+                        name: '运营企业总数',
+                        type: 'value',
+                        axisLine: {show: false},
+                        axisTick: {show: false},
+                        splitLine: {
+                            show: false
+                        }
+                    },
+                    {
+                        name: '增长率%',
                         type: 'value',
                         axisLine: {show: false},
                         axisTick: {show: false},
@@ -66,44 +77,18 @@ export default {
                 ],
                 series: [
                     {
-                        name: '总数',
-                        type: 'bar',
-                        // stack: '总量',
-                        tooltip: {
-                            trigger: 'axis'
-                        },
+                        name: '增长率',
+                        type: 'line',
                         smooth: true,
-                        data: [807,900,907,1010,1154,1320,1654,1975,2235,2595,2776]
+                        yAxisIndex: 1,
+                        data: ['5','31','15','8','11','18','29','25','17','14','12']
                     },
                     {
-                        name: '固定翼',
+                        name: '运营企业总数',
                         type: 'bar',
-                        // stack: '总量',
-                        tooltip: {
-                            trigger: 'axis'
-                        },
+                        barWidth: 15,
                         smooth: true,
-                        data: [677,743,736,812,893,995,1239,1403,1530,1692,1808]
-                    },
-                    {
-                        name: '旋翼类',
-                        type: 'bar',
-                        // stack: '总量',
-                        tooltip: {
-                            trigger: 'axis'
-                        },
-                        smooth: true,
-                        data: [124,141,154,178,238,298,385,538,658,838,903]
-                    },
-                    {
-                        name: '其它',
-                        type: 'bar',
-                        // stack: '总量',
-                        tooltip: {
-                            trigger: 'axis'
-                        },
-                        smooth: true,
-                        data: [6,16,17,20,23,27,30,34,47,65,65]
+                        data: [68,89,103,111,123,146,189,239,281,320,360]
                     }
                 ]
             }

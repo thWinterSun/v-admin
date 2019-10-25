@@ -66,7 +66,7 @@ export default {
                     },
                     {
                         show: false,
-                        left: '54.5%',
+                        left: '56.5%',
                         top: 60,
                         bottom: 40,
                         width: '0%'
@@ -147,7 +147,10 @@ export default {
                             show: false
                         },
                         axisLine: {
-                            show: false
+                            show: true,
+                            lineStyle: {
+                                type: 'dashed'
+                            }
                         },
                         axisTick: {
                             show: false
@@ -191,7 +194,10 @@ export default {
                             show: false
                         },
                         axisLine: {
-                            show: false
+                            show: true,
+                            lineStyle: {
+                                type: 'dashed'
+                            }
                         },
                         axisTick: {
                             show: false
@@ -211,7 +217,7 @@ export default {
                     name: '小时',
                     type: 'bar',
                     barGap: 20,
-                    barWidth: 20,
+                    barWidth: 15,
                     label: {
                         normal: {
                             show: true,
@@ -241,7 +247,7 @@ export default {
                     name: '架次',
                     type: 'bar',
                     barGap: 20,
-                    barWidth: 20,
+                    barWidth: 15,
                     xAxisIndex: 2,
                     yAxisIndex: 2,
                     label: {
