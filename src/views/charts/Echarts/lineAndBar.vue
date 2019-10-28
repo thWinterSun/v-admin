@@ -42,6 +42,9 @@ export default {
                     {
                         type: 'category',
                         boundaryGap: false,
+                        axisLabel: {
+                            color: '#eee'
+                        },
                         axisTick: {show: false},
                         axisLine: {
                             show: true,
@@ -63,6 +66,9 @@ export default {
                         axisTick: {show: false},
                         splitLine: {
                             show: false
+                        },
+                        axisLabel: {
+                            color: '#eee'
                         }
                     },
                     {
@@ -70,6 +76,9 @@ export default {
                         type: 'value',
                         axisLine: {show: false},
                         axisTick: {show: false},
+                        axisLabel: {
+                            color: '#eee'
+                        },
                         splitLine: {
                             show: false
                         }
@@ -79,7 +88,7 @@ export default {
                     {
                         name: '增长率',
                         type: 'line',
-                        smooth: true,
+                        // smooth: true,
                         yAxisIndex: 1,
                         data: ['5','31','15','8','11','18','29','25','17','14','12']
                     },

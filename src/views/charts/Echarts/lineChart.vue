@@ -42,6 +42,9 @@ export default {
                         boundaryGap: false,
                         axisTick: {show: false},
                         axisLine: {show: false},
+                        axisLabel: {
+                            color: '#eee'
+                        },
                         splitLine: {
                             show: false
                         },
@@ -54,6 +57,9 @@ export default {
                         type: 'value',
                         axisLine: {show: false},
                         axisTick: {show: false},
+                        axisLabel: {
+                            color: '#eee'
+                        },
                         splitLine: {
                             show: false
                         }

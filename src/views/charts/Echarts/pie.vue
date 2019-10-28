@@ -45,7 +45,7 @@ export default {
                             normal: {
                                 formatter: '{b}：{c}',
                                 textStyle: {
-                                    color: '#9EB2BF',
+                                    color: '#eee',
                                     fontSize: 11
                                 }
                             }

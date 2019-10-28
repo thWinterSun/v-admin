@@ -31,6 +31,9 @@ export default {
                     bottom: '3%',
                     itemWidth: 12,
                     itemHeight: 12,
+                    textStyle: {
+                        color: '#eee'
+                    },
                     data: ['总数','固定翼','旋翼类','其它']
                 },
                 grid: {
@@ -47,6 +50,9 @@ export default {
                                 type: 'dashed'
                             }
                         },
+                        axisLabel: {
+                            color: '#eee'
+                        },
                         splitLine: {
                             show: false
                         },
@@ -59,6 +65,9 @@ export default {
                         type: 'value',
                         axisLine: {show: false},
                         axisTick: {show: false},
+                        axisLabel: {
+                            color: '#eee'
+                        },
                         splitLine: {
                             show: false
                         }

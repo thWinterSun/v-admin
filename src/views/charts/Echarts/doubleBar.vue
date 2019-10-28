@@ -32,6 +32,9 @@ export default {
                 },
                 legend: {
                     data: ['小时', '架次'],
+                    textStyle: {
+                        color: '#eee'
+                    },
                     bottom: 0,
                     right: 'center'
                 },
@@ -179,7 +182,7 @@ export default {
                         axisLabel: {
                             show: true,
                             textStyle: {
-                                // color: '#fff',
+                                color: '#fff',
                                 fontSize: 13
                             }
                         },

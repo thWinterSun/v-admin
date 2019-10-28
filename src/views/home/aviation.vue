@@ -9,8 +9,8 @@
 
     .mapChart{
         width:100%;
-        height:800px;
-       
+        height:680px;
+
     }
     .contentBg {
         background: url("../../images/MapCache3.png") no-repeat;
@@ -23,6 +23,40 @@
         margin: 10px;
         background: url("../../images/divbg3.png") 0% 0% / 100% 100% no-repeat;
     }
+    .topCont {
+      height: 200px;
+      padding: 15px;
+      margin: 15px 50px;
+      background: rgba(101,132,226,.1);
+    }
+    .topCont .border{
+      height: 100px;
+      margin: 10px;
+      background: url("../../images/divbg3.png") 0% 0% / 100% 100% no-repeat;
+    }
+    .topCont li{
+      list-style-type:none;
+      width: 50%;
+      text-align: center;
+
+    }
+    .topCont .num{
+      font-size: 6em;
+      color: #ffeb7b;
+      font-weight: bold;
+    }
+
+    .topCont .title{
+      padding: 10px;
+      font-size: 20px;
+      color: #ddd;
+    }
+    .pull-left{
+      float: left;
+    }
+    .pull-right{
+      float: right;
+    }
 </style>
 <template lang="html">
     <div class="contentBg">
@@ -34,7 +68,7 @@
                             <linechart></linechart>
                         </div>
                     </Col :lg="24">
-                    
+
                     <Col :lg="24">
                         <div class="cont">
                             <manybar></manybar>
@@ -48,14 +82,38 @@
                 </Row>
             </Col>
             <Col :sm="24" :md="24" :lg="12">
-                <div class="">
-                    <chart :options="chinMap" class="mapChart" id="cakechart" theme="dark"></chart> 
-                    
-                </div>
+                <Row>
+                    <Col :lg="24">
+                        <div class="topCont">
+                          <div class="border">
+                            <ul>
+                              <li class="pull-left num">
+                                <countTo :startVal='companyStart' :endVal='companyEnd' :duration='5000'></countTo>
+                              </li>
+                              <li class="pull-right num">
+                                <countTo :startVal='aircraftStart' :endVal='aircraftEnd' :duration='7000'></countTo>
+                              </li>
+                            </ul>
+                          </div>
+                          <ul>
+                            <li class="pull-left title">通用航空企业数量</li>
+                            <li class="pull-right title">通用航空器数量</li>
+                          </ul>
+                        </div>
+                    </Col>
+                </Row>
+                <Row>
+                    <Col :lg="24">
+                      <div class="">
+                          <chart :options="chinMap" class="mapChart" id="cakechart" theme="dark"></chart>
+                      </div>
+                    </Col>
+                </Row>
+
             </Col>
             <Col :sm="24" :md="12" :lg="6">
                 <Row>
-                    
+
                     <Col :lg="24">
                         <div class="cont" style="height: 580px">
                             <doublebar></doublebar>
@@ -70,7 +128,7 @@
                 </Row>
             </Col>
         </Row>
-   
+
     </div>
 </template>
 
@@ -88,11 +146,14 @@ import linechart from '../charts/Echarts/lineChart'
 import doublebar from '../charts/Echarts/doubleBar'
 import manybar from '../charts/Echarts/barChartmany'
 import lineBar from '../charts/Echarts/lineAndBar'
+
+import countTo from 'vue-count-to'
 // ECharts.registerMap('world', worldMap)
 ECharts.registerMap('china', chinaMap)
 
 export default {
     components: {
+        countTo,
         bar,
         pie,
         linechart,
@@ -104,6 +165,10 @@ export default {
     },
     data () {
         return {
+            companyStart: 0,
+            companyEnd: 335,
+            aircraftStart: 0,
+            aircraftEnd: 2595,
             chinMap: {
                 // backgroundColor: '#404a59',
                 title: {
