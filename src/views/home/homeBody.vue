@@ -39,8 +39,8 @@
                     </Row >
                </Card>
             </Col>
-        
-            
+
+
             <Col :xs="12" :md="8" :lg="6">
                 <Card :bordered="false" class="bgBlue card-container">
                     <Row class="media">
@@ -79,7 +79,7 @@
                     </Row >
                </Card>
             </Col>
-            
+
         </Row>
         <Row :gutter="10">
             <Col :md="24" :lg="16">
@@ -113,7 +113,7 @@
                     <p slot="title" class="card-title">
                         在线用户
                     </p>
-                    
+
                </Card>
             </Col>
             <Col :md="24" :lg="8">
@@ -121,7 +121,7 @@
                     <p slot="title" class="card-title">
                         授权信息
                     </p>
-                    
+
                </Card>
             </Col>
             <Col :md="24" :lg="8">
@@ -136,17 +136,14 @@
 </template>
 
 <script>
-import charts from '../charts/Echarts/doubleLine'
-import radar from '../charts/Echarts/RadarChart'
-import user from './userTable'
-import syslog from './syslog'
+import charts from '@/components/Echarts/doubleLine'
+import radar from '@/components/Echarts/RadarChart'
+
 export default {
     name: 'home-body',
     components: {
         charts,
-        radar,
-        user,
-        syslog
+        radar
     },
     data () {
         return {

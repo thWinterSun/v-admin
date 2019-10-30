@@ -101,24 +101,25 @@
                     {
                         'children': [
                             {
-                                'name': 'runstatus',
+                                'name': '运行状态',
                                 'mId': '1-1',
                                 'route': '/home/runstatus'
                             },
                             {
-                                'name': 'worldMap',
+                                'name': '通用航空',
                                 'mId': '1-2',
                                 'route': '/home/worldMap'
                             },
                             {
-                                'name': 'globalMap',
-                                'mId': '1-3',
-                                'route': '/home/globalMap'
+                              'name': '航空煤油',
+                              'mId': '1-3',
+                              'route': '/home/netdata'
                             },
                             {
-                                'name': 'netdata',
+                                'name': 'globalMap',
                                 'mId': '1-4',
-                                'route': '/home/netdata'
+                                'route': '/home/globalMap'
+
                             }
                         ],
                         'name': 'Home',

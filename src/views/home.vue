@@ -13,7 +13,7 @@ import topMenus from '../components/menu'
 import footer from '../components/footer'
 import '../assets/themes/dark.less'
 import '../assets/css/style.less'
-import './home/home.less'
+import '../assets/css/home.less'
 export default {
     name: 'dashboard',
     components: {
@@ -24,6 +24,5 @@ export default {
 </script>
 
 <style lang="less">
-    
-</style>
 
+</style>

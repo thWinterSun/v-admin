@@ -9,17 +9,16 @@
 </template>
 
 <script>
-import bread from '../../components/breadcrumb'
-import double from './Echarts/doubleLine'
-import dash from './Echarts/DashChartLarge'
-import radar from './Echarts/RadarChart'
-import spider from './Echarts/spider'
+import bread from '@/components/breadcrumb'
+import double from '@/components/Echarts/doubleLine'
+// import dash from './Echarts/lineChart'
+import radar from '@/components/Echarts/RadarChart'
+import spider from '@/components/Echarts/spider'
 export default {
     name: 'homeCon',
     components: {
         bread,
         double,
-        dash,
         radar,
         spider,
         'tabPane': {
@@ -30,10 +29,6 @@ export default {
                     {
                         name: '降雨分布图',
                         tab: 'double'
-                    },
-                    {
-                        name: '曲线图',
-                        tab: 'dash'
                     },
                     {
                         name: '雷达图',
@@ -61,5 +56,5 @@ export default {
 </script>
 
 <style lang="css">
-    
+
 </style>

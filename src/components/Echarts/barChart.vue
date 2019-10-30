@@ -1,21 +1,36 @@
 <template>
-    <chart :options="option" class="echarts" theme="dark"> </chart>
+    <chart :options="option" :style="style" theme="dark"> </chart>
 </template>
 
 <style scoped>
-.echarts {
-    height: 280px;
-    width: 100%;
-}
+
 </style>
 <script>
 export default {
-    name: 'dashChartLarge',
+    name: 'barcharts',
+    props: {
+      barData: {
+        type: Object
+      },
+      width: {
+        type: String,
+        default: '100%'
+      },
+      height: {
+        type: String,
+        default: '280px'
+      }
+    },
     data () {
+        const style = {
+          width: this.width,
+          height: this.height
+        }
         return {
+            style,
             option: {
                 title: {
-                    text: '通航历年飞行小时',
+                    text: this.barData.title,
                     top: 10,
                     left: 5,
                     x: 'left',
@@ -27,11 +42,14 @@ export default {
                     trigger: 'axis'
                 },
                 legend: {
-                    show: false,
+                    show: true,
                     bottom: '3%',
                     itemWidth: 12,
                     itemHeight: 12,
-                    data: []
+                    textStyle: {
+                        color: '#eee'
+                    },
+                    data: this.barData.legend
                 },
                 grid: {
                     left: '15%'
@@ -41,14 +59,19 @@ export default {
                         type: 'category',
                         boundaryGap: false,
                         axisTick: {show: false},
-                        axisLine: {show: false},
+                        axisLine: {
+                            show: true,
+                            lineStyle: {
+                                type: 'dashed'
+                            }
+                        },
                         axisLabel: {
                             color: '#eee'
                         },
                         splitLine: {
                             show: false
                         },
-                        data: ['2007','2008','2009','2010','2011','2012','2013','2014','2015','2016','2017']
+                        data: this.barData.xdata
                     }
                 ],
                 yAxis: [
@@ -65,20 +88,7 @@ export default {
                         }
                     }
                 ],
-                series: [
-                    {
-                        name: '',
-                        type: 'line',
-                        tooltip: {
-                            trigger: 'axis'
-                        },
-                        // areaStyle: {
-                        //     normal: {}
-                        // },
-                        smooth: true,
-                        data: [260716,272843,329873,367600,502749,517037,529800,675000,735000,764700,808000]
-                    }
-                ]
+                series: this.barData.series
             }
         }
     }

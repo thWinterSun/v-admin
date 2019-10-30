@@ -63,8 +63,8 @@
 <script>
 import ECharts from 'vue-echarts';
 import worldMap from 'echarts/map/json/world.json'
-import bar from '../charts/Echarts/bar'
-import pie from '../charts/Echarts/pie'
+import bar from '@/components/Echarts/bar'
+import pie from '@/components/Echarts/pie'
 ECharts.registerMap('world', worldMap)
 export default {
     data () {

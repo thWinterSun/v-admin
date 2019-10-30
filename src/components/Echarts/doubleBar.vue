@@ -1,5 +1,5 @@
 <template>
-    <chart :options="option" theme="dark" style="width:100%;height:560px"> </chart>
+    <chart :options="option" theme="dark" :style="style"> </chart>
 </template>
 
 <style scoped>
@@ -10,20 +10,29 @@
 <script>
 export default {
     name: 'bar',
-    computed: {
-        barData () {
-            return {
-            }
-        }
+    props: {
+      doubleBarData: {
+        type: Object
+      },
+      width: {
+        type: String,
+        default: '100%'
+      },
+      height: {
+        type: String,
+        default: '280px'
+      }
     },
     data () {
+        const style = {
+          width: this.width,
+          height: this.height
+        }
         return {
-            flightType: ['航空摄影', '航空探矿', '空中巡查', '石油服务', '人工降水', '航空护林', '航空喷洒', '气象探测', '直升机引航', '科学实验', '空中广告', '航空器代管', '空中游览', '包机飞行', '医疗救援','跳伞飞行','个人娱乐','执照培训'],
-            flights: [6352,1458,19661,46217,6319,15835,107444,1842,5365,1083,9543,8658,74352,14987,3537,5085,16622,908035],
-            flightHours: [17350,4648,28429,37926,9732,17923,41570,1921,2984,2307,2634,21688,16434,22053,2156,3316,2709,295476],
+            style,
             option: {
                 title: {
-                    text: '通航作业架次与小时',
+                    text: this.doubleBarData.title,
                     left: 5,
                     top: 10,
                     textStyle: {
@@ -31,7 +40,7 @@ export default {
                     }
                 },
                 legend: {
-                    data: ['小时', '架次'],
+                    data: this.doubleBarData.legend,
                     textStyle: {
                         color: '#eee'
                     },
@@ -166,7 +175,7 @@ export default {
                                 // fontSize: 12
                             }
                         },
-                        data: ['航空摄影', '航空探矿', '空中巡查', '石油服务', '人工降水', '航空护林', '航空喷洒', '气象探测', '直升机引航', '科学实验', '空中广告', '航空器代管', '空中游览', '包机飞行', '医疗救援','跳伞飞行','个人娱乐']
+                        data: this.doubleBarData.ydata
                     },
                     {
                         gridIndex: 1,
@@ -186,7 +195,7 @@ export default {
                                 fontSize: 13
                             }
                         },
-                        data: ['航空摄影', '航空探矿', '空中巡查', '石油服务', '人工降水', '航空护林', '航空喷洒', '气象探测', '直升机引航', '科学实验', '空中广告', '航空器代管', '空中游览', '包机飞行', '医疗救援','跳伞飞行','个人娱乐']
+                        data: this.doubleBarData.ydata
                     },
                     {
                         gridIndex: 2,
@@ -212,12 +221,12 @@ export default {
                                 // fontSize: 14
                             }
                         },
-                        data: ['航空摄影', '航空探矿', '空中巡查', '石油服务', '人工降水', '航空护林', '航空喷洒', '气象探测', '直升机引航', '科学实验', '空中广告', '航空器代管', '空中游览', '包机飞行', '医疗救援','跳伞飞行','个人娱乐']
+                        data: this.doubleBarData.ydata
                     }
                 ],
                 series: [
-                    {
-                    name: '小时',
+                  {
+                    name: this.doubleBarData.legend[0],
                     type: 'bar',
                     barGap: 20,
                     barWidth: 15,
@@ -244,10 +253,10 @@ export default {
                             color: '#08C7AE'
                         }
                     },
-                    data: [17350,4648,28429,37926,9732,17923,41570,1921,2984,2307,2634,21688,16434,22053,2156,3316,2709]
+                    data: this.doubleBarData.seriesData.leftData
                 },
                 {
-                    name: '架次',
+                    name: this.doubleBarData.legend[1],
                     type: 'bar',
                     barGap: 20,
                     barWidth: 15,
@@ -276,7 +285,7 @@ export default {
                             color: '#F94646'
                         }
                     },
-                    data: [6352,1458,19661,46217,6319,15835,107444,1842,5365,1083,9543,8658,74352,14987,3537,5085,16622]
+                    data: this.doubleBarData.seriesData.rightData
                 }]
             }
         }

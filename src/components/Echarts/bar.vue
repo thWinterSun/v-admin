@@ -1,5 +1,5 @@
 <template>
-    <chart :options="option" theme="dark" style="width:100%;height:260px"> </chart>
+    <chart :options="option" theme="dark" :style="style"> </chart>
 </template>
 
 <style scoped>
@@ -10,19 +10,29 @@
 <script>
 export default {
     name: 'bar',
-    computed: {
-        barData () {
-            return {
-            }
-        }
+    props: {
+      barData: {
+        type: Object
+      },
+      width: {
+        type: String,
+        default: '100%'
+      },
+      height: {
+        type: String,
+        default: '280px'
+      }
     },
-    data () {
+    data() {
+        const style = {
+          width: this.width,
+          height: this.height
+        }
         return {
-            srcIpArr: [],
-            srcCountArr: [],
+            style,
             option: {
                 title: {
-                    text: '中国通航历年飞行小时',
+                    text: this.barData.title,
                     x: 'center',
                     left: 5,
                     top: 10
@@ -53,7 +63,7 @@ export default {
                         axisLine: {show: true},
                         axisTick: {show: false},
                         splitLine: {show: false},
-                        data: ['2007','2008','2009','2010','2011','2012','2013','2014','2015','2016','2017']
+                        data: this.barData.xData
                     }
                 ],
                 yAxis: [
@@ -67,9 +77,9 @@ export default {
                 ],
                 series: [
                     {
-                        name: '时长',
+                        name: '',
                         type: 'bar',
-                        stack: 'IP',
+                        stack: '',
                         label: {
                             normal: {
                                 show: false,
@@ -81,7 +91,7 @@ export default {
                         animationDelayUpdate: function (idx) {
                             return idx * 5;
                         },
-                        data: [260716,272843,329873,367600,502749,517037,529800,675000,735000,764700,808000],
+                        data: this.barData.seriesData,
                         itemStyle: {
                             normal: {
                                 color: function (params) {

@@ -1,21 +1,39 @@
 <template>
-    <chart :options="option" class="echarts" theme="dark"> </chart>
+    <chart :options="option" :style="style" theme="dark"> </chart>
 </template>
 
 <style scoped>
-.echarts {
-    height: 280px;
-    width: 100%;
-}
+
 </style>
 <script>
 export default {
     name: 'dashChartLarge',
+    props: {
+      linebarData: {
+        type: Object
+      },
+      width: {
+        type: String,
+        default: '100%'
+      },
+      height: {
+        type: String,
+        default: '280px'
+      }
+    },
+    // created() {
+    //   console.log(this.linebarData)
+    // },
     data () {
+        const style = {
+          width: this.width,
+          height: this.height
+        }
         return {
+            style,
             option: {
                 title: {
-                    text: '运营企业数量',
+                    text: this.linebarData.title,
                     top: 10,
                     left: 5,
                     x: 'left',
@@ -31,7 +49,7 @@ export default {
                     bottom: '3%',
                     itemWidth: 12,
                     itemHeight: 12,
-                    data: ['增长率','运营企业总数']
+                    data: this.linebarData.legend
                 },
                 grid: {
                     left: '15%',
@@ -55,12 +73,12 @@ export default {
                         splitLine: {
                             show: false
                         },
-                        data: ['2007','2008','2009','2010','2011','2012','2013','2014','2015','2016','2017']
+                        data: this.linebarData.xdata
                     }
                 ],
                 yAxis: [
                     {
-                        name: '运营企业总数',
+                        name: this.linebarData.legend[1],
                         type: 'value',
                         axisLine: {show: false},
                         axisTick: {show: false},
@@ -72,7 +90,7 @@ export default {
                         }
                     },
                     {
-                        name: '增长率%',
+                        name: this.linebarData.legend[0],
                         type: 'value',
                         axisLine: {show: false},
                         axisTick: {show: false},
@@ -84,22 +102,7 @@ export default {
                         }
                     }
                 ],
-                series: [
-                    {
-                        name: '增长率',
-                        type: 'line',
-                        // smooth: true,
-                        yAxisIndex: 1,
-                        data: ['5','31','15','8','11','18','29','25','17','14','12']
-                    },
-                    {
-                        name: '运营企业总数',
-                        type: 'bar',
-                        barWidth: 15,
-                        smooth: true,
-                        data: [68,89,103,111,123,146,189,239,281,320,360]
-                    }
-                ]
+                series: this.linebarData.serise
             }
         }
     }
