@@ -23,6 +23,9 @@ export default {
         default: '280px'
       }
     },
+    mounted() {
+        console.log(this.pieData)
+    },
     data () {
         const style = {
           width: this.width,
@@ -31,44 +34,58 @@ export default {
         return {
             style,
             option: {
-                title: {
-                    text: this.pieData.title,
-                    x: 'center',
-                    left: 5,
-                    top: 10,
-                    textStyle: {
-                        color: '#fff'
-                    }
-                },
-                tooltip: {
-                    trigger: 'item',
-                    formatter: "{b} : {c} ({d}%)"
-                },
-                legend: {
-                    show: false,
-                    orient: 'vertical',
-                    top: 'middle',
-                    left: 'left',
-                    data: ['','','','','']
-                },
-                series: [
-                    {
-                        name: '',
-                        type: 'pie',
-                        radius: ['40%','50%'],
-                        center: ['50%', '50%'],
-                        label: {
-                            normal: {
-                                formatter: '{b}：{c}',
-                                textStyle: {
-                                    color: '#eee',
-                                    fontSize: 11
-                                }
-                            }
+                baseOption: {
+                    title: {
+                        text: this.pieData.title,
+                        x: 'center',
+                        left: 5,
+                        top: 10,
+                        textStyle: {
+                            color: '#fff'
+                        }
+                    },
+                    timeline: {
+                        show: false,
+                        axisType: 'category',
+                        autoPlay: true,
+                        playInterval: 1000,
+                        data: this.pieData.timeLine
+                    },
+                    tooltip: {
+                        trigger: 'item',
+                        formatter: "{b} : {c} ({d}%)"
+                    },
+                    legend: {
+                        show: true,
+                        orient: 'vertical',
+                        top: 'middle',
+                        right: "15",
+                        textStyle: {
+                            color: '#fff'
                         },
-                        data: this.pieData.data
-                    }
-                ]
+                        data: this.pieData.legend
+                    },
+                    series: [
+                        {
+                            name: '',
+                            type: 'pie',
+                            radius: ['40%','60%'],
+                            center: ['40%', '55%'],
+                            roseType: 'radius',
+                            label: {
+                                normal: {
+                                    formatter: '{c}',
+                                    textStyle: {
+                                        color: '#eee',
+                                        fontSize: 11
+                                    }
+                                }
+                            },
+                            data: []
+                        }
+                    ]
+                },
+                options: this.pieData.options
             }
         }
     }

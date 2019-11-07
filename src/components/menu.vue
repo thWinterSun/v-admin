@@ -111,7 +111,7 @@
                                 'route': '/home/worldMap'
                             },
                             {
-                              'name': '航空煤油',
+                              'name': '通航可视化',
                               'mId': '1-3',
                               'route': '/home/netdata'
                             },

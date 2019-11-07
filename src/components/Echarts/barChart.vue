@@ -52,7 +52,7 @@ export default {
                     data: this.barData.legend
                 },
                 grid: {
-                    left: '15%'
+                    right: '12%'
                 },
                 xAxis: [
                     {
@@ -69,7 +69,10 @@ export default {
                             color: '#eee'
                         },
                         splitLine: {
-                            show: false
+                            show: false,
+                            lineStyle: {
+                                color: '#ffffff1f'
+                            }
                         },
                         data: this.barData.xdata
                     }
@@ -78,13 +81,23 @@ export default {
                     {
                         name: '',
                         type: 'value',
-                        axisLine: {show: false},
+                        position: 'right',
                         axisTick: {show: false},
                         axisLabel: {
                             color: '#eee'
                         },
                         splitLine: {
-                            show: false
+                            show: false,
+                            lineStyle: {
+                                color: '#ffffff1f'
+                            }
+                        },
+                        axisLine: {
+                            show: false,
+                            lineStyle: {
+                                color: '#9CACB7',
+                                width: 2
+                            }
                         }
                     }
                 ],

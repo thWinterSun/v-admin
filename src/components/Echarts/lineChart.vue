@@ -6,9 +6,11 @@
 
 </style>
 <script>
+// import resize from './mixins/resize'
 export default {
     name: 'dashChartLarge',
     // props: ['lineData'],
+    // mixins: [resize],
     props: {
       lineData: {
         type: Object
@@ -53,19 +55,31 @@ export default {
                     data: this.lineData.legend
                 },
                 grid: {
-                    left: '15%'
+                    right: '18%'
                 },
                 xAxis: [
                     {
                         type: 'category',
                         boundaryGap: false,
-                        axisTick: {show: false},
-                        axisLine: {show: false},
                         axisLabel: {
+                            margin: 30,
                             color: '#eee'
                         },
-                        splitLine: {
+                        axisLine: {
                             show: false
+                        },
+                        axisTick: {
+                            show: true,
+                            length: 25,
+                            lineStyle: {
+                                color: "#ffffff1f"
+                            }
+                        },
+                        splitLine: {
+                            show: true,
+                            lineStyle: {
+                                color: '#ffffff1f'
+                            }
                         },
                         data: this.lineData.xdata
                     }
@@ -74,13 +88,30 @@ export default {
                     {
                         name: '',
                         type: 'value',
-                        axisLine: {show: false},
-                        axisTick: {show: false},
+                        position: 'right',
                         axisLabel: {
+                            margin: 20,
                             color: '#eee'
                         },
+                        axisTick: {
+                            show: true,
+                            length: 15,
+                            lineStyle: {
+                                color: "#ffffff1f"
+                            }
+                        },
                         splitLine: {
-                            show: false
+                            show: true,
+                            lineStyle: {
+                                color: '#ffffff1f'
+                            }
+                        },
+                        axisLine: {
+                            show: false,
+                            lineStyle: {
+                                color: '#9CACB7',
+                                width: 2
+                            }
                         }
                     }
                 ],

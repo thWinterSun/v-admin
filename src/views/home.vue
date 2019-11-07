@@ -4,7 +4,7 @@
         <!--导航组件  -->
         <top-menus></top-menus>
         <router-view></router-view>
-        <foot></foot>
+        <!-- <foot></foot> -->
     </div>
 </template>
 
