@@ -42,7 +42,7 @@
     "cryptojs": "^2.5.3",
     "css-loader": "^0.28.0",
     "d3": "^4.11.0",
-    "echarts": "^3.7.2",
+    "echarts": "^4.4.0",
     "echarts-gl": "^1.0.0-beta.6",
     "eslint": "^3.19.0",
     "eslint-config-standard": "^10.2.1",

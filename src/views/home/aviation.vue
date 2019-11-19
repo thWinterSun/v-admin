@@ -99,12 +99,12 @@
                 
                 <Row>
                     <Col :lg="24">
-                      <h2 class="platformTitle">中航油通航大数据平台</h2>
-                        <div class="topCont">
-                          <ul>
+                      <h2 class="platformTitle">大数据平台</h2>
+                        <!--<div class="topCont">
+                           <ul>
                             <li class="pull-left title">通用航空企业数量</li>
                             <li class="pull-right title">通用航空器数量</li>
-                          </ul>
+                          </ul> 
                           <div class="border">
                             <ul>
                               <li class="pull-left num">
@@ -116,11 +116,11 @@
                             </ul>
                           </div>
 
-                        </div>
+                        </div>-->
                     </Col>
                     <Col :lg="24">
                       <div>
-                        <chinamap :mapData="chinMap"  class="mapChart" ></chinamap>
+                        <global :mapData="chinMap"  class="mapChart" ></global>
                       </div>
                     </Col>
                 </Row>
@@ -151,7 +151,8 @@ import 'echarts/theme/dark.js'
 import echarts from 'echarts'
 import countTo from 'vue-count-to'
 // Map of China
-import chinamap from '@/components/Echarts/chinaMap'
+// import chinamap from '@/components/Echarts/chinaMap'
+import global from '@/components/echarts-gl/globe'
 import pie from '@/components/Echarts/pie'
 import linechart from '@/components/Echarts/lineChart'
 import doublebar from '@/components/Echarts/doubleBar'
@@ -161,7 +162,7 @@ import { city,line } from '@/assets/data/mapData'
 export default {
     components: {
         countTo,
-        chinamap,
+        global,
         pie,
         linechart,
         doublebar,
@@ -182,7 +183,7 @@ export default {
             },
             lineOptions: {
                 title: '中国通航历年飞行小时',
-                xdata: ['2007','2008','2009','2010','2011','2012','2013','2014','2015','2016','2017'],
+                xdata: ['2007','2008','2009','2010','2011','2012','2013','2014','2015','2016','2017','2018'],
                 series: [
                   {
                       name: '',
@@ -226,6 +227,117 @@ export default {
                       },
                       data: [260716,272843,329873,367600,502749,517037,529800,675000,735000,764700,808000]
                   }
+                ],
+                options: [
+                  {
+                      xAxis: [{
+                          data: ['2007','2008','2009','2010','2011']
+                      }],
+                      series: [{
+                          name: '',
+                          type: 'line',
+                          smooth: true,
+                          showAllSymbol: true,
+                          symbol: 'circle',
+                          symbolSize: 6,
+                          lineStyle: {
+                              normal: {
+                                  color: "#DD6B66"
+                              }
+                          },
+                          label: {
+                              show: true,
+                              position: 'top',
+                              textStyle: {
+                                  color: '#fff'
+                              }
+                          },
+                          itemStyle: {
+                              color: "red",
+                              borderColor: "#fff",
+                              borderWidth: 3
+                          },
+                          tooltip: {
+                              show: true
+                          },
+                          areaStyle: {
+                              normal: {
+                                  color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                                          offset: 0,
+                                          color: '#DD6B66'
+                                      },
+                                      {
+                                          offset: 1,
+                                          color: '#3fbbff0d'
+                                      }
+                                  ], false)
+                              }
+                          },
+                          data: [260716,272843,329873,367600,502749]
+                      }]
+                  }, {
+                      xAxis: [{
+                          data: ['2007','2008','2009','2010','2011','2012']
+                      }],
+                      series: [{
+                          name: '',
+                          'data': [260716,272843,329873,367600,502749,517037]
+                      }]
+                  },
+                  {
+                      xAxis: [{
+                          data: ['2007','2008','2009','2010','2011','2012','2013']
+                      }],
+                      series: [{
+                          name: '',
+                          'data': [260716,272843,329873,367600,502749,517037,529800]
+                      }]
+                  },
+                  {
+                      xAxis: [{
+                          data: ['2007','2008','2009','2010','2011','2012','2013','2014']
+                      }],
+                      series: [{
+                          name: '',
+                          'data': [260716,272843,329873,367600,502749,517037,529800,675000]
+                      }]
+                  },
+                  {
+                      xAxis: [{
+                          data: ['2007','2008','2009','2010','2011','2012','2013','2014','2015']
+                      }],
+                      series: [{
+                          name: '',
+                          'data': [260716,272843,329873,367600,502749,517037,529800,675000,735000]
+                      }]
+                  },
+                  {
+                      xAxis: [{
+                          data: ['2007','2008','2009','2010','2011','2012','2013','2014','2015','2016']
+                      }],
+                      series: [{
+                          name: '',
+                          'data': [260716,272843,329873,367600,502749,517037,529800,675000,735000,764700]
+                      }]
+                  },
+                  {
+                      xAxis: [{
+                          data: ['2007','2008','2009','2010','2011','2012','2013','2014','2015','2016','2017']
+                      }],
+                      series: [{
+                          name: '',
+                          'data': [260716,272843,329873,367600,502749,517037,529800,675000,735000,764700,808000]
+                      }]
+                  },
+                  {
+                      xAxis: [{
+                          data: ['2007','2008','2009','2010','2011','2012','2013','2014','2015','2016','2017','2018']
+                      }],
+                      series: [{
+                          name: '',
+                          'data': [260716,272843,329873,367600,502749,517037,529800,675000,735000,764700,808000,838000]
+                      }]
+                  }
                 ]
 
             },
@@ -247,7 +359,7 @@ export default {
                   {value: 11, name: '跳伞飞行'},
                   {value: 6, name: '航空表演'}
               ],
-              timeLine: ['2007','2008','2009','2010','2011','2012','2013','2014','2015','2016','2017'],
+              timeLine: ['2017'],
               options: [
                 {
                     series: [{
@@ -269,220 +381,7 @@ export default {
                               }
                           ]
                       }]
-                  },
-                {
-                    series: [{
-                          data: [{
-                                  value: 900,
-                                  name: '总数'
-                              },
-                              {
-                                  value: 743,
-                                  name: '固定翼'
-                              },
-                              {
-                                  value: 141,
-                                  name: '旋翼类'
-                              },
-                              {
-                                  value: 16,
-                                  name: '其他'
-                              }
-                          ]
-                      }]
-                  },
-                {
-                    series: [{
-                          data: [{
-                                  value: 907,
-                                  name: '总数'
-                              },
-                              {
-                                  value: 736,
-                                  name: '固定翼'
-                              },
-                              {
-                                  value: 154,
-                                  name: '旋翼类'
-                              },
-                              {
-                                  value: 17,
-                                  name: '其他'
-                              }
-                          ]
-                      }]
-                  },
-                {
-                    series: [{
-                          data: [{
-                                  value: 1010,
-                                  name: '总数'
-                              },
-                              {
-                                  value: 812,
-                                  name: '固定翼'
-                              },
-                              {
-                                  value: 178,
-                                  name: '旋翼类'
-                              },
-                              {
-                                  value: 20,
-                                  name: '其他'
-                              }
-                          ]
-                      }]
-                  },
-                {
-                    series: [{
-                          data: [{
-                                  value: 1154,
-                                  name: '总数'
-                              },
-                              {
-                                  value: 893,
-                                  name: '固定翼'
-                              },
-                              {
-                                  value: 238,
-                                  name: '旋翼类'
-                              },
-                              {
-                                  value: 23,
-                                  name: '其他'
-                              }
-                          ]
-                      }]
-                  },
-                  {
-                      series: [{
-                          data: [{
-                                  value: 1320,
-                                  name: '总数'
-                              },
-                              {
-                                  value: 995,
-                                  name: '固定翼'
-                              },
-                              {
-                                  value: 298,
-                                  name: '旋翼类'
-                              },
-                              {
-                                  value: 27,
-                                  name: '其他'
-                              }
-                          ]
-                      }]
-                  },
-                  {
-                      series: [{
-                          data: [
-                              {
-                                  value: 1654,
-                                  name: '总数'
-                              },
-                              {
-                                  value: 1239,
-                                  name: '固定翼'
-                              },
-                              {
-                                  value: 385,
-                                  name: '旋翼类'
-                              },
-                              {
-                                  value: 30,
-                                  name: '其他'
-                              }
-                          ]
-                      }]
-                  },
-                  {
-                      series: [{
-                          data: [{
-                                  value: 1975,
-                                  name: '总数'
-                              },
-                              {
-                                  value: 1403,
-                                  name: '固定翼'
-                              },
-                              {
-                                  value: 538,
-                                  name: '旋翼类'
-                              },
-                              {
-                                  value: 34,
-                                  name: '其他'
-                              }
-                          ]
-                      }]
-                  },
-                  {
-                      series: [{
-                          data: [{
-                                  value: 2235,
-                                  name: '总数'
-                              },
-                              {
-                                  value: 1530,
-                                  name: '固定翼'
-                              },
-                              {
-                                  value: 658,
-                                  name: '旋翼类'
-                              },
-                              {
-                                  value: 47,
-                                  name: '其他'
-                              }
-                          ]
-                      }]
-                  },
-                  {
-                      series: [{
-                          data: [
-                              {
-                                  value: 2595,
-                                  name: '总数'
-                              },
-                              {
-                                  value: 1692,
-                                  name: '固定翼'
-                              },
-                              {
-                                  value: 838,
-                                  name: '旋翼类'
-                              },
-                              {
-                                  value: 65,
-                                  name: '其他'
-                              }
-                          ]
-                      }]
-                  },
-                  {
-                    series: [{
-                        data: [
-                            {
-                                value: 2776,
-                                name: '总数'
-                            },
-                            {
-                                value: 1808,
-                                name: '固定翼'
-                            },
-                            {
-                                value: 903,
-                                name: '旋翼类'
-                            },
-                            {
-                                value: 65,
-                                name: '其他'
-                            }
-                        ]
-                    }]
-                }
+                  }
               ]
             },
             doubleOption: {
@@ -517,43 +416,222 @@ export default {
                   {
                       name: '总数',
                       type: 'bar',
-                      // stack: '总量',
-                      tooltip: {
-                          trigger: 'axis'
-                      },
+                      tooltip: {trigger: 'axis'},
                       smooth: true,
                       data: [807,900,907,1010,1154,1320,1654,1975,2235,2595,2776]
                   },
                   {
                       name: '固定翼',
                       type: 'bar',
-                      // stack: '总量',
-                      tooltip: {
-                          trigger: 'axis'
-                      },
                       smooth: true,
                       data: [677,743,736,812,893,995,1239,1403,1530,1692,1808]
                   },
                   {
                       name: '旋翼类',
                       type: 'bar',
-                      // stack: '总量',
-                      tooltip: {
-                          trigger: 'axis'
-                      },
                       smooth: true,
                       data: [124,141,154,178,238,298,385,538,658,838,903]
                   },
                   {
                       name: '其它',
                       type: 'bar',
-                      // stack: '总量',
-                      tooltip: {
-                          trigger: 'axis'
-                      },
                       smooth: true,
                       data: [6,16,17,20,23,27,30,34,47,65,65]
                   }
+              ],
+              options: [
+                {
+                  xAxis: [{
+                      data: ['2007','2008','2009','2010','2011']
+                  }],
+                  series: [
+                    {
+                      name: '总数',
+                      type: 'bar',
+                      tooltip: {trigger: 'axis'},
+                      smooth: true,
+                      data: [807,900,907,1010,1154]
+                    },
+                    {
+                        name: '固定翼',
+                        type: 'bar',
+                        smooth: true,
+                        data: [677,743,736,812]
+                    },
+                    {
+                        name: '旋翼类',
+                        type: 'bar',
+                        smooth: true,
+                        data: [124,141,154,178,238]
+                    },
+                    {
+                        name: '其它',
+                        type: 'bar',
+                        smooth: true,
+                        data: [6,16,17,20,23]
+                    }
+                  ]
+                },
+                {
+                  xAxis: [{
+                      data: ['2007','2008','2009','2010','2011','2012']
+                  }],
+                  series: [
+                    {
+                      name: '总数',
+                      type: 'bar',
+                      tooltip: {trigger: 'axis'},
+                      smooth: true,
+                      data: [807,900,907,1010,1154,1320]
+                    },
+                    {
+                        name: '固定翼',
+                        type: 'bar',
+                        smooth: true,
+                        data: [677,743,736,812,893,995]
+                    },
+                    {
+                        name: '旋翼类',
+                        type: 'bar',
+                        smooth: true,
+                        data: [124,141,154,178,238,298]
+                    },
+                    {
+                        name: '其它',
+                        type: 'bar',
+                        smooth: true,
+                        data: [6,16,17,20,23,27]
+                    }
+                  ]
+                },
+                {
+                  xAxis: [{
+                      data: ['2007','2008','2009','2010','2011','2012','2013']
+                  }],
+                  series: [
+                    {
+                      name: '总数',
+                      type: 'bar',
+                      tooltip: {trigger: 'axis'},
+                      smooth: true,
+                      data: [807,900,907,1010,1154,1320,1654]
+                    },
+                    {
+                        name: '固定翼',
+                        type: 'bar',
+                        smooth: true,
+                        data: [677,743,736,812,893,995,1239]
+                    },
+                    {
+                        name: '旋翼类',
+                        type: 'bar',
+                        smooth: true,
+                        data: [124,141,154,178,238,298,385]
+                    },
+                    {
+                        name: '其它',
+                        type: 'bar',
+                        smooth: true,
+                        data: [6,16,17,20,23,27,30]
+                    }
+                  ]
+                },
+                {
+                  xAxis: [{
+                      data: ['2007','2008','2009','2010','2011','2012','2013','2014']
+                  }],
+                  series: [
+                    {
+                      name: '总数',
+                      type: 'bar',
+                      tooltip: {trigger: 'axis'},
+                      smooth: true,
+                      data: [807,900,907,1010,1154,1320,1654,1975]
+                    },
+                    {
+                        name: '固定翼',
+                        type: 'bar',
+                        smooth: true,
+                        data: [677,743,736,812,893,995,1239,1403]
+                    },
+                    {
+                        name: '旋翼类',
+                        type: 'bar',
+                        smooth: true,
+                        data: [124,141,154,178,238,298,385,538]
+                    },
+                    {
+                        name: '其它',
+                        type: 'bar',
+                        smooth: true,
+                        data: [6,16,17,20,23,27,30,34]
+                    }
+                  ]
+                },
+                {
+                  xAxis: [{
+                      data: ['2007','2008','2009','2010','2011','2012','2013','2014','2015']
+                  }],
+                  series: [
+                    {
+                      name: '总数',
+                      type: 'bar',
+                      tooltip: {trigger: 'axis'},
+                      smooth: true,
+                      data: [807,900,907,1010,1154,1320,1654,1975,2235]
+                    },
+                    {
+                        name: '固定翼',
+                        type: 'bar',
+                        smooth: true,
+                        data: [677,743,736,812,893,995,1239,1403,1530]
+                    },
+                    {
+                        name: '旋翼类',
+                        type: 'bar',
+                        smooth: true,
+                        data: [124,141,154,178,238,298,385,538,658]
+                    },
+                    {
+                        name: '其它',
+                        type: 'bar',
+                        smooth: true,
+                        data: [6,16,17,20,23,27,30,34,47]
+                    }
+                  ]
+                },
+                {
+                  xAxis: [{
+                      data: ['2007','2008','2009','2010','2011','2012','2013','2014','2015','2016']
+                  }],
+                  series: [
+                    {
+                      name: '总数',
+                      type: 'bar',
+                      tooltip: {trigger: 'axis'},
+                      smooth: true,
+                      data: [807,900,907,1010,1154,1320,1654,1975,2235,2595]
+                    },
+                    {
+                        name: '固定翼',
+                        type: 'bar',
+                        smooth: true,
+                        data: [677,743,736,812,893,995,1239,1403,1530,1692]
+                    },
+                    {
+                        name: '旋翼类',
+                        type: 'bar',
+                        smooth: true,
+                        data: [124,141,154,178,238,298,385,538,658,838]
+                    },
+                    {
+                        name: '其它',
+                        type: 'bar',
+                        smooth: true,
+                        data: [6,16,17,20,23,27,30,34,47,65]
+                    }
+                  ]
+                }
               ]
             },
             lineBarOption: {

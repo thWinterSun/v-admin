@@ -1,31 +1,32 @@
 <template lang="html">
     <div class="contentBg">
         <Row>
-            <Col :md="12" :lg="7">
+            <Col :md="12" :lg="6">
               <Row>
                 <Col :lg="24">
                   <div class="cont">
-                      <lineChart :lineData="lineOptions"></lineChart>
+                     
                   </div>
                 </Col>
                 <Col :lg="24">
                   <div class="cont">
-                      <piering></piering>
+                      
                   </div>
                 </Col>
               </Row>
 
             </Col>
-            <Col :md="12" :lg="10">
+            <Col :md="12" :lg="12">
+              <h2 class="platformTitle"></h2>
               <div class="">
-                <chinamap :mapData="mapData" class="map"></chinamap>
+                <global></global>
               </div>
             </Col>
-            <Col :md="12" :lg="7">
+            <Col :md="12" :lg="6">
               <Row>
-                <Col :lg="18">
-                  <div class="cont" style="height:580px">
-                    <bartop :bartopData="bartopOption" height="580px"></bartop>
+                <Col :lg="24">
+                  <div class="cont">
+                    
                   </div>
                 </Col>
               </Row>
@@ -37,15 +38,15 @@
 
 <script>
 import 'echarts/theme/dark.js'
-// Map of China
-import chinamap from '@/components/Echarts/chinaMap'
+// Map of gl
+import global from '@/components/echarts-gl/globe'
 import lineChart from '@/components/Echarts/lineChart'
 import bartop from '@/components/Echarts/barTop'
 import piering from '@/components/Echarts/pieRing.vue'
 import { city } from '@/assets/data/mapData'
 export default {
     components: {
-      chinamap,
+      global,
       lineChart,
       bartop,
       piering
@@ -110,5 +111,15 @@ export default {
     background: url("../../images/divbg2.png") 0% 0% / 100% 100% no-repeat;
 }
 
+.platformTitle {
+  text-align: center;
+  color: #eee;
+  line-height: 100px;
+  font-size: 2em;
+  height: 100px;
+  width: 100%;
+  background: url("../../images/form(8).png") 0% 0% / 100% 100% no-repeat;
+
+}
 
 </style>

@@ -63,11 +63,11 @@ export default {
                   roam: false,
                   itemStyle: {
                       normal: {
-                          areaColor: '#D4EFFC',
+                          areaColor: '#BFE0FC',
                           borderColor: '#162546'
                       },
                       emphasis: {
-                          areaColor: '#9DC0DE'
+                          areaColor: '#D4EFFC'
                       }
                   }
               },
